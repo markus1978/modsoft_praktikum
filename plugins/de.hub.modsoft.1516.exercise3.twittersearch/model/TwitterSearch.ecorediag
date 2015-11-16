@@ -14,7 +14,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_-hvXwYxMEeWLqrQfqtvDJg" fontColor="4210752" fontName=".SF NS Text" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//ExampleClass"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-hvXwoxMEeWLqrQfqtvDJg" x="120" y="85"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-hvXwoxMEeWLqrQfqtvDJg" x="72" y="81"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_uN-1YYxMEeWLqrQfqtvDJg"/>
   <element xmi:type="ecore:EPackage" href="TwitterSearch.ecore#/"/>
