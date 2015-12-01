@@ -1,7 +1,7 @@
 package de.hub.modsoft.twittersearch.main;
 
-import de.hub.modsoft.model.twittersearch.Search;
-import de.hub.modsoft.model.twittersearch.TwitterSearchFactory;
+import de.hub.modsoft.twittersearch.Search;
+import de.hub.modsoft.twittersearch.TwitterSearchFactory;
 
 public class Main {
 	

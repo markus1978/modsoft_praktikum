@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="twittersearch" nsURI="http://www.hu-berlin.de/modsoft/TwitterSearch/1.0alt"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="twittersearchalt" nsURI="http://www.hu-berlin.de/modsoft/TwitterSearch/1.0alt"
     nsPrefix="twittersearch">
   <eClassifiers xsi:type="ecore:EClass" name="Search">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TwitterObjectType"/>

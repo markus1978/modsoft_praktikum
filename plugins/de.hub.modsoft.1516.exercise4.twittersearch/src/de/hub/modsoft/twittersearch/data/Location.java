@@ -1,4 +1,4 @@
-package de.hub.modsoft.twittersearch.modelalt.data;
+package de.hub.modsoft.twittersearch.data;
 
 public class Location {
 
