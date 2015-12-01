@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TwitterSearch -->
+      <package
+            uri="http://www.hu-berlin.de/modsoft/TwitterSearch/1.0"
+            class="de.hub.modsoft.model.twittersearch.TwitterSearchPackage"
+            genModel="model/TwitterSearch.genmodel"/>
+   </extension>
+
+</plugin>
