@@ -25,7 +25,7 @@ enum FieldType returns FieldTypes: boolean = 'BOOLEAN' | int = 'INT' | string = 
 
 Search returns Search:
 	{Search}
-	"search" ";"
+	"search" ";" /* TODO: implement this rule and all other necessary rules */
 ;
 
 enum DistanceUnit returns DistanceUnit:	miles = 'mi' | kilometers = 'km';

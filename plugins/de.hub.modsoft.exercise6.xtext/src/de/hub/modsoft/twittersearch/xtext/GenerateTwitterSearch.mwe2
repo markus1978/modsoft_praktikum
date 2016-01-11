@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/de/hub/modsoft/twittersearch/xtext/TwitterSearch.xtext"
+var grammarURI = "src/de/hub/modsoft/twittersearch/xtext/TwitterSearch.xtext"
 var fileExtensions = "ts"
 var projectName = "de.hub.modsoft.exercise6.xtext"
 var runtimeProject = "../${projectName}"
@@ -29,7 +29,7 @@ Workflow {
 	component = Generator {
 		pathRtProject = runtimeProject
 		pathUiProject = "${runtimeProject}.ui"
-		pathTestProject = "${runtimeProject}.tests"
+//		pathTestProject = "${runtimeProject}.tests"
 		projectNameRt = projectName
 		projectNameUi = "${projectName}.ui"
 		language = auto-inject {
@@ -105,7 +105,7 @@ Workflow {
 			}
 			
 			// generates junit test support classes into Generator#pathTestProject
-			fragment = junit.Junit4Fragment auto-inject {}
+			// fragment = junit.Junit4Fragment auto-inject {}
 
 			// project wizard (optional) 
 			// fragment = projectWizard.SimpleProjectWizardFragment auto-inject {
