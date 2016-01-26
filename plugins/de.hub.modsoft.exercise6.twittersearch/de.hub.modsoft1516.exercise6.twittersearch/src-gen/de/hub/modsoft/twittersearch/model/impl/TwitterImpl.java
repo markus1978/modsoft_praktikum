@@ -4,7 +4,6 @@ package de.hub.modsoft.twittersearch.model.impl;
 
 import de.hub.modsoft.twittersearch.model.Search;
 import de.hub.modsoft.twittersearch.model.Twitter;
-import de.hub.modsoft.twittersearch.model.TwitterObject;
 import de.hub.modsoft.twittersearch.model.TwitterObjectType;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
 
@@ -107,7 +106,7 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TwitterObject> performSearch(Search search) {
+	public void performSearch(Search search) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -209,7 +208,8 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case TwitterSearchPackage.TWITTER___PERFORM_SEARCH__SEARCH:
-				return performSearch((Search)arguments.get(0));
+				performSearch((Search)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

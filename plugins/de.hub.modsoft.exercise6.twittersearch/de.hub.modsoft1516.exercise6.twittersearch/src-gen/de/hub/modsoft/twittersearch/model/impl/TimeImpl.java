@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link de.hub.modsoft.twittersearch.model.impl.TimeImpl#getBefore <em>Before</em>}</li>
- *   <li>{@link de.hub.modsoft.twittersearch.model.impl.TimeImpl#getAfter <em>After</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,26 +46,6 @@ public class TimeImpl extends SearchOptionImpl implements Time {
 	 * @ordered
 	 */
 	protected Date before = BEFORE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAfter() <em>After</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAfter()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date AFTER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAfter() <em>After</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAfter()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date after = AFTER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,34 +92,11 @@ public class TimeImpl extends SearchOptionImpl implements Time {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getAfter() {
-		return after;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAfter(Date newAfter) {
-		Date oldAfter = after;
-		after = newAfter;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.TIME__AFTER, oldAfter, after));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TwitterSearchPackage.TIME__BEFORE:
 				return getBefore();
-			case TwitterSearchPackage.TIME__AFTER:
-				return getAfter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,9 +111,6 @@ public class TimeImpl extends SearchOptionImpl implements Time {
 		switch (featureID) {
 			case TwitterSearchPackage.TIME__BEFORE:
 				setBefore((Date)newValue);
-				return;
-			case TwitterSearchPackage.TIME__AFTER:
-				setAfter((Date)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -174,9 +127,6 @@ public class TimeImpl extends SearchOptionImpl implements Time {
 			case TwitterSearchPackage.TIME__BEFORE:
 				setBefore(BEFORE_EDEFAULT);
 				return;
-			case TwitterSearchPackage.TIME__AFTER:
-				setAfter(AFTER_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -191,8 +141,6 @@ public class TimeImpl extends SearchOptionImpl implements Time {
 		switch (featureID) {
 			case TwitterSearchPackage.TIME__BEFORE:
 				return BEFORE_EDEFAULT == null ? before != null : !BEFORE_EDEFAULT.equals(before);
-			case TwitterSearchPackage.TIME__AFTER:
-				return AFTER_EDEFAULT == null ? after != null : !AFTER_EDEFAULT.equals(after);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,8 +157,6 @@ public class TimeImpl extends SearchOptionImpl implements Time {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (before: ");
 		result.append(before);
-		result.append(", after: ");
-		result.append(after);
 		result.append(')');
 		return result.toString();
 	}

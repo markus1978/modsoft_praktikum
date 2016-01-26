@@ -14,7 +14,6 @@ import java.util.Date;
  * </p>
  * <ul>
  *   <li>{@link de.hub.modsoft.twittersearch.model.Time#getBefore <em>Before</em>}</li>
- *   <li>{@link de.hub.modsoft.twittersearch.model.Time#getAfter <em>After</em>}</li>
  * </ul>
  *
  * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getTime()
@@ -47,31 +46,5 @@ public interface Time extends SearchOption {
 	 * @generated
 	 */
 	void setBefore(Date value);
-
-	/**
-	 * Returns the value of the '<em><b>After</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>After</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>After</em>' attribute.
-	 * @see #setAfter(Date)
-	 * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getTime_After()
-	 * @model
-	 * @generated
-	 */
-	Date getAfter();
-
-	/**
-	 * Sets the value of the '{@link de.hub.modsoft.twittersearch.model.Time#getAfter <em>After</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>After</em>' attribute.
-	 * @see #getAfter()
-	 * @generated
-	 */
-	void setAfter(Date value);
 
 } // Time

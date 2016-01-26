@@ -144,12 +144,6 @@ public class TwitterSearchSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TwitterSearchPackage.TWITTER_OBJECT: {
-				TwitterObject twitterObject = (TwitterObject)theEObject;
-				T result = caseTwitterObject(twitterObject);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TwitterSearchPackage.TWITTER_OBJECT_TYPE: {
 				TwitterObjectType twitterObjectType = (TwitterObjectType)theEObject;
 				T result = caseTwitterObjectType(twitterObjectType);
@@ -337,21 +331,6 @@ public class TwitterSearchSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTwitter(Twitter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Twitter Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Twitter Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTwitterObject(TwitterObject object) {
 		return null;
 	}
 

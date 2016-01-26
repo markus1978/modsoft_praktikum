@@ -492,22 +492,13 @@ public interface TwitterSearchPackage extends EPackage {
 	int TIME__BEFORE = SEARCH_OPTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>After</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME__AFTER = SEARCH_OPTION_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Time</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_FEATURE_COUNT = SEARCH_OPTION_FEATURE_COUNT + 2;
+	int TIME_FEATURE_COUNT = SEARCH_OPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Time</em>' class.
@@ -629,34 +620,6 @@ public interface TwitterSearchPackage extends EPackage {
 	int TWITTER_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.impl.TwitterObjectImpl <em>Twitter Object</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterObjectImpl
-	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getTwitterObject()
-	 * @generated
-	 */
-	int TWITTER_OBJECT = 12;
-
-	/**
-	 * The number of structural features of the '<em>Twitter Object</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TWITTER_OBJECT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Twitter Object</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TWITTER_OBJECT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.impl.TwitterObjectTypeImpl <em>Twitter Object Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -664,7 +627,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getTwitterObjectType()
 	 * @generated
 	 */
-	int TWITTER_OBJECT_TYPE = 13;
+	int TWITTER_OBJECT_TYPE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -710,7 +673,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getDistanceUnit()
 	 * @generated
 	 */
-	int DISTANCE_UNIT = 14;
+	int DISTANCE_UNIT = 13;
 
 	/**
 	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.FieldTypes <em>Field Types</em>}' enum.
@@ -720,7 +683,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getFieldTypes()
 	 * @generated
 	 */
-	int FIELD_TYPES = 15;
+	int FIELD_TYPES = 14;
 
 	/**
 	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.StringOperators <em>String Operators</em>}' enum.
@@ -730,7 +693,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getStringOperators()
 	 * @generated
 	 */
-	int STRING_OPERATORS = 16;
+	int STRING_OPERATORS = 15;
 
 	/**
 	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.IntOperators <em>Int Operators</em>}' enum.
@@ -740,7 +703,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getIntOperators()
 	 * @generated
 	 */
-	int INT_OPERATORS = 17;
+	int INT_OPERATORS = 16;
 
 
 	/**
@@ -1020,17 +983,6 @@ public interface TwitterSearchPackage extends EPackage {
 	EAttribute getTime_Before();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.hub.modsoft.twittersearch.model.Time#getAfter <em>After</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>After</em>'.
-	 * @see de.hub.modsoft.twittersearch.model.Time#getAfter()
-	 * @see #getTime()
-	 * @generated
-	 */
-	EAttribute getTime_After();
-
-	/**
 	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.model.FieldDeclaration <em>Field Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1114,16 +1066,6 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTwitter__PerformSearch__Search();
-
-	/**
-	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.model.TwitterObject <em>Twitter Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Twitter Object</em>'.
-	 * @see de.hub.modsoft.twittersearch.model.TwitterObject
-	 * @generated
-	 */
-	EClass getTwitterObject();
 
 	/**
 	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.model.TwitterObjectType <em>Twitter Object Type</em>}'.
@@ -1449,14 +1391,6 @@ public interface TwitterSearchPackage extends EPackage {
 		EAttribute TIME__BEFORE = eINSTANCE.getTime_Before();
 
 		/**
-		 * The meta object literal for the '<em><b>After</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME__AFTER = eINSTANCE.getTime_After();
-
-		/**
 		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.impl.FieldDeclarationImpl <em>Field Declaration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1523,16 +1457,6 @@ public interface TwitterSearchPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TWITTER___PERFORM_SEARCH__SEARCH = eINSTANCE.getTwitter__PerformSearch__Search();
-
-		/**
-		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.impl.TwitterObjectImpl <em>Twitter Object</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.hub.modsoft.twittersearch.model.impl.TwitterObjectImpl
-		 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getTwitterObject()
-		 * @generated
-		 */
-		EClass TWITTER_OBJECT = eINSTANCE.getTwitterObject();
 
 		/**
 		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.impl.TwitterObjectTypeImpl <em>Twitter Object Type</em>}' class.

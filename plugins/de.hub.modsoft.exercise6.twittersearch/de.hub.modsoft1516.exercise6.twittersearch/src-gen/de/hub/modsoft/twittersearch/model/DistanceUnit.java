@@ -19,54 +19,52 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum DistanceUnit implements Enumerator {
 	/**
-	 * The '<em><b>Miles</b></em>' literal object.
+	 * The '<em><b>Mi</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MILES_VALUE
+	 * @see #MI_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MILES(0, "miles", "miles"),
-
-	/**
-	 * The '<em><b>Kilometers</b></em>' literal object.
+	MI(0, "mi", "mi"), /**
+	 * The '<em><b>Km</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #KILOMETERS_VALUE
+	 * @see #KM_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	KILOMETERS(1, "kilometers", "kilometers");
+	KM(1, "km", "km");
 
 	/**
-	 * The '<em><b>Miles</b></em>' literal value.
+	 * The '<em><b>Mi</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Miles</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Mi</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #MILES
-	 * @model name="miles"
+	 * @see #MI
+	 * @model name="mi"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MILES_VALUE = 0;
+	public static final int MI_VALUE = 0;
 
 	/**
-	 * The '<em><b>Kilometers</b></em>' literal value.
+	 * The '<em><b>Km</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Kilometers</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Km</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #KILOMETERS
-	 * @model name="kilometers"
+	 * @see #KM
+	 * @model name="km"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int KILOMETERS_VALUE = 1;
+	public static final int KM_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Distance Unit</b></em>' enumerators.
@@ -76,8 +74,8 @@ public enum DistanceUnit implements Enumerator {
 	 */
 	private static final DistanceUnit[] VALUES_ARRAY =
 		new DistanceUnit[] {
-			MILES,
-			KILOMETERS,
+			MI,
+			KM,
 		};
 
 	/**
@@ -134,8 +132,8 @@ public enum DistanceUnit implements Enumerator {
 	 */
 	public static DistanceUnit get(int value) {
 		switch (value) {
-			case MILES_VALUE: return MILES;
-			case KILOMETERS_VALUE: return KILOMETERS;
+			case MI_VALUE: return MI;
+			case KM_VALUE: return KM;
 		}
 		return null;
 	}

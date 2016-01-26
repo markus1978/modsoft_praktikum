@@ -5,20 +5,30 @@ package de.hub.modsoft.twittersearch.xtext.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import de.hub.modsoft.twittersearch.model.BooleanCondition;
 import de.hub.modsoft.twittersearch.model.FieldDeclaration;
+import de.hub.modsoft.twittersearch.model.FieldExpr;
+import de.hub.modsoft.twittersearch.model.IntCondition;
+import de.hub.modsoft.twittersearch.model.Keywords;
+import de.hub.modsoft.twittersearch.model.Location;
 import de.hub.modsoft.twittersearch.model.Search;
+import de.hub.modsoft.twittersearch.model.StringCondition;
+import de.hub.modsoft.twittersearch.model.Time;
 import de.hub.modsoft.twittersearch.model.Twitter;
 import de.hub.modsoft.twittersearch.model.TwitterObjectType;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
 import de.hub.modsoft.twittersearch.xtext.services.TwitterSearchGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
+import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -29,11 +39,32 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == TwitterSearchPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case TwitterSearchPackage.BOOLEAN_CONDITION:
+				sequence_BooleanCondition(context, (BooleanCondition) semanticObject); 
+				return; 
 			case TwitterSearchPackage.FIELD_DECLARATION:
 				sequence_FieldDclr(context, (FieldDeclaration) semanticObject); 
 				return; 
+			case TwitterSearchPackage.FIELD_EXPR:
+				sequence_FieldExpression(context, (FieldExpr) semanticObject); 
+				return; 
+			case TwitterSearchPackage.INT_CONDITION:
+				sequence_IntCondition(context, (IntCondition) semanticObject); 
+				return; 
+			case TwitterSearchPackage.KEYWORDS:
+				sequence_Keywords(context, (Keywords) semanticObject); 
+				return; 
+			case TwitterSearchPackage.LOCATION:
+				sequence_Location(context, (Location) semanticObject); 
+				return; 
 			case TwitterSearchPackage.SEARCH:
 				sequence_Search(context, (Search) semanticObject); 
+				return; 
+			case TwitterSearchPackage.STRING_CONDITION:
+				sequence_StringCondition(context, (StringCondition) semanticObject); 
+				return; 
+			case TwitterSearchPackage.TIME:
+				sequence_Time(context, (Time) semanticObject); 
 				return; 
 			case TwitterSearchPackage.TWITTER:
 				sequence_Model(context, (Twitter) semanticObject); 
@@ -47,10 +78,98 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 	
 	/**
 	 * Constraint:
+	 *     field=FieldExpression
+	 */
+	protected void sequence_BooleanCondition(EObject context, BooleanCondition semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getBooleanConditionAccess().getFieldFieldExpressionParserRuleCall_0(), semanticObject.getField());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID fieldType=FieldType)
 	 */
 	protected void sequence_FieldDclr(EObject context, FieldDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     fieldDeclaration=[FieldDeclaration|ID]
+	 */
+	protected void sequence_FieldExpression(EObject context, FieldExpr semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.FIELD_EXPR__FIELD_DECLARATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.FIELD_EXPR__FIELD_DECLARATION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getFieldExpressionAccess().getFieldDeclarationFieldDeclarationIDTerminalRuleCall_0_1(), semanticObject.getFieldDeclaration());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (field=FieldExpression operator=IntOperators operand=INT)
+	 */
+	protected void sequence_IntCondition(EObject context, IntCondition semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.INT_CONDITION__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.INT_CONDITION__OPERAND));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.INT_CONDITION__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.INT_CONDITION__OPERATOR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getIntConditionAccess().getFieldFieldExpressionParserRuleCall_0_0(), semanticObject.getField());
+		feeder.accept(grammarAccess.getIntConditionAccess().getOperatorIntOperatorsEnumRuleCall_1_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getIntConditionAccess().getOperandINTTerminalRuleCall_2_0(), semanticObject.getOperand());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (keywords+=STRING keywords+=STRING*)
+	 */
+	protected void sequence_Keywords(EObject context, Keywords semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (lon=DOUBLE lat=DOUBLE radius=DOUBLE radiusUnit=DistanceUnit)
+	 */
+	protected void sequence_Location(EObject context, Location semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.LOCATION__LON) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.LOCATION__LON));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.LOCATION__LAT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.LOCATION__LAT));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.LOCATION__RADIUS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.LOCATION__RADIUS));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.LOCATION__RADIUS_UNIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.LOCATION__RADIUS_UNIT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getLocationAccess().getLonDOUBLEParserRuleCall_3_0(), semanticObject.getLon());
+		feeder.accept(grammarAccess.getLocationAccess().getLatDOUBLEParserRuleCall_5_0(), semanticObject.getLat());
+		feeder.accept(grammarAccess.getLocationAccess().getRadiusDOUBLEParserRuleCall_7_0(), semanticObject.getRadius());
+		feeder.accept(grammarAccess.getLocationAccess().getRadiusUnitDistanceUnitEnumRuleCall_8_0(), semanticObject.getRadiusUnit());
+		feeder.finish();
 	}
 	
 	
@@ -74,9 +193,47 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 	
 	/**
 	 * Constraint:
-	 *     {Search}
+	 *     (searchFor=[TwitterObjectType|ID] options+=Option* (conditions+=Condition conditions+=Condition*)? sortation=FieldExpression?)
 	 */
 	protected void sequence_Search(EObject context, Search semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (field=FieldExpression operator=StringOperators operand=STRING)
+	 */
+	protected void sequence_StringCondition(EObject context, StringCondition semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.STRING_CONDITION__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.STRING_CONDITION__OPERAND));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.STRING_CONDITION__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.STRING_CONDITION__OPERATOR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getStringConditionAccess().getFieldFieldExpressionParserRuleCall_0_0(), semanticObject.getField());
+		feeder.accept(grammarAccess.getStringConditionAccess().getOperatorStringOperatorsEnumRuleCall_2_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getStringConditionAccess().getOperandSTRINGTerminalRuleCall_4_0(), semanticObject.getOperand());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     before=DATE
+	 */
+	protected void sequence_Time(EObject context, Time semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.TIME__BEFORE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.TIME__BEFORE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTimeAccess().getBeforeDATEParserRuleCall_1_0(), semanticObject.getBefore());
+		feeder.finish();
 	}
 }

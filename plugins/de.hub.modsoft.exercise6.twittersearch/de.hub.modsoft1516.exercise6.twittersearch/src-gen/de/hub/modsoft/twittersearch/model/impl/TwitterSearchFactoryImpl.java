@@ -67,7 +67,6 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 			case TwitterSearchPackage.TIME: return createTime();
 			case TwitterSearchPackage.FIELD_DECLARATION: return createFieldDeclaration();
 			case TwitterSearchPackage.TWITTER: return createTwitter();
-			case TwitterSearchPackage.TWITTER_OBJECT: return createTwitterObject();
 			case TwitterSearchPackage.TWITTER_OBJECT_TYPE: return createTwitterObjectType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -214,16 +213,6 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 	public Twitter createTwitter() {
 		TwitterImpl twitter = new TwitterImpl();
 		return twitter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TwitterObject createTwitterObject() {
-		TwitterObjectImpl twitterObject = new TwitterObjectImpl();
-		return twitterObject;
 	}
 
 	/**

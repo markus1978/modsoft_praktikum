@@ -112,15 +112,6 @@ public interface TwitterSearchFactory extends EFactory {
 	Twitter createTwitter();
 
 	/**
-	 * Returns a new object of class '<em>Twitter Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Twitter Object</em>'.
-	 * @generated
-	 */
-	TwitterObject createTwitterObject();
-
-	/**
 	 * Returns a new object of class '<em>Twitter Object Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
