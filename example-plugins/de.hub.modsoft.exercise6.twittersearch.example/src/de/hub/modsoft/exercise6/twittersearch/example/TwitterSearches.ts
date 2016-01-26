@@ -1,18 +1,21 @@
 configuration:
 
-	objecttype tweet {
-		field retweets : INT
-		field favorits : INT
-		field hasImage : BOOLEAN
-		field hasURL : BOOLEAN
-		field content : STRING	
-	}
-	
-	objecttype user {
-		field follower : INT
-		field followes : INT
-		field name : STRING 
-	}
+objecttype tweet {
+	field retweet_count : INT
+	field favorit_count : INT
+	field hasURL : BOOLEAN
+	field hasHashtag : BOOLEAN
+	field hasUser_mention : BOOLEAN
+	field text : STRING	
+}
+
+objecttype user {
+	field follower : INT
+	field friends : INT
+	field name : STRING 
+}
 
 searches:
-	search for tweet with "VW", "abgasskandal" where tweet.retweets > 5 & tweet.hasURL
+	search for tweet with "VW", "abgasskandal" where retweet_count > 5 & hasURL;
+	search for tweet with "piraten" in geo(52.520007,13.404953,100mi) before 12.11.2012;
+        search for tweet with "@realDonaldTrump" where text.contains("conservative");
