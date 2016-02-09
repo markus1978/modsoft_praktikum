@@ -18,4 +18,4 @@ objecttype user {
 searches:
 	search for tweet with "VW", "abgasskandal" where retweet_count > 5 & hasURL;
 	search for tweet with "piraten" in geo(52.520007,13.404953,100mi) before 12.11.2012;
-        search for tweet with "@realDonaldTrump" where text.contains("conservative");
+       search for tweet with "@realDonaldTrump" where text.contains("conservative");
