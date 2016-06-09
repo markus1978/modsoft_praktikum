@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.hub.modsoft.twittersearch.twittersearch,
- de.hub.modsoft.twittersearch.twittersearch.impl,
- de.hub.modsoft.twittersearch.twittersearch.util
+Export-Package: de.hub.modsoft.twittersearch,
+ de.hub.modsoft.twittersearch.impl,
+ de.hub.modsoft.twittersearch.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

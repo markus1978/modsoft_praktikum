@@ -3,43 +3,20 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="twittersearch" nsURI="http://www.hu-berlin.de/modsoft/TwitterSearch/1.0"
     nsPrefix="twittersearch">
   <eClassifiers xsi:type="ecore:EClass" name="Search">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TwitterObjectType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
-        eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sortation" eType="#//FieldExpr"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//BooleanExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
         eType="#//SearchOption" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="searchType" eType="#//TwitterObjectTypeDeclaration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldExpr">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TwitterObjectType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="field" eType="#//Fields"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="field" lowerBound="1" eType="#//FieldExpr"
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldExpression" eType="#//FieldExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="TwitterObjectType">
-    <eLiterals name="tweet"/>
-    <eLiterals name="user" value="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Fields">
-    <eLiterals name="hashtags"/>
-    <eLiterals name="favorits" value="1"/>
-    <eLiterals name="retweets" value="2"/>
-    <eLiterals name="mentions" value="3"/>
-    <eLiterals name="tweets" value="4"/>
-    <eLiterals name="hasURL" value="5"/>
-    <eLiterals name="hasImage" value="6"/>
-    <eLiterals name="followers" value="7"/>
-    <eLiterals name="message" value="8"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanCondition" eSuperTypes="#//Condition"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StringCondition" eSuperTypes="#//Condition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntCondition" eSuperTypes="#//Condition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//IntOperators"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SearchOption" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Keywords" eSuperTypes="#//SearchOption">
@@ -52,12 +29,60 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="radius" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="radiusUnit" eType="#//DistanceUnit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//SearchOption">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="before" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="after" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DistanceUnit">
     <eLiterals name="miles"/>
     <eLiterals name="kilometers" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IntOperators">
+    <eLiterals name="gt" literal=">"/>
+    <eLiterals name="gte" value="1" literal=">="/>
+    <eLiterals name="eq" value="2" literal="="/>
+    <eLiterals name="lt" value="3" literal="&lt;"/>
+    <eLiterals name="lte" value="4" literal="&lt;="/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterObjectTypeDeclaration" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//TwitterFieldDeclaration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterFieldDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Twitter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//Type" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanExpression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Not" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="#//BooleanExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanBinaryOp" abstract="true" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//BooleanExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//BooleanBinaryOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//BooleanBinaryOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldExpression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Dot" eSuperTypes="#//FieldExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//FieldExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//FieldReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldReference" eSuperTypes="#//FieldExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDeclaration" eType="#//TwitterFieldDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="twitter" eType="#//Twitter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="searches" upperBound="-1"
+        eType="#//Search" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
