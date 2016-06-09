@@ -3,6 +3,8 @@
 *.war
 *.ear
 *.class
+*._trace
+*.xtendbin
 
 # eclipse specific git ignore
 bin/**
