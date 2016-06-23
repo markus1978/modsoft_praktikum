@@ -97,7 +97,7 @@ public class LocationImpl extends SearchOptionImpl implements Location {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final DistanceUnit RADIUS_UNIT_EDEFAULT = DistanceUnit.MILES;
+	protected static final DistanceUnit RADIUS_UNIT_EDEFAULT = DistanceUnit.MI;
 
 	/**
 	 * The cached value of the '{@link #getRadiusUnit() <em>Radius Unit</em>}' attribute.

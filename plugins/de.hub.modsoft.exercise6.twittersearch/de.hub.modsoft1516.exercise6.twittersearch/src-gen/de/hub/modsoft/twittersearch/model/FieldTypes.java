@@ -29,16 +29,6 @@ public enum FieldTypes implements Enumerator {
 	INT(0, "int", "int"),
 
 	/**
-	 * The '<em><b>String</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #STRING_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	STRING(1, "string", "string"),
-
-	/**
 	 * The '<em><b>Boolean</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,21 +54,6 @@ public enum FieldTypes implements Enumerator {
 	public static final int INT_VALUE = 0;
 
 	/**
-	 * The '<em><b>String</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>String</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #STRING
-	 * @model name="string"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int STRING_VALUE = 1;
-
-	/**
 	 * The '<em><b>Boolean</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -102,7 +77,6 @@ public enum FieldTypes implements Enumerator {
 	private static final FieldTypes[] VALUES_ARRAY =
 		new FieldTypes[] {
 			INT,
-			STRING,
 			BOOLEAN,
 		};
 
@@ -161,7 +135,6 @@ public enum FieldTypes implements Enumerator {
 	public static FieldTypes get(int value) {
 		switch (value) {
 			case INT_VALUE: return INT;
-			case STRING_VALUE: return STRING;
 			case BOOLEAN_VALUE: return BOOLEAN;
 		}
 		return null;

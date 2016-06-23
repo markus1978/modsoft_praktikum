@@ -5,8 +5,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Search">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
         eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sortation" eType="#//FieldExpr"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
         eType="#//SearchOption" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="searchFor" eType="#//TwitterObjectType">
@@ -27,10 +25,6 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanCondition" eSuperTypes="#//Condition"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StringCondition" eSuperTypes="#//Condition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//StringOperators"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntCondition" eSuperTypes="#//Condition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//IntOperators"/>
@@ -48,11 +42,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//SearchOption">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="before" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="after" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DistanceUnit">
-    <eLiterals name="miles"/>
-    <eLiterals name="kilometers" value="1"/>
+    <eLiterals name="mi"/>
+    <eLiterals name="km" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldType" eType="#//FieldTypes"/>
@@ -62,11 +55,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FieldTypes">
     <eLiterals name="int"/>
-    <eLiterals name="string" value="1"/>
     <eLiterals name="boolean" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Twitter">
-    <eOperations name="performSearch" upperBound="-1" eType="#//TwitterObject">
+    <eOperations name="performSearch">
       <eParameters name="search" eType="#//Search"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="objectTypes" upperBound="-1"
@@ -74,15 +66,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="searches" upperBound="-1"
         eType="#//Search" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterObject"/>
   <eClassifiers xsi:type="ecore:EClass" name="TwitterObjectType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//FieldDeclaration" containment="true" eOpposite="#//FieldDeclaration/objectType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="StringOperators">
-    <eLiterals name="contains"/>
-    <eLiterals name="containsnot" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IntOperators">
     <eLiterals name="gt"/>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<twittersearch:Twitter xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:twittersearch="http://www.hu-berlin.de/modsoft/TwitterSearch/1.0">
+  <objectTypes name="tweet">
+    <fields name="retweet_count"/>
+    <fields name="favorit_count"/>
+    <fields fieldType="boolean" name="hasURL"/>
+    <fields fieldType="boolean" name="hasHashtag"/>
+    <fields fieldType="boolean" name="hasUser_mention"/>
+    <fields fieldType="string" name="text"/>
+  </objectTypes>
+  <objectTypes name="user">
+    <fields name="follower"/>
+    <fields name="friends"/>
+    <fields fieldType="string" name="name"/>
+  </objectTypes>
+  <searches searchFor="//@objectTypes.0">
+    <conditions xsi:type="twittersearch:IntCondition" operand="5">
+      <field fieldDeclaration="//@objectTypes.0/@fields.0"/>
+    </conditions>
+    <conditions xsi:type="twittersearch:BooleanCondition">
+      <field fieldDeclaration="//@objectTypes.0/@fields.2"/>
+    </conditions>
+    <options xsi:type="twittersearch:Keywords">
+      <keywords>&quot;VW&quot;</keywords>
+      <keywords>&quot;abgasskandal&quot;</keywords>
+    </options>
+  </searches>
+  <searches searchFor="//@objectTypes.0">
+    <options xsi:type="twittersearch:Keywords">
+      <keywords>&quot;piraten&quot;</keywords>
+    </options>
+    <options xsi:type="twittersearch:Location" lon="52.520007" lat="13.404953" radius="100.0"/>
+    <options xsi:type="twittersearch:Time" before="2012-11-12T00:00:00.000+0100"/>
+  </searches>
+  <searches searchFor="//@objectTypes.0">
+    <conditions xsi:type="twittersearch:StringCondition" operand="&quot;conservative&quot;">
+      <field fieldDeclaration="//@objectTypes.0/@fields.5"/>
+    </conditions>
+    <options xsi:type="twittersearch:Keywords">
+      <keywords>&quot;@realDonaldTrump&quot;</keywords>
+    </options>
+  </searches>
+</twittersearch:Twitter>

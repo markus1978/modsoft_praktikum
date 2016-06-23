@@ -91,13 +91,6 @@ public class TwitterSearchSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TwitterSearchPackage.STRING_CONDITION: {
-				StringCondition stringCondition = (StringCondition)theEObject;
-				T result = caseStringCondition(stringCondition);
-				if (result == null) result = caseCondition(stringCondition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TwitterSearchPackage.INT_CONDITION: {
 				IntCondition intCondition = (IntCondition)theEObject;
 				T result = caseIntCondition(intCondition);
@@ -141,12 +134,6 @@ public class TwitterSearchSwitch<T> extends Switch<T> {
 			case TwitterSearchPackage.TWITTER: {
 				Twitter twitter = (Twitter)theEObject;
 				T result = caseTwitter(twitter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TwitterSearchPackage.TWITTER_OBJECT: {
-				TwitterObject twitterObject = (TwitterObject)theEObject;
-				T result = caseTwitterObject(twitterObject);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -217,21 +204,6 @@ public class TwitterSearchSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBooleanCondition(BooleanCondition object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>String Condition</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>String Condition</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStringCondition(StringCondition object) {
 		return null;
 	}
 
@@ -337,21 +309,6 @@ public class TwitterSearchSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTwitter(Twitter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Twitter Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Twitter Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTwitterObject(TwitterObject object) {
 		return null;
 	}
 

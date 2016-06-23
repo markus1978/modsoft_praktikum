@@ -49,15 +49,6 @@ public interface TwitterSearchFactory extends EFactory {
 	BooleanCondition createBooleanCondition();
 
 	/**
-	 * Returns a new object of class '<em>String Condition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String Condition</em>'.
-	 * @generated
-	 */
-	StringCondition createStringCondition();
-
-	/**
 	 * Returns a new object of class '<em>Int Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,15 +101,6 @@ public interface TwitterSearchFactory extends EFactory {
 	 * @generated
 	 */
 	Twitter createTwitter();
-
-	/**
-	 * Returns a new object of class '<em>Twitter Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Twitter Object</em>'.
-	 * @generated
-	 */
-	TwitterObject createTwitterObject();
 
 	/**
 	 * Returns a new object of class '<em>Twitter Object Type</em>'.

@@ -62,6 +62,6 @@ public interface Twitter extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<TwitterObject> performSearch(Search search);
+	void performSearch(Search search);
 
 } // Twitter

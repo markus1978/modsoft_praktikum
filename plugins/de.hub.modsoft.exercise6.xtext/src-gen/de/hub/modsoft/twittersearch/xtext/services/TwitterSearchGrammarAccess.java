@@ -147,13 +147,29 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cSearchAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cSearchKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cForKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSearchForAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cSearchForTwitterObjectTypeCrossReference_3_0 = (CrossReference)cSearchForAssignment_3.eContents().get(0);
+		private final RuleCall cSearchForTwitterObjectTypeIDTerminalRuleCall_3_0_1 = (RuleCall)cSearchForTwitterObjectTypeCrossReference_3_0.eContents().get(1);
+		private final Assignment cOptionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cOptionsOptionParserRuleCall_4_0 = (RuleCall)cOptionsAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cWhereKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cConditionsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cConditionsConditionParserRuleCall_5_1_0 = (RuleCall)cConditionsAssignment_5_1.eContents().get(0);
+		private final Group cGroup_5_2 = (Group)cGroup_5.eContents().get(2);
+		private final Keyword cAmpersandKeyword_5_2_0 = (Keyword)cGroup_5_2.eContents().get(0);
+		private final Assignment cConditionsAssignment_5_2_1 = (Assignment)cGroup_5_2.eContents().get(1);
+		private final RuleCall cConditionsConditionParserRuleCall_5_2_1_0 = (RuleCall)cConditionsAssignment_5_2_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Search:
-		//	{Search} "search" ";";
+		//	{Search} "search" "for" searchFor=[TwitterObjectType] options+=Option* ("where" conditions+=Condition ("&"
+		//	conditions+=Condition)*)? ";";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{Search} "search" ";"
+		//{Search} "search" "for" searchFor=[TwitterObjectType] options+=Option* ("where" conditions+=Condition ("&"
+		//conditions+=Condition)*)? ";"
 		public Group getGroup() { return cGroup; }
 
 		//{Search}
@@ -162,25 +178,349 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		//"search"
 		public Keyword getSearchKeyword_1() { return cSearchKeyword_1; }
 
+		//"for"
+		public Keyword getForKeyword_2() { return cForKeyword_2; }
+
+		//searchFor=[TwitterObjectType]
+		public Assignment getSearchForAssignment_3() { return cSearchForAssignment_3; }
+
+		//[TwitterObjectType]
+		public CrossReference getSearchForTwitterObjectTypeCrossReference_3_0() { return cSearchForTwitterObjectTypeCrossReference_3_0; }
+
+		//ID
+		public RuleCall getSearchForTwitterObjectTypeIDTerminalRuleCall_3_0_1() { return cSearchForTwitterObjectTypeIDTerminalRuleCall_3_0_1; }
+
+		//options+=Option*
+		public Assignment getOptionsAssignment_4() { return cOptionsAssignment_4; }
+
+		//Option
+		public RuleCall getOptionsOptionParserRuleCall_4_0() { return cOptionsOptionParserRuleCall_4_0; }
+
+		//("where" conditions+=Condition ("&" conditions+=Condition)*)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"where"
+		public Keyword getWhereKeyword_5_0() { return cWhereKeyword_5_0; }
+
+		//conditions+=Condition
+		public Assignment getConditionsAssignment_5_1() { return cConditionsAssignment_5_1; }
+
+		//Condition
+		public RuleCall getConditionsConditionParserRuleCall_5_1_0() { return cConditionsConditionParserRuleCall_5_1_0; }
+
+		//("&" conditions+=Condition)*
+		public Group getGroup_5_2() { return cGroup_5_2; }
+
+		//"&"
+		public Keyword getAmpersandKeyword_5_2_0() { return cAmpersandKeyword_5_2_0; }
+
+		//conditions+=Condition
+		public Assignment getConditionsAssignment_5_2_1() { return cConditionsAssignment_5_2_1; }
+
+		//Condition
+		public RuleCall getConditionsConditionParserRuleCall_5_2_1_0() { return cConditionsConditionParserRuleCall_5_2_1_0; }
+
 		//";"
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+	}
+
+	public class OptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Option");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cKeywordsParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLocationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cTimeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Option returns SearchOption:
+		//	Keywords | Location | Time;
+		@Override public ParserRule getRule() { return rule; }
+
+		//Keywords | Location | Time
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Keywords
+		public RuleCall getKeywordsParserRuleCall_0() { return cKeywordsParserRuleCall_0; }
+
+		//Location
+		public RuleCall getLocationParserRuleCall_1() { return cLocationParserRuleCall_1; }
+
+		//Time
+		public RuleCall getTimeParserRuleCall_2() { return cTimeParserRuleCall_2; }
+	}
+
+	public class KeywordsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Keywords");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cWithKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cKeywordsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeywordsSTRINGTerminalRuleCall_1_0 = (RuleCall)cKeywordsAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cKeywordsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cKeywordsSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cKeywordsAssignment_2_1.eContents().get(0);
+		
+		//Keywords:
+		//	"with" keywords+=STRING ("," keywords+=STRING)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"with" keywords+=STRING ("," keywords+=STRING)*
+		public Group getGroup() { return cGroup; }
+
+		//"with"
+		public Keyword getWithKeyword_0() { return cWithKeyword_0; }
+
+		//keywords+=STRING
+		public Assignment getKeywordsAssignment_1() { return cKeywordsAssignment_1; }
+
+		//STRING
+		public RuleCall getKeywordsSTRINGTerminalRuleCall_1_0() { return cKeywordsSTRINGTerminalRuleCall_1_0; }
+
+		//("," keywords+=STRING)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//keywords+=STRING
+		public Assignment getKeywordsAssignment_2_1() { return cKeywordsAssignment_2_1; }
+
+		//STRING
+		public RuleCall getKeywordsSTRINGTerminalRuleCall_2_1_0() { return cKeywordsSTRINGTerminalRuleCall_2_1_0; }
+	}
+
+	public class LocationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Location");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cInKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cGeoKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cLonAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cLonDOUBLEParserRuleCall_3_0 = (RuleCall)cLonAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cLatAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cLatDOUBLEParserRuleCall_5_0 = (RuleCall)cLatAssignment_5.eContents().get(0);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cRadiusAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cRadiusDOUBLEParserRuleCall_7_0 = (RuleCall)cRadiusAssignment_7.eContents().get(0);
+		private final Assignment cRadiusUnitAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cRadiusUnitDistanceUnitEnumRuleCall_8_0 = (RuleCall)cRadiusUnitAssignment_8.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		
+		//Location:
+		//	"in" "geo" "(" lon=DOUBLE "," lat=DOUBLE "," radius=DOUBLE radiusUnit=DistanceUnit ")";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"in" "geo" "(" lon=DOUBLE "," lat=DOUBLE "," radius=DOUBLE radiusUnit=DistanceUnit ")"
+		public Group getGroup() { return cGroup; }
+
+		//"in"
+		public Keyword getInKeyword_0() { return cInKeyword_0; }
+
+		//"geo"
+		public Keyword getGeoKeyword_1() { return cGeoKeyword_1; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+
+		//lon=DOUBLE
+		public Assignment getLonAssignment_3() { return cLonAssignment_3; }
+
+		//DOUBLE
+		public RuleCall getLonDOUBLEParserRuleCall_3_0() { return cLonDOUBLEParserRuleCall_3_0; }
+
+		//","
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+
+		//lat=DOUBLE
+		public Assignment getLatAssignment_5() { return cLatAssignment_5; }
+
+		//DOUBLE
+		public RuleCall getLatDOUBLEParserRuleCall_5_0() { return cLatDOUBLEParserRuleCall_5_0; }
+
+		//","
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+
+		//radius=DOUBLE
+		public Assignment getRadiusAssignment_7() { return cRadiusAssignment_7; }
+
+		//DOUBLE
+		public RuleCall getRadiusDOUBLEParserRuleCall_7_0() { return cRadiusDOUBLEParserRuleCall_7_0; }
+
+		//radiusUnit=DistanceUnit
+		public Assignment getRadiusUnitAssignment_8() { return cRadiusUnitAssignment_8; }
+
+		//DistanceUnit
+		public RuleCall getRadiusUnitDistanceUnitEnumRuleCall_8_0() { return cRadiusUnitDistanceUnitEnumRuleCall_8_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
+	}
+
+	public class TimeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Time");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBeforeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cBeforeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cBeforeDATEParserRuleCall_1_0 = (RuleCall)cBeforeAssignment_1.eContents().get(0);
+		
+		//Time:
+		//	"before" before=DATE;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"before" before=DATE
+		public Group getGroup() { return cGroup; }
+
+		//"before"
+		public Keyword getBeforeKeyword_0() { return cBeforeKeyword_0; }
+
+		//before=DATE
+		public Assignment getBeforeAssignment_1() { return cBeforeAssignment_1; }
+
+		//DATE
+		public RuleCall getBeforeDATEParserRuleCall_1_0() { return cBeforeDATEParserRuleCall_1_0; }
+	}
+
+	public class ConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Condition");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIntConditionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBooleanConditionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Condition:
+		//	IntCondition | BooleanCondition;
+		@Override public ParserRule getRule() { return rule; }
+
+		//IntCondition | BooleanCondition
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//IntCondition
+		public RuleCall getIntConditionParserRuleCall_0() { return cIntConditionParserRuleCall_0; }
+
+		//BooleanCondition
+		public RuleCall getBooleanConditionParserRuleCall_1() { return cBooleanConditionParserRuleCall_1; }
+	}
+
+	public class IntConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IntCondition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFieldAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cFieldFieldExpressionParserRuleCall_0_0 = (RuleCall)cFieldAssignment_0.eContents().get(0);
+		private final Assignment cOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cOperatorIntOperatorsEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
+		private final Assignment cOperandAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOperandINTTerminalRuleCall_2_0 = (RuleCall)cOperandAssignment_2.eContents().get(0);
+		
+		//IntCondition:
+		//	field=FieldExpression operator=IntOperators operand=INT;
+		@Override public ParserRule getRule() { return rule; }
+
+		//field=FieldExpression operator=IntOperators operand=INT
+		public Group getGroup() { return cGroup; }
+
+		//field=FieldExpression
+		public Assignment getFieldAssignment_0() { return cFieldAssignment_0; }
+
+		//FieldExpression
+		public RuleCall getFieldFieldExpressionParserRuleCall_0_0() { return cFieldFieldExpressionParserRuleCall_0_0; }
+
+		//operator=IntOperators
+		public Assignment getOperatorAssignment_1() { return cOperatorAssignment_1; }
+
+		//IntOperators
+		public RuleCall getOperatorIntOperatorsEnumRuleCall_1_0() { return cOperatorIntOperatorsEnumRuleCall_1_0; }
+
+		//operand=INT
+		public Assignment getOperandAssignment_2() { return cOperandAssignment_2; }
+
+		//INT
+		public RuleCall getOperandINTTerminalRuleCall_2_0() { return cOperandINTTerminalRuleCall_2_0; }
+	}
+
+	public class BooleanConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BooleanCondition");
+		private final Assignment cFieldAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cFieldFieldExpressionParserRuleCall_0 = (RuleCall)cFieldAssignment.eContents().get(0);
+		
+		//BooleanCondition:
+		//	field=FieldExpression;
+		@Override public ParserRule getRule() { return rule; }
+
+		//field=FieldExpression
+		public Assignment getFieldAssignment() { return cFieldAssignment; }
+
+		//FieldExpression
+		public RuleCall getFieldFieldExpressionParserRuleCall_0() { return cFieldFieldExpressionParserRuleCall_0; }
+	}
+
+	public class FieldExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FieldExpression");
+		private final Assignment cFieldDeclarationAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cFieldDeclarationFieldDeclarationCrossReference_0 = (CrossReference)cFieldDeclarationAssignment.eContents().get(0);
+		private final RuleCall cFieldDeclarationFieldDeclarationIDTerminalRuleCall_0_1 = (RuleCall)cFieldDeclarationFieldDeclarationCrossReference_0.eContents().get(1);
+		
+		//FieldExpression returns FieldExpr:
+		//	fieldDeclaration=[FieldDeclaration];
+		@Override public ParserRule getRule() { return rule; }
+
+		//fieldDeclaration=[FieldDeclaration]
+		public Assignment getFieldDeclarationAssignment() { return cFieldDeclarationAssignment; }
+
+		//[FieldDeclaration]
+		public CrossReference getFieldDeclarationFieldDeclarationCrossReference_0() { return cFieldDeclarationFieldDeclarationCrossReference_0; }
+
+		//ID
+		public RuleCall getFieldDeclarationFieldDeclarationIDTerminalRuleCall_0_1() { return cFieldDeclarationFieldDeclarationIDTerminalRuleCall_0_1; }
 	}
 
 	public class DOUBLEElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DOUBLE");
 		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cFullStopKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		
+		//DOUBLE returns ecore::EDouble:
+		//	"-"? INT ("." INT)?;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"-"? INT ("." INT)?
+		public Group getGroup() { return cGroup; }
+
+		//"-"?
+		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+
+		//("." INT)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"."
+		public Keyword getFullStopKeyword_2_0() { return cFullStopKeyword_2_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_2_1() { return cINTTerminalRuleCall_2_1; }
+	}
+
+	public class DATEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DATE");
+		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cINTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
-		//DOUBLE returns ecore::EDouble:
-		//	INT? "." INT;
+		//DATE returns ecore::EDate:
+		//	INT "." INT "." INT;
 		@Override public ParserRule getRule() { return rule; }
 
-		//INT? "." INT
+		//INT "." INT "." INT
 		public Group getGroup() { return cGroup; }
 
-		//INT?
+		//INT
 		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
 
 		//"."
@@ -188,146 +528,12 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
-	}
 
-	public class DATEElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DATE");
-		private final Keyword cEDateKeyword = (Keyword)rule.eContents().get(1);
-		
-		/// * TODO: implement this rule and an appropriate IValueConverter * / / *
-		//// automatically generated by Xtext
-		//grammar de.hub.modsoft.excercise6.twittersearch.TwitterSearch with org.eclipse.xtext.common.Terminals
-		//
-		//import "http://www.hu-berlin.de/modsoft/TwitterSearch/1.0" 
-		//import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-		//
-		//Twitter returns Twitter:
-		//	{Twitter}
-		//	'Twitter'
-		//	'{'
-		//		('objectTypes' '{' objectTypes+=TwitterObjectType ( "," objectTypes+=TwitterObjectType)* '}' )?
-		//		('searches' '{' searches+=Search ( "," searches+=Search)* '}' )?
-		//	'}';
-		//
-		//
-		//
-		//
-		//Condition returns Condition:
-		//	BooleanCondition | StringCondition | IntCondition;
-		//
-		//
-		//SearchOption returns SearchOption:
-		//	Keywords | Location | Time;
-		//
-		//TwitterObjectType returns TwitterObjectType:
-		//	{TwitterObjectType}
-		//	'TwitterObjectType'
-		//	name=EString
-		//	'{'
-		//		('fields' '{' fields+=FieldDeclaration ( "," fields+=FieldDeclaration)* '}' )?
-		//	'}';
-		//
-		//Search returns Search:
-		//	{Search}
-		//	'Search'
-		//	'{'
-		//		('searchFor' searchFor=[TwitterObjectType|EString])?
-		//		('conditions' '{' conditions+=Condition ( "," conditions+=Condition)* '}' )?
-		//		('sortation' sortation=FieldExpr)?
-		//		('options' '{' options+=SearchOption ( "," options+=SearchOption)* '}' )?
-		//	'}';
-		//
-		//EString returns ecore::EString:
-		//	STRING | ID;
-		//
-		//FieldDeclaration returns FieldDeclaration:
-		//	{FieldDeclaration}
-		//	'FieldDeclaration'
-		//	name=EString
-		//	'{'
-		//		('fieldType' fieldType=FieldTypes)?
-		//	'}';
-		//
-		//enum FieldTypes returns FieldTypes:
-		//				int = 'int' | string = 'string' | boolean = 'boolean';
-		//
-		//FieldExpr returns FieldExpr:
-		//	{FieldExpr}
-		//	'FieldExpr'
-		//	'{'
-		//		('fieldDeclaration' fieldDeclaration=[FieldDeclaration|EString])?
-		//	'}';
-		//
-		//BooleanCondition returns BooleanCondition:
-		//	'BooleanCondition'
-		//	'{'
-		//		'field' field=FieldExpr
-		//	'}';
-		//
-		//StringCondition returns StringCondition:
-		//	'StringCondition'
-		//	'{'
-		//		('operand' operand=EString)?
-		//		('operator' operator=StringOperators)?
-		//		'field' field=FieldExpr
-		//	'}';
-		//
-		//IntCondition returns IntCondition:
-		//	'IntCondition'
-		//	'{'
-		//		('operand' operand=EInt)?
-		//		('operator' operator=IntOperators)?
-		//		'field' field=FieldExpr
-		//	'}';
-		//
-		//enum StringOperators returns StringOperators:
-		//				contains = 'contains' | containsnot = 'containsnot';
-		//
-		//EInt returns ecore::EInt:
-		//	'-'? INT;
-		//
-		//enum IntOperators returns IntOperators:
-		//				gt = 'gt' | lt = 'lt' | eq = 'eq' | geq = 'geq' | leq = 'leq';
-		//
-		//Keywords returns Keywords:
-		//	{Keywords}
-		//	'Keywords'
-		//	'{'
-		//		('keywords' '{' keywords+=EString ( "," keywords+=EString)* '}' )?
-		//	'}';
-		//
-		//Location returns Location:
-		//	{Location}
-		//	'Location'
-		//	'{'
-		//		('lon' lon=EDouble)?
-		//		('lat' lat=EDouble)?
-		//		('radius' radius=EDouble)?
-		//		('radiusUnit' radiusUnit=DistanceUnit)?
-		//	'}';
-		//
-		//Time returns Time:
-		//	{Time}
-		//	'Time'
-		//	'{'
-		//		('before' before=EDate)?
-		//		('after' after=EDate)?
-		//	'}';
-		//
-		//EDouble returns ecore::EDouble:
-		//	'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
-		//
-		//enum DistanceUnit returns DistanceUnit:
-		//				miles = 'miles' | kilometers = 'kilometers';
-		//
-		//EDate returns ecore::EDate:
-		//	'EDate'; // TODO: implement this rule and an appropriate IValueConverter
-		// * / DATE returns ecore::EDate:
-		//	"EDate";
-		@Override public ParserRule getRule() { return rule; }
+		//"."
+		public Keyword getFullStopKeyword_3() { return cFullStopKeyword_3; }
 
-		//"EDate"
-		public Keyword getEDateKeyword() { return cEDateKeyword; }
+		//INT
+		public RuleCall getINTTerminalRuleCall_4() { return cINTTerminalRuleCall_4; }
 	}
 	
 	
@@ -338,14 +544,12 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBooleanBOOLEANKeyword_0_0 = (Keyword)cBooleanEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cIntEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cIntINTKeyword_1_0 = (Keyword)cIntEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cStringEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cStringSTRINGKeyword_2_0 = (Keyword)cStringEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum FieldType returns FieldTypes:
-		//	boolean="BOOLEAN" | int="INT" | string="STRING";
+		//	boolean="BOOLEAN" | int="INT";
 		public EnumRule getRule() { return rule; }
 
-		//boolean="BOOLEAN" | int="INT" | string="STRING"
+		//boolean="BOOLEAN" | int="INT"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//boolean="BOOLEAN"
@@ -359,40 +563,86 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"INT"
 		public Keyword getIntINTKeyword_1_0() { return cIntINTKeyword_1_0; }
+	}
 
-		//string="STRING"
-		public EnumLiteralDeclaration getStringEnumLiteralDeclaration_2() { return cStringEnumLiteralDeclaration_2; }
+	public class IntOperatorsElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "IntOperators");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cGtEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cGtGreaterThanSignKeyword_0_0 = (Keyword)cGtEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cLtEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cLtLessThanSignKeyword_1_0 = (Keyword)cLtEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cEqEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cEqEqualsSignKeyword_2_0 = (Keyword)cEqEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cGeqEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cGeqGreaterThanSignEqualsSignKeyword_3_0 = (Keyword)cGeqEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cLeqEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cLeqLessThanSignEqualsSignKeyword_4_0 = (Keyword)cLeqEnumLiteralDeclaration_4.eContents().get(0);
+		
+		//enum IntOperators:
+		//	gt=">" | lt="<" | eq="=" | geq=">=" | leq="<=";
+		public EnumRule getRule() { return rule; }
 
-		//"STRING"
-		public Keyword getStringSTRINGKeyword_2_0() { return cStringSTRINGKeyword_2_0; }
+		//gt=">" | lt="<" | eq="=" | geq=">=" | leq="<="
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//gt=">"
+		public EnumLiteralDeclaration getGtEnumLiteralDeclaration_0() { return cGtEnumLiteralDeclaration_0; }
+
+		//">"
+		public Keyword getGtGreaterThanSignKeyword_0_0() { return cGtGreaterThanSignKeyword_0_0; }
+
+		//lt="<"
+		public EnumLiteralDeclaration getLtEnumLiteralDeclaration_1() { return cLtEnumLiteralDeclaration_1; }
+
+		//"<"
+		public Keyword getLtLessThanSignKeyword_1_0() { return cLtLessThanSignKeyword_1_0; }
+
+		//eq="="
+		public EnumLiteralDeclaration getEqEnumLiteralDeclaration_2() { return cEqEnumLiteralDeclaration_2; }
+
+		//"="
+		public Keyword getEqEqualsSignKeyword_2_0() { return cEqEqualsSignKeyword_2_0; }
+
+		//geq=">="
+		public EnumLiteralDeclaration getGeqEnumLiteralDeclaration_3() { return cGeqEnumLiteralDeclaration_3; }
+
+		//">="
+		public Keyword getGeqGreaterThanSignEqualsSignKeyword_3_0() { return cGeqGreaterThanSignEqualsSignKeyword_3_0; }
+
+		//leq="<="
+		public EnumLiteralDeclaration getLeqEnumLiteralDeclaration_4() { return cLeqEnumLiteralDeclaration_4; }
+
+		//"<="
+		public Keyword getLeqLessThanSignEqualsSignKeyword_4_0() { return cLeqLessThanSignEqualsSignKeyword_4_0; }
 	}
 
 	public class DistanceUnitElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "DistanceUnit");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cMilesEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cMilesMiKeyword_0_0 = (Keyword)cMilesEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cKilometersEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cKilometersKmKeyword_1_0 = (Keyword)cKilometersEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cMiEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMiMiKeyword_0_0 = (Keyword)cMiEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cKmEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cKmKmKeyword_1_0 = (Keyword)cKmEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum DistanceUnit:
-		//	miles="mi" | kilometers="km";
+		//	mi | km;
 		public EnumRule getRule() { return rule; }
 
-		//miles="mi" | kilometers="km"
+		//mi | km
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//miles="mi"
-		public EnumLiteralDeclaration getMilesEnumLiteralDeclaration_0() { return cMilesEnumLiteralDeclaration_0; }
+		//mi
+		public EnumLiteralDeclaration getMiEnumLiteralDeclaration_0() { return cMiEnumLiteralDeclaration_0; }
 
 		//"mi"
-		public Keyword getMilesMiKeyword_0_0() { return cMilesMiKeyword_0_0; }
+		public Keyword getMiMiKeyword_0_0() { return cMiMiKeyword_0_0; }
 
-		//kilometers="km"
-		public EnumLiteralDeclaration getKilometersEnumLiteralDeclaration_1() { return cKilometersEnumLiteralDeclaration_1; }
+		//km
+		public EnumLiteralDeclaration getKmEnumLiteralDeclaration_1() { return cKmEnumLiteralDeclaration_1; }
 
 		//"km"
-		public Keyword getKilometersKmKeyword_1_0() { return cKilometersKmKeyword_1_0; }
+		public Keyword getKmKmKeyword_1_0() { return cKmKmKeyword_1_0; }
 	}
 	
 	private final ModelElements pModel;
@@ -400,6 +650,15 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 	private final FieldDclrElements pFieldDclr;
 	private final FieldTypeElements unknownRuleFieldType;
 	private final SearchElements pSearch;
+	private final OptionElements pOption;
+	private final KeywordsElements pKeywords;
+	private final LocationElements pLocation;
+	private final TimeElements pTime;
+	private final ConditionElements pCondition;
+	private final IntOperatorsElements unknownRuleIntOperators;
+	private final IntConditionElements pIntCondition;
+	private final BooleanConditionElements pBooleanCondition;
+	private final FieldExpressionElements pFieldExpression;
 	private final DistanceUnitElements unknownRuleDistanceUnit;
 	private final DOUBLEElements pDOUBLE;
 	private final DATEElements pDATE;
@@ -418,6 +677,15 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFieldDclr = new FieldDclrElements();
 		this.unknownRuleFieldType = new FieldTypeElements();
 		this.pSearch = new SearchElements();
+		this.pOption = new OptionElements();
+		this.pKeywords = new KeywordsElements();
+		this.pLocation = new LocationElements();
+		this.pTime = new TimeElements();
+		this.pCondition = new ConditionElements();
+		this.unknownRuleIntOperators = new IntOperatorsElements();
+		this.pIntCondition = new IntConditionElements();
+		this.pBooleanCondition = new BooleanConditionElements();
+		this.pFieldExpression = new FieldExpressionElements();
 		this.unknownRuleDistanceUnit = new DistanceUnitElements();
 		this.pDOUBLE = new DOUBLEElements();
 		this.pDATE = new DATEElements();
@@ -481,7 +749,7 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum FieldType returns FieldTypes:
-	//	boolean="BOOLEAN" | int="INT" | string="STRING";
+	//	boolean="BOOLEAN" | int="INT";
 	public FieldTypeElements getFieldTypeAccess() {
 		return unknownRuleFieldType;
 	}
@@ -491,7 +759,8 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Search:
-	//	{Search} "search" ";";
+	//	{Search} "search" "for" searchFor=[TwitterObjectType] options+=Option* ("where" conditions+=Condition ("&"
+	//	conditions+=Condition)*)? ";";
 	public SearchElements getSearchAccess() {
 		return pSearch;
 	}
@@ -500,8 +769,98 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		return getSearchAccess().getRule();
 	}
 
+	//Option returns SearchOption:
+	//	Keywords | Location | Time;
+	public OptionElements getOptionAccess() {
+		return pOption;
+	}
+	
+	public ParserRule getOptionRule() {
+		return getOptionAccess().getRule();
+	}
+
+	//Keywords:
+	//	"with" keywords+=STRING ("," keywords+=STRING)*;
+	public KeywordsElements getKeywordsAccess() {
+		return pKeywords;
+	}
+	
+	public ParserRule getKeywordsRule() {
+		return getKeywordsAccess().getRule();
+	}
+
+	//Location:
+	//	"in" "geo" "(" lon=DOUBLE "," lat=DOUBLE "," radius=DOUBLE radiusUnit=DistanceUnit ")";
+	public LocationElements getLocationAccess() {
+		return pLocation;
+	}
+	
+	public ParserRule getLocationRule() {
+		return getLocationAccess().getRule();
+	}
+
+	//Time:
+	//	"before" before=DATE;
+	public TimeElements getTimeAccess() {
+		return pTime;
+	}
+	
+	public ParserRule getTimeRule() {
+		return getTimeAccess().getRule();
+	}
+
+	//Condition:
+	//	IntCondition | BooleanCondition;
+	public ConditionElements getConditionAccess() {
+		return pCondition;
+	}
+	
+	public ParserRule getConditionRule() {
+		return getConditionAccess().getRule();
+	}
+
+	//enum IntOperators:
+	//	gt=">" | lt="<" | eq="=" | geq=">=" | leq="<=";
+	public IntOperatorsElements getIntOperatorsAccess() {
+		return unknownRuleIntOperators;
+	}
+	
+	public EnumRule getIntOperatorsRule() {
+		return getIntOperatorsAccess().getRule();
+	}
+
+	//IntCondition:
+	//	field=FieldExpression operator=IntOperators operand=INT;
+	public IntConditionElements getIntConditionAccess() {
+		return pIntCondition;
+	}
+	
+	public ParserRule getIntConditionRule() {
+		return getIntConditionAccess().getRule();
+	}
+
+	//BooleanCondition:
+	//	field=FieldExpression;
+	public BooleanConditionElements getBooleanConditionAccess() {
+		return pBooleanCondition;
+	}
+	
+	public ParserRule getBooleanConditionRule() {
+		return getBooleanConditionAccess().getRule();
+	}
+
+	//FieldExpression returns FieldExpr:
+	//	fieldDeclaration=[FieldDeclaration];
+	public FieldExpressionElements getFieldExpressionAccess() {
+		return pFieldExpression;
+	}
+	
+	public ParserRule getFieldExpressionRule() {
+		return getFieldExpressionAccess().getRule();
+	}
+
 	//enum DistanceUnit:
-	//	miles="mi" | kilometers="km";
+	//	mi | km;
 	public DistanceUnitElements getDistanceUnitAccess() {
 		return unknownRuleDistanceUnit;
 	}
@@ -511,7 +870,7 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DOUBLE returns ecore::EDouble:
-	//	INT? "." INT;
+	//	"-"? INT ("." INT)?;
 	public DOUBLEElements getDOUBLEAccess() {
 		return pDOUBLE;
 	}
@@ -520,136 +879,8 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		return getDOUBLEAccess().getRule();
 	}
 
-	/// * TODO: implement this rule and an appropriate IValueConverter * / / *
-	//// automatically generated by Xtext
-	//grammar de.hub.modsoft.excercise6.twittersearch.TwitterSearch with org.eclipse.xtext.common.Terminals
-	//
-	//import "http://www.hu-berlin.de/modsoft/TwitterSearch/1.0" 
-	//import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-	//
-	//Twitter returns Twitter:
-	//	{Twitter}
-	//	'Twitter'
-	//	'{'
-	//		('objectTypes' '{' objectTypes+=TwitterObjectType ( "," objectTypes+=TwitterObjectType)* '}' )?
-	//		('searches' '{' searches+=Search ( "," searches+=Search)* '}' )?
-	//	'}';
-	//
-	//
-	//
-	//
-	//Condition returns Condition:
-	//	BooleanCondition | StringCondition | IntCondition;
-	//
-	//
-	//SearchOption returns SearchOption:
-	//	Keywords | Location | Time;
-	//
-	//TwitterObjectType returns TwitterObjectType:
-	//	{TwitterObjectType}
-	//	'TwitterObjectType'
-	//	name=EString
-	//	'{'
-	//		('fields' '{' fields+=FieldDeclaration ( "," fields+=FieldDeclaration)* '}' )?
-	//	'}';
-	//
-	//Search returns Search:
-	//	{Search}
-	//	'Search'
-	//	'{'
-	//		('searchFor' searchFor=[TwitterObjectType|EString])?
-	//		('conditions' '{' conditions+=Condition ( "," conditions+=Condition)* '}' )?
-	//		('sortation' sortation=FieldExpr)?
-	//		('options' '{' options+=SearchOption ( "," options+=SearchOption)* '}' )?
-	//	'}';
-	//
-	//EString returns ecore::EString:
-	//	STRING | ID;
-	//
-	//FieldDeclaration returns FieldDeclaration:
-	//	{FieldDeclaration}
-	//	'FieldDeclaration'
-	//	name=EString
-	//	'{'
-	//		('fieldType' fieldType=FieldTypes)?
-	//	'}';
-	//
-	//enum FieldTypes returns FieldTypes:
-	//				int = 'int' | string = 'string' | boolean = 'boolean';
-	//
-	//FieldExpr returns FieldExpr:
-	//	{FieldExpr}
-	//	'FieldExpr'
-	//	'{'
-	//		('fieldDeclaration' fieldDeclaration=[FieldDeclaration|EString])?
-	//	'}';
-	//
-	//BooleanCondition returns BooleanCondition:
-	//	'BooleanCondition'
-	//	'{'
-	//		'field' field=FieldExpr
-	//	'}';
-	//
-	//StringCondition returns StringCondition:
-	//	'StringCondition'
-	//	'{'
-	//		('operand' operand=EString)?
-	//		('operator' operator=StringOperators)?
-	//		'field' field=FieldExpr
-	//	'}';
-	//
-	//IntCondition returns IntCondition:
-	//	'IntCondition'
-	//	'{'
-	//		('operand' operand=EInt)?
-	//		('operator' operator=IntOperators)?
-	//		'field' field=FieldExpr
-	//	'}';
-	//
-	//enum StringOperators returns StringOperators:
-	//				contains = 'contains' | containsnot = 'containsnot';
-	//
-	//EInt returns ecore::EInt:
-	//	'-'? INT;
-	//
-	//enum IntOperators returns IntOperators:
-	//				gt = 'gt' | lt = 'lt' | eq = 'eq' | geq = 'geq' | leq = 'leq';
-	//
-	//Keywords returns Keywords:
-	//	{Keywords}
-	//	'Keywords'
-	//	'{'
-	//		('keywords' '{' keywords+=EString ( "," keywords+=EString)* '}' )?
-	//	'}';
-	//
-	//Location returns Location:
-	//	{Location}
-	//	'Location'
-	//	'{'
-	//		('lon' lon=EDouble)?
-	//		('lat' lat=EDouble)?
-	//		('radius' radius=EDouble)?
-	//		('radiusUnit' radiusUnit=DistanceUnit)?
-	//	'}';
-	//
-	//Time returns Time:
-	//	{Time}
-	//	'Time'
-	//	'{'
-	//		('before' before=EDate)?
-	//		('after' after=EDate)?
-	//	'}';
-	//
-	//EDouble returns ecore::EDouble:
-	//	'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
-	//
-	//enum DistanceUnit returns DistanceUnit:
-	//				miles = 'miles' | kilometers = 'kilometers';
-	//
-	//EDate returns ecore::EDate:
-	//	'EDate'; // TODO: implement this rule and an appropriate IValueConverter
-	// * / DATE returns ecore::EDate:
-	//	"EDate";
+	//DATE returns ecore::EDate:
+	//	INT "." INT "." INT;
 	public DATEElements getDATEAccess() {
 		return pDATE;
 	}

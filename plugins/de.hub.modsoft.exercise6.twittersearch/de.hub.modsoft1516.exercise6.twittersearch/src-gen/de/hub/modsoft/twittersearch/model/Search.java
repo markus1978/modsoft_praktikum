@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link de.hub.modsoft.twittersearch.model.Search#getConditions <em>Conditions</em>}</li>
- *   <li>{@link de.hub.modsoft.twittersearch.model.Search#getSortation <em>Sortation</em>}</li>
  *   <li>{@link de.hub.modsoft.twittersearch.model.Search#getOptions <em>Options</em>}</li>
  *   <li>{@link de.hub.modsoft.twittersearch.model.Search#getSearchFor <em>Search For</em>}</li>
  * </ul>
@@ -41,32 +40,6 @@ public interface Search extends EObject {
 	 * @generated
 	 */
 	EList<Condition> getConditions();
-
-	/**
-	 * Returns the value of the '<em><b>Sortation</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Sortation</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sortation</em>' containment reference.
-	 * @see #setSortation(FieldExpr)
-	 * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getSearch_Sortation()
-	 * @model containment="true"
-	 * @generated
-	 */
-	FieldExpr getSortation();
-
-	/**
-	 * Sets the value of the '{@link de.hub.modsoft.twittersearch.model.Search#getSortation <em>Sortation</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sortation</em>' containment reference.
-	 * @see #getSortation()
-	 * @generated
-	 */
-	void setSortation(FieldExpr value);
 
 	/**
 	 * Returns the value of the '<em><b>Options</b></em>' containment reference list.

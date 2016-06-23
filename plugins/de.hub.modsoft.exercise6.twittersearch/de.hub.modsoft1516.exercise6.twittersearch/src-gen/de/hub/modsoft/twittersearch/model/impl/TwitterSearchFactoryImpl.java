@@ -60,14 +60,12 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 			case TwitterSearchPackage.SEARCH: return createSearch();
 			case TwitterSearchPackage.FIELD_EXPR: return createFieldExpr();
 			case TwitterSearchPackage.BOOLEAN_CONDITION: return createBooleanCondition();
-			case TwitterSearchPackage.STRING_CONDITION: return createStringCondition();
 			case TwitterSearchPackage.INT_CONDITION: return createIntCondition();
 			case TwitterSearchPackage.KEYWORDS: return createKeywords();
 			case TwitterSearchPackage.LOCATION: return createLocation();
 			case TwitterSearchPackage.TIME: return createTime();
 			case TwitterSearchPackage.FIELD_DECLARATION: return createFieldDeclaration();
 			case TwitterSearchPackage.TWITTER: return createTwitter();
-			case TwitterSearchPackage.TWITTER_OBJECT: return createTwitterObject();
 			case TwitterSearchPackage.TWITTER_OBJECT_TYPE: return createTwitterObjectType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -86,8 +84,6 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 				return createDistanceUnitFromString(eDataType, initialValue);
 			case TwitterSearchPackage.FIELD_TYPES:
 				return createFieldTypesFromString(eDataType, initialValue);
-			case TwitterSearchPackage.STRING_OPERATORS:
-				return createStringOperatorsFromString(eDataType, initialValue);
 			case TwitterSearchPackage.INT_OPERATORS:
 				return createIntOperatorsFromString(eDataType, initialValue);
 			default:
@@ -107,8 +103,6 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 				return convertDistanceUnitToString(eDataType, instanceValue);
 			case TwitterSearchPackage.FIELD_TYPES:
 				return convertFieldTypesToString(eDataType, instanceValue);
-			case TwitterSearchPackage.STRING_OPERATORS:
-				return convertStringOperatorsToString(eDataType, instanceValue);
 			case TwitterSearchPackage.INT_OPERATORS:
 				return convertIntOperatorsToString(eDataType, instanceValue);
 			default:
@@ -144,16 +138,6 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 	public BooleanCondition createBooleanCondition() {
 		BooleanConditionImpl booleanCondition = new BooleanConditionImpl();
 		return booleanCondition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StringCondition createStringCondition() {
-		StringConditionImpl stringCondition = new StringConditionImpl();
-		return stringCondition;
 	}
 
 	/**
@@ -221,16 +205,6 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TwitterObject createTwitterObject() {
-		TwitterObjectImpl twitterObject = new TwitterObjectImpl();
-		return twitterObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public TwitterObjectType createTwitterObjectType() {
 		TwitterObjectTypeImpl twitterObjectType = new TwitterObjectTypeImpl();
 		return twitterObjectType;
@@ -273,26 +247,6 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 	 * @generated
 	 */
 	public String convertFieldTypesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StringOperators createStringOperatorsFromString(EDataType eDataType, String initialValue) {
-		StringOperators result = StringOperators.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertStringOperatorsToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

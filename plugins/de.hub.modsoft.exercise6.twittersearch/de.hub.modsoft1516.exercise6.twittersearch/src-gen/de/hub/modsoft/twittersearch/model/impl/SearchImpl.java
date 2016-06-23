@@ -3,7 +3,6 @@
 package de.hub.modsoft.twittersearch.model.impl;
 
 import de.hub.modsoft.twittersearch.model.Condition;
-import de.hub.modsoft.twittersearch.model.FieldExpr;
 import de.hub.modsoft.twittersearch.model.Search;
 import de.hub.modsoft.twittersearch.model.SearchOption;
 import de.hub.modsoft.twittersearch.model.TwitterObjectType;
@@ -34,7 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link de.hub.modsoft.twittersearch.model.impl.SearchImpl#getConditions <em>Conditions</em>}</li>
- *   <li>{@link de.hub.modsoft.twittersearch.model.impl.SearchImpl#getSortation <em>Sortation</em>}</li>
  *   <li>{@link de.hub.modsoft.twittersearch.model.impl.SearchImpl#getOptions <em>Options</em>}</li>
  *   <li>{@link de.hub.modsoft.twittersearch.model.impl.SearchImpl#getSearchFor <em>Search For</em>}</li>
  * </ul>
@@ -51,16 +49,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 	 * @ordered
 	 */
 	protected EList<Condition> conditions;
-
-	/**
-	 * The cached value of the '{@link #getSortation() <em>Sortation</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSortation()
-	 * @generated
-	 * @ordered
-	 */
-	protected FieldExpr sortation;
 
 	/**
 	 * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference list.
@@ -111,49 +99,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 			conditions = new EObjectContainmentEList<Condition>(Condition.class, this, TwitterSearchPackage.SEARCH__CONDITIONS);
 		}
 		return conditions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FieldExpr getSortation() {
-		return sortation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSortation(FieldExpr newSortation, NotificationChain msgs) {
-		FieldExpr oldSortation = sortation;
-		sortation = newSortation;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.SEARCH__SORTATION, oldSortation, newSortation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSortation(FieldExpr newSortation) {
-		if (newSortation != sortation) {
-			NotificationChain msgs = null;
-			if (sortation != null)
-				msgs = ((InternalEObject)sortation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TwitterSearchPackage.SEARCH__SORTATION, null, msgs);
-			if (newSortation != null)
-				msgs = ((InternalEObject)newSortation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TwitterSearchPackage.SEARCH__SORTATION, null, msgs);
-			msgs = basicSetSortation(newSortation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.SEARCH__SORTATION, newSortation, newSortation));
 	}
 
 	/**
@@ -216,8 +161,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 		switch (featureID) {
 			case TwitterSearchPackage.SEARCH__CONDITIONS:
 				return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
-			case TwitterSearchPackage.SEARCH__SORTATION:
-				return basicSetSortation(null, msgs);
 			case TwitterSearchPackage.SEARCH__OPTIONS:
 				return ((InternalEList<?>)getOptions()).basicRemove(otherEnd, msgs);
 		}
@@ -234,8 +177,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 		switch (featureID) {
 			case TwitterSearchPackage.SEARCH__CONDITIONS:
 				return getConditions();
-			case TwitterSearchPackage.SEARCH__SORTATION:
-				return getSortation();
 			case TwitterSearchPackage.SEARCH__OPTIONS:
 				return getOptions();
 			case TwitterSearchPackage.SEARCH__SEARCH_FOR:
@@ -257,9 +198,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 			case TwitterSearchPackage.SEARCH__CONDITIONS:
 				getConditions().clear();
 				getConditions().addAll((Collection<? extends Condition>)newValue);
-				return;
-			case TwitterSearchPackage.SEARCH__SORTATION:
-				setSortation((FieldExpr)newValue);
 				return;
 			case TwitterSearchPackage.SEARCH__OPTIONS:
 				getOptions().clear();
@@ -283,9 +221,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 			case TwitterSearchPackage.SEARCH__CONDITIONS:
 				getConditions().clear();
 				return;
-			case TwitterSearchPackage.SEARCH__SORTATION:
-				setSortation((FieldExpr)null);
-				return;
 			case TwitterSearchPackage.SEARCH__OPTIONS:
 				getOptions().clear();
 				return;
@@ -306,8 +241,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 		switch (featureID) {
 			case TwitterSearchPackage.SEARCH__CONDITIONS:
 				return conditions != null && !conditions.isEmpty();
-			case TwitterSearchPackage.SEARCH__SORTATION:
-				return sortation != null;
 			case TwitterSearchPackage.SEARCH__OPTIONS:
 				return options != null && !options.isEmpty();
 			case TwitterSearchPackage.SEARCH__SEARCH_FOR:

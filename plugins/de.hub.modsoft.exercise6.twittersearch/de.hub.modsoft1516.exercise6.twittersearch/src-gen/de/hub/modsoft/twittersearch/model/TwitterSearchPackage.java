@@ -78,22 +78,13 @@ public interface TwitterSearchPackage extends EPackage {
 	int SEARCH__CONDITIONS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sortation</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH__SORTATION = 1;
-
-	/**
 	 * The feature id for the '<em><b>Options</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH__OPTIONS = 2;
+	int SEARCH__OPTIONS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Search For</b></em>' reference.
@@ -102,7 +93,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH__SEARCH_FOR = 3;
+	int SEARCH__SEARCH_FOR = 2;
 
 	/**
 	 * The number of structural features of the '<em>Search</em>' class.
@@ -111,7 +102,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_FEATURE_COUNT = 4;
+	int SEARCH_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Search</em>' class.
@@ -234,61 +225,6 @@ public interface TwitterSearchPackage extends EPackage {
 	int BOOLEAN_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.impl.StringConditionImpl <em>String Condition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.hub.modsoft.twittersearch.model.impl.StringConditionImpl
-	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getStringCondition()
-	 * @generated
-	 */
-	int STRING_CONDITION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Field</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_CONDITION__FIELD = CONDITION__FIELD;
-
-	/**
-	 * The feature id for the '<em><b>Operand</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_CONDITION__OPERAND = CONDITION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_CONDITION__OPERATOR = CONDITION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>String Condition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>String Condition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.impl.IntConditionImpl <em>Int Condition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,7 +232,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getIntCondition()
 	 * @generated
 	 */
-	int INT_CONDITION = 5;
+	int INT_CONDITION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Field</b></em>' containment reference.
@@ -351,7 +287,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getSearchOption()
 	 * @generated
 	 */
-	int SEARCH_OPTION = 6;
+	int SEARCH_OPTION = 5;
 
 	/**
 	 * The number of structural features of the '<em>Search Option</em>' class.
@@ -379,7 +315,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getKeywords()
 	 * @generated
 	 */
-	int KEYWORDS = 7;
+	int KEYWORDS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Keywords</b></em>' attribute list.
@@ -416,7 +352,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getLocation()
 	 * @generated
 	 */
-	int LOCATION = 8;
+	int LOCATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Lon</b></em>' attribute.
@@ -480,7 +416,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getTime()
 	 * @generated
 	 */
-	int TIME = 9;
+	int TIME = 8;
 
 	/**
 	 * The feature id for the '<em><b>Before</b></em>' attribute.
@@ -492,22 +428,13 @@ public interface TwitterSearchPackage extends EPackage {
 	int TIME__BEFORE = SEARCH_OPTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>After</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME__AFTER = SEARCH_OPTION_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Time</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_FEATURE_COUNT = SEARCH_OPTION_FEATURE_COUNT + 2;
+	int TIME_FEATURE_COUNT = SEARCH_OPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Time</em>' class.
@@ -526,7 +453,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getFieldDeclaration()
 	 * @generated
 	 */
-	int FIELD_DECLARATION = 10;
+	int FIELD_DECLARATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Field Type</b></em>' attribute.
@@ -581,7 +508,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getTwitter()
 	 * @generated
 	 */
-	int TWITTER = 11;
+	int TWITTER = 10;
 
 	/**
 	 * The feature id for the '<em><b>Object Types</b></em>' containment reference list.
@@ -629,34 +556,6 @@ public interface TwitterSearchPackage extends EPackage {
 	int TWITTER_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.impl.TwitterObjectImpl <em>Twitter Object</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterObjectImpl
-	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getTwitterObject()
-	 * @generated
-	 */
-	int TWITTER_OBJECT = 12;
-
-	/**
-	 * The number of structural features of the '<em>Twitter Object</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TWITTER_OBJECT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Twitter Object</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TWITTER_OBJECT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.impl.TwitterObjectTypeImpl <em>Twitter Object Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -664,7 +563,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getTwitterObjectType()
 	 * @generated
 	 */
-	int TWITTER_OBJECT_TYPE = 13;
+	int TWITTER_OBJECT_TYPE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -710,7 +609,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getDistanceUnit()
 	 * @generated
 	 */
-	int DISTANCE_UNIT = 14;
+	int DISTANCE_UNIT = 12;
 
 	/**
 	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.FieldTypes <em>Field Types</em>}' enum.
@@ -720,17 +619,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getFieldTypes()
 	 * @generated
 	 */
-	int FIELD_TYPES = 15;
-
-	/**
-	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.StringOperators <em>String Operators</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.hub.modsoft.twittersearch.model.StringOperators
-	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getStringOperators()
-	 * @generated
-	 */
-	int STRING_OPERATORS = 16;
+	int FIELD_TYPES = 13;
 
 	/**
 	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.model.IntOperators <em>Int Operators</em>}' enum.
@@ -740,7 +629,7 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getIntOperators()
 	 * @generated
 	 */
-	int INT_OPERATORS = 17;
+	int INT_OPERATORS = 14;
 
 
 	/**
@@ -763,17 +652,6 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSearch_Conditions();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.hub.modsoft.twittersearch.model.Search#getSortation <em>Sortation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Sortation</em>'.
-	 * @see de.hub.modsoft.twittersearch.model.Search#getSortation()
-	 * @see #getSearch()
-	 * @generated
-	 */
-	EReference getSearch_Sortation();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.hub.modsoft.twittersearch.model.Search#getOptions <em>Options</em>}'.
@@ -848,38 +726,6 @@ public interface TwitterSearchPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBooleanCondition();
-
-	/**
-	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.model.StringCondition <em>String Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String Condition</em>'.
-	 * @see de.hub.modsoft.twittersearch.model.StringCondition
-	 * @generated
-	 */
-	EClass getStringCondition();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.hub.modsoft.twittersearch.model.StringCondition#getOperand <em>Operand</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operand</em>'.
-	 * @see de.hub.modsoft.twittersearch.model.StringCondition#getOperand()
-	 * @see #getStringCondition()
-	 * @generated
-	 */
-	EAttribute getStringCondition_Operand();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.hub.modsoft.twittersearch.model.StringCondition#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see de.hub.modsoft.twittersearch.model.StringCondition#getOperator()
-	 * @see #getStringCondition()
-	 * @generated
-	 */
-	EAttribute getStringCondition_Operator();
 
 	/**
 	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.model.IntCondition <em>Int Condition</em>}'.
@@ -1020,17 +866,6 @@ public interface TwitterSearchPackage extends EPackage {
 	EAttribute getTime_Before();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.hub.modsoft.twittersearch.model.Time#getAfter <em>After</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>After</em>'.
-	 * @see de.hub.modsoft.twittersearch.model.Time#getAfter()
-	 * @see #getTime()
-	 * @generated
-	 */
-	EAttribute getTime_After();
-
-	/**
 	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.model.FieldDeclaration <em>Field Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1116,16 +951,6 @@ public interface TwitterSearchPackage extends EPackage {
 	EOperation getTwitter__PerformSearch__Search();
 
 	/**
-	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.model.TwitterObject <em>Twitter Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Twitter Object</em>'.
-	 * @see de.hub.modsoft.twittersearch.model.TwitterObject
-	 * @generated
-	 */
-	EClass getTwitterObject();
-
-	/**
 	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.model.TwitterObjectType <em>Twitter Object Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1178,16 +1003,6 @@ public interface TwitterSearchPackage extends EPackage {
 	EEnum getFieldTypes();
 
 	/**
-	 * Returns the meta object for enum '{@link de.hub.modsoft.twittersearch.model.StringOperators <em>String Operators</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>String Operators</em>'.
-	 * @see de.hub.modsoft.twittersearch.model.StringOperators
-	 * @generated
-	 */
-	EEnum getStringOperators();
-
-	/**
 	 * Returns the meta object for enum '{@link de.hub.modsoft.twittersearch.model.IntOperators <em>Int Operators</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1237,14 +1052,6 @@ public interface TwitterSearchPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEARCH__CONDITIONS = eINSTANCE.getSearch_Conditions();
-
-		/**
-		 * The meta object literal for the '<em><b>Sortation</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SEARCH__SORTATION = eINSTANCE.getSearch_Sortation();
 
 		/**
 		 * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
@@ -1307,32 +1114,6 @@ public interface TwitterSearchPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BOOLEAN_CONDITION = eINSTANCE.getBooleanCondition();
-
-		/**
-		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.impl.StringConditionImpl <em>String Condition</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.hub.modsoft.twittersearch.model.impl.StringConditionImpl
-		 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getStringCondition()
-		 * @generated
-		 */
-		EClass STRING_CONDITION = eINSTANCE.getStringCondition();
-
-		/**
-		 * The meta object literal for the '<em><b>Operand</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING_CONDITION__OPERAND = eINSTANCE.getStringCondition_Operand();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING_CONDITION__OPERATOR = eINSTANCE.getStringCondition_Operator();
 
 		/**
 		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.impl.IntConditionImpl <em>Int Condition</em>}' class.
@@ -1449,14 +1230,6 @@ public interface TwitterSearchPackage extends EPackage {
 		EAttribute TIME__BEFORE = eINSTANCE.getTime_Before();
 
 		/**
-		 * The meta object literal for the '<em><b>After</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME__AFTER = eINSTANCE.getTime_After();
-
-		/**
 		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.impl.FieldDeclarationImpl <em>Field Declaration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1525,16 +1298,6 @@ public interface TwitterSearchPackage extends EPackage {
 		EOperation TWITTER___PERFORM_SEARCH__SEARCH = eINSTANCE.getTwitter__PerformSearch__Search();
 
 		/**
-		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.impl.TwitterObjectImpl <em>Twitter Object</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.hub.modsoft.twittersearch.model.impl.TwitterObjectImpl
-		 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getTwitterObject()
-		 * @generated
-		 */
-		EClass TWITTER_OBJECT = eINSTANCE.getTwitterObject();
-
-		/**
 		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.impl.TwitterObjectTypeImpl <em>Twitter Object Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1579,16 +1342,6 @@ public interface TwitterSearchPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum FIELD_TYPES = eINSTANCE.getFieldTypes();
-
-		/**
-		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.StringOperators <em>String Operators</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.hub.modsoft.twittersearch.model.StringOperators
-		 * @see de.hub.modsoft.twittersearch.model.impl.TwitterSearchPackageImpl#getStringOperators()
-		 * @generated
-		 */
-		EEnum STRING_OPERATORS = eINSTANCE.getStringOperators();
 
 		/**
 		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.model.IntOperators <em>Int Operators</em>}' enum.

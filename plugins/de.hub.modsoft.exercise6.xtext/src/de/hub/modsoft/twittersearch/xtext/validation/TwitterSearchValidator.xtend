@@ -3,23 +3,33 @@
  */
 package de.hub.modsoft.twittersearch.xtext.validation
 
-//import org.eclipse.xtext.validation.Check
+import de.hub.modsoft.twittersearch.model.FieldExpr
+import de.hub.modsoft.twittersearch.model.Search
+import org.eclipse.xtext.validation.Check
+import de.hub.modsoft.twittersearch.model.TwitterSearchPackage
+import de.hub.modsoft.twittersearch.model.Condition
 
-/**
- * This class contains custom validation rules. 
- *
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
- */
 class TwitterSearchValidator extends AbstractTwitterSearchValidator {
+	
+	@Check(FAST)
+	def checkFieldDeclarationsPartOfSearchType(FieldExpr fieldExpr) {
+		val search = (if (fieldExpr.eContainingFeature == TwitterSearchPackage.eINSTANCE.condition_Field) fieldExpr.eContainer.eContainer else fieldExpr.eContainer) as Search
+		if (!(search).searchFor.fields.contains(fieldExpr.fieldDeclaration)) {
+			error(
+				'''«fieldExpr.fieldDeclaration.name» is not a field of the requested search type «search.searchFor.name»''', 
+				TwitterSearchPackage.eINSTANCE.fieldExpr_FieldDeclaration
+			);
+		}
+	}
 
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	@Check(FAST)
+	def checkConditionTypeMatchesFieldType(Condition condition) {
+		if (!condition.eClass.name.toLowerCase.startsWith(condition.field.fieldDeclaration.fieldType.getName.toLowerCase)) {
+			error(
+				'''«condition.field.fieldDeclaration.name» has the wrong type.''', 
+				TwitterSearchPackage.eINSTANCE.condition_Field
+			);
+		}
+	}
+
 }

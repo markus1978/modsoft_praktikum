@@ -84,10 +84,6 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 				return createBooleanConditionAdapter();
 			}
 			@Override
-			public Adapter caseStringCondition(StringCondition object) {
-				return createStringConditionAdapter();
-			}
-			@Override
 			public Adapter caseIntCondition(IntCondition object) {
 				return createIntConditionAdapter();
 			}
@@ -114,10 +110,6 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTwitter(Twitter object) {
 				return createTwitterAdapter();
-			}
-			@Override
-			public Adapter caseTwitterObject(TwitterObject object) {
-				return createTwitterObjectAdapter();
 			}
 			@Override
 			public Adapter caseTwitterObjectType(TwitterObjectType object) {
@@ -196,20 +188,6 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBooleanConditionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.StringCondition <em>String Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.model.StringCondition
-	 * @generated
-	 */
-	public Adapter createStringConditionAdapter() {
 		return null;
 	}
 
@@ -308,20 +286,6 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTwitterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterObject <em>Twitter Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.model.TwitterObject
-	 * @generated
-	 */
-	public Adapter createTwitterObjectAdapter() {
 		return null;
 	}
 
