@@ -23,27 +23,7 @@ FieldDclr returns FieldDeclaration:
 
 enum FieldType returns FieldTypes: boolean = 'BOOLEAN' | int = 'INT';
 
-Search returns Search:
-	{Search}
-	"search" "for" searchFor=[TwitterObjectType|ID] 
-	(options+=Option)* 
-	("where" conditions+=Condition ("&" conditions+=Condition)*)?
-	";"
-;
-
-Option returns SearchOption: Keywords | Location | Time;
-Keywords returns Keywords: "with" keywords+=STRING ("," keywords+=STRING)*;
-Location returns Location: "in" "geo" "(" lon=DOUBLE "," lat=DOUBLE "," radius=DOUBLE radiusUnit=DistanceUnit")";
-Time returns Time: ("before" before=DATE);
-
-Condition returns Condition: IntCondition | BooleanCondition;
-enum IntOperators returns IntOperators:	gt = '>' | lt = '<' | eq = '=' | geq = '>=' | leq = '<=';
-IntCondition returns IntCondition: field=FieldExpression operator=IntOperators operand=INT;
-BooleanCondition returns BooleanCondition: field=FieldExpression;
-
-FieldExpression returns FieldExpr: fieldDeclaration=[FieldDeclaration|ID];
-
-enum DistanceUnit returns DistanceUnit:	mi = 'mi' | km = 'km';
+Search returns Search: 'TODO';
 
 DOUBLE returns ecore::EDouble: '-'? INT ('.' INT)?;
 DATE returns ecore::EDate:INT'.'INT'.'INT;

@@ -1,7 +1,5 @@
 package de.hub.modsoft.twittersearch.xtext;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.eclipse.xtext.conversion.IValueConverter;
@@ -14,20 +12,16 @@ public class TwitterValueConverterService extends AbstractDeclarativeValueConver
 	@ValueConverter(rule = "DATE")
 	public IValueConverter<Date> getDateValueConverter() {
 	  return new IValueConverter<Date>() {
-		private SimpleDateFormat dataFormat = new SimpleDateFormat("dd.MM.yyyy");
-
 		@Override
 		public Date toValue(String string, INode node) throws ValueConverterException {
-			try {
-				return dataFormat.parse(string);
-			} catch (ParseException e) {
-				throw new ValueConverterException("Could not parse the data " + string, node, e);
-			}		
+			// TODO
+			throw new ValueConverterException("Not implemented", node, null);
 		}
 
 		@Override
 		public String toString(Date value) throws ValueConverterException {
-			return dataFormat.format(value);
+			// TODO
+			throw new ValueConverterException("Not implemented", null, null);
 		}		  
 	  };
 	}

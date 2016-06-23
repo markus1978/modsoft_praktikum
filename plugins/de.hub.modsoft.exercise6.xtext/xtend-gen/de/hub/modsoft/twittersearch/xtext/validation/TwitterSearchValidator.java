@@ -3,79 +3,21 @@
  */
 package de.hub.modsoft.twittersearch.xtext.validation;
 
-import com.google.common.base.Objects;
 import de.hub.modsoft.twittersearch.model.Condition;
-import de.hub.modsoft.twittersearch.model.FieldDeclaration;
 import de.hub.modsoft.twittersearch.model.FieldExpr;
-import de.hub.modsoft.twittersearch.model.FieldTypes;
-import de.hub.modsoft.twittersearch.model.Search;
-import de.hub.modsoft.twittersearch.model.TwitterObjectType;
-import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
 import de.hub.modsoft.twittersearch.xtext.validation.AbstractTwitterSearchValidator;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.CheckType;
 
 @SuppressWarnings("all")
 public class TwitterSearchValidator extends AbstractTwitterSearchValidator {
   @Check(CheckType.FAST)
-  public void checkFieldDeclarationsPartOfSearchType(final FieldExpr fieldExpr) {
-    EObject _xifexpression = null;
-    EStructuralFeature _eContainingFeature = fieldExpr.eContainingFeature();
-    EReference _condition_Field = TwitterSearchPackage.eINSTANCE.getCondition_Field();
-    boolean _equals = Objects.equal(_eContainingFeature, _condition_Field);
-    if (_equals) {
-      EObject _eContainer = fieldExpr.eContainer();
-      _xifexpression = _eContainer.eContainer();
-    } else {
-      _xifexpression = fieldExpr.eContainer();
-    }
-    final Search search = ((Search) _xifexpression);
-    TwitterObjectType _searchFor = search.getSearchFor();
-    EList<FieldDeclaration> _fields = _searchFor.getFields();
-    FieldDeclaration _fieldDeclaration = fieldExpr.getFieldDeclaration();
-    boolean _contains = _fields.contains(_fieldDeclaration);
-    boolean _not = (!_contains);
-    if (_not) {
-      StringConcatenation _builder = new StringConcatenation();
-      FieldDeclaration _fieldDeclaration_1 = fieldExpr.getFieldDeclaration();
-      String _name = _fieldDeclaration_1.getName();
-      _builder.append(_name, "");
-      _builder.append(" is not a field of the requested search type ");
-      TwitterObjectType _searchFor_1 = search.getSearchFor();
-      String _name_1 = _searchFor_1.getName();
-      _builder.append(_name_1, "");
-      EReference _fieldExpr_FieldDeclaration = TwitterSearchPackage.eINSTANCE.getFieldExpr_FieldDeclaration();
-      this.error(_builder.toString(), _fieldExpr_FieldDeclaration);
-    }
+  public Object checkFieldDeclarationsPartOfSearchType(final FieldExpr fieldExpr) {
+    return null;
   }
   
   @Check(CheckType.FAST)
-  public void checkConditionTypeMatchesFieldType(final Condition condition) {
-    EClass _eClass = condition.eClass();
-    String _name = _eClass.getName();
-    String _lowerCase = _name.toLowerCase();
-    FieldExpr _field = condition.getField();
-    FieldDeclaration _fieldDeclaration = _field.getFieldDeclaration();
-    FieldTypes _fieldType = _fieldDeclaration.getFieldType();
-    String _name_1 = _fieldType.getName();
-    String _lowerCase_1 = _name_1.toLowerCase();
-    boolean _startsWith = _lowerCase.startsWith(_lowerCase_1);
-    boolean _not = (!_startsWith);
-    if (_not) {
-      StringConcatenation _builder = new StringConcatenation();
-      FieldExpr _field_1 = condition.getField();
-      FieldDeclaration _fieldDeclaration_1 = _field_1.getFieldDeclaration();
-      String _name_2 = _fieldDeclaration_1.getName();
-      _builder.append(_name_2, "");
-      _builder.append(" has the wrong type.");
-      EReference _condition_Field = TwitterSearchPackage.eINSTANCE.getCondition_Field();
-      this.error(_builder.toString(), _condition_Field);
-    }
+  public Object checkConditionTypeMatchesFieldType(final Condition condition) {
+    return null;
   }
 }

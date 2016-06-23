@@ -3,7 +3,6 @@
  */
 package de.hub.modsoft.twittersearch.xtext.generator;
 
-import de.hub.modsoft.twittersearch.codegen.CodeGenerator;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
@@ -17,7 +16,5 @@ import org.eclipse.xtext.generator.IGenerator;
 public class TwitterSearchGenerator implements IGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
-    CodeGenerator _codeGenerator = new CodeGenerator();
-    _codeGenerator.doGenerate(resource, fsa);
   }
 }
