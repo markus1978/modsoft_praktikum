@@ -4,6 +4,8 @@
 *.ear
 *.class
 *.xtendbin
+.DS_store
+*._trace
 
 # eclipse specific git ignore
 bin/**
