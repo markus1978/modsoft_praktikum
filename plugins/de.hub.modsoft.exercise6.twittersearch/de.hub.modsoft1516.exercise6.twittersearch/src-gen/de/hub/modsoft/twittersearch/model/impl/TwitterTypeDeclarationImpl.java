@@ -3,7 +3,7 @@
 package de.hub.modsoft.twittersearch.model.impl;
 
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
-import de.hub.modsoft.twittersearch.model.TwitterType;
+import de.hub.modsoft.twittersearch.model.TwitterTypeDeclaration;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Twitter Type</b></em>'.
+ * An implementation of the model object '<em><b>Twitter Type Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.hub.modsoft.twittersearch.model.impl.TwitterTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.hub.modsoft.twittersearch.model.impl.TwitterTypeDeclarationImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TwitterTypeImpl extends MinimalEObjectImpl.Container implements TwitterType {
+public class TwitterTypeDeclarationImpl extends MinimalEObjectImpl.Container implements TwitterTypeDeclaration {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,7 +51,7 @@ public class TwitterTypeImpl extends MinimalEObjectImpl.Container implements Twi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TwitterTypeImpl() {
+	protected TwitterTypeDeclarationImpl() {
 		super();
 	}
 
@@ -62,7 +62,7 @@ public class TwitterTypeImpl extends MinimalEObjectImpl.Container implements Twi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TwitterSearchPackage.Literals.TWITTER_TYPE;
+		return TwitterSearchPackage.Literals.TWITTER_TYPE_DECLARATION;
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class TwitterTypeImpl extends MinimalEObjectImpl.Container implements Twi
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.TWITTER_TYPE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.TWITTER_TYPE_DECLARATION__NAME, oldName, name));
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class TwitterTypeImpl extends MinimalEObjectImpl.Container implements Twi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TwitterSearchPackage.TWITTER_TYPE__NAME:
+			case TwitterSearchPackage.TWITTER_TYPE_DECLARATION__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -108,7 +108,7 @@ public class TwitterTypeImpl extends MinimalEObjectImpl.Container implements Twi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TwitterSearchPackage.TWITTER_TYPE__NAME:
+			case TwitterSearchPackage.TWITTER_TYPE_DECLARATION__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -123,7 +123,7 @@ public class TwitterTypeImpl extends MinimalEObjectImpl.Container implements Twi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TwitterSearchPackage.TWITTER_TYPE__NAME:
+			case TwitterSearchPackage.TWITTER_TYPE_DECLARATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -138,7 +138,7 @@ public class TwitterTypeImpl extends MinimalEObjectImpl.Container implements Twi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TwitterSearchPackage.TWITTER_TYPE__NAME:
+			case TwitterSearchPackage.TWITTER_TYPE_DECLARATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -160,4 +160,4 @@ public class TwitterTypeImpl extends MinimalEObjectImpl.Container implements Twi
 		return result.toString();
 	}
 
-} //TwitterTypeImpl
+} //TwitterTypeDeclarationImpl

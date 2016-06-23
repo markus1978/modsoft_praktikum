@@ -13,9 +13,9 @@ Model returns Model:
 	"}"
 ;
 
-TwitterType returns TwitterType : TwitterObjectType | TwitterPrimitiveType;
+TwitterType returns TwitterTypeDeclaration : TwitterObjectType | TwitterPrimitiveType;
 
-TwitterPrimitiveType returns TwitterPrimitiveType:
+TwitterPrimitiveType returns TwitterPrimitiveTypeDeclaration:
 	"primitive" name=ID
 ;
 
@@ -27,7 +27,7 @@ TwitterObjectType returns TwitterObjectTypeDeclaration:
 ;
 
 FieldDclr returns TwitterFieldDeclaration:	
-	"field" name=ID ':' type=[TwitterType|ID]
+	"field" name=ID ':' type=[TwitterTypeDeclaration|ID]
 ;
 
 Search returns Search: 'TODO';

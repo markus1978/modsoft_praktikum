@@ -60,12 +60,12 @@ public interface TwitterFieldDeclaration extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(TwitterType)
+	 * @see #setType(TwitterTypeDeclaration)
 	 * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getTwitterFieldDeclaration_Type()
 	 * @model
 	 * @generated
 	 */
-	TwitterType getType();
+	TwitterTypeDeclaration getType();
 
 	/**
 	 * Sets the value of the '{@link de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration#getType <em>Type</em>}' reference.
@@ -75,7 +75,7 @@ public interface TwitterFieldDeclaration extends EObject {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(TwitterType value);
+	void setType(TwitterTypeDeclaration value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

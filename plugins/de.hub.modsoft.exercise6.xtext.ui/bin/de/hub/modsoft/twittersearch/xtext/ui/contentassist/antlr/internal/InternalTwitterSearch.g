@@ -997,12 +997,12 @@ rule__FieldDclr__TypeAssignment_3
     }
 :
 (
-{ before(grammarAccess.getFieldDclrAccess().getTypeTwitterTypeCrossReference_3_0()); }
+{ before(grammarAccess.getFieldDclrAccess().getTypeTwitterTypeDeclarationCrossReference_3_0()); }
 (
-{ before(grammarAccess.getFieldDclrAccess().getTypeTwitterTypeIDTerminalRuleCall_3_0_1()); }
-	RULE_ID{ after(grammarAccess.getFieldDclrAccess().getTypeTwitterTypeIDTerminalRuleCall_3_0_1()); }
+{ before(grammarAccess.getFieldDclrAccess().getTypeTwitterTypeDeclarationIDTerminalRuleCall_3_0_1()); }
+	RULE_ID{ after(grammarAccess.getFieldDclrAccess().getTypeTwitterTypeDeclarationIDTerminalRuleCall_3_0_1()); }
 )
-{ after(grammarAccess.getFieldDclrAccess().getTypeTwitterTypeCrossReference_3_0()); }
+{ after(grammarAccess.getFieldDclrAccess().getTypeTwitterTypeDeclarationCrossReference_3_0()); }
 )
 
 ;

@@ -72,10 +72,6 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 				return createSearchAdapter();
 			}
 			@Override
-			public Adapter caseFieldExpr(FieldExpr object) {
-				return createFieldExprAdapter();
-			}
-			@Override
 			public Adapter caseCondition(Condition object) {
 				return createConditionAdapter();
 			}
@@ -112,12 +108,12 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 				return createTwitterObjectTypeDeclarationAdapter();
 			}
 			@Override
-			public Adapter caseTwitterType(TwitterType object) {
-				return createTwitterTypeAdapter();
+			public Adapter caseTwitterTypeDeclaration(TwitterTypeDeclaration object) {
+				return createTwitterTypeDeclarationAdapter();
 			}
 			@Override
-			public Adapter caseTwitterPrimitiveType(TwitterPrimitiveType object) {
-				return createTwitterPrimitiveTypeAdapter();
+			public Adapter caseTwitterPrimitiveTypeDeclaration(TwitterPrimitiveTypeDeclaration object) {
+				return createTwitterPrimitiveTypeDeclarationAdapter();
 			}
 			@Override
 			public Adapter caseModel(Model object) {
@@ -154,20 +150,6 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSearchAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.FieldExpr <em>Field Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.model.FieldExpr
-	 * @generated
-	 */
-	public Adapter createFieldExprAdapter() {
 		return null;
 	}
 
@@ -298,30 +280,30 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterType <em>Twitter Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterTypeDeclaration <em>Twitter Type Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.model.TwitterType
+	 * @see de.hub.modsoft.twittersearch.model.TwitterTypeDeclaration
 	 * @generated
 	 */
-	public Adapter createTwitterTypeAdapter() {
+	public Adapter createTwitterTypeDeclarationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterPrimitiveType <em>Twitter Primitive Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterPrimitiveTypeDeclaration <em>Twitter Primitive Type Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.model.TwitterPrimitiveType
+	 * @see de.hub.modsoft.twittersearch.model.TwitterPrimitiveTypeDeclaration
 	 * @generated
 	 */
-	public Adapter createTwitterPrimitiveTypeAdapter() {
+	public Adapter createTwitterPrimitiveTypeDeclarationAdapter() {
 		return null;
 	}
 

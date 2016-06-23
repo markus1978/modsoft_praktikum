@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class TwitterObjectTypeDeclarationImpl extends TwitterTypeImpl implements TwitterObjectTypeDeclaration {
+public class TwitterObjectTypeDeclarationImpl extends TwitterTypeDeclarationImpl implements TwitterObjectTypeDeclaration {
 	/**
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

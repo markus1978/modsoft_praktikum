@@ -13,16 +13,12 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldExpr">
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDeclaration" eType="#//TwitterFieldDeclaration">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="fields"/>
       </eAnnotations>
     </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="field" lowerBound="1" eType="#//FieldExpr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanCondition" eSuperTypes="#//Condition"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntCondition" eSuperTypes="#//Condition">
@@ -50,14 +46,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="TwitterFieldDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="objectType" eType="#//TwitterObjectTypeDeclaration"
         eOpposite="#//TwitterObjectTypeDeclaration/fields"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TwitterType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TwitterTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FieldTypes">
     <eLiterals name="int"/>
     <eLiterals name="boolean" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterObjectTypeDeclaration" eSuperTypes="#//TwitterType">
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterObjectTypeDeclaration" eSuperTypes="#//TwitterTypeDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//TwitterFieldDeclaration" containment="true" eOpposite="#//TwitterFieldDeclaration/objectType"/>
   </eClassifiers>
@@ -68,14 +64,14 @@
     <eLiterals name="geq" value="3"/>
     <eLiterals name="leq" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterType">
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterTypeDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterPrimitiveType" eSuperTypes="#//TwitterType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TwitterPrimitiveTypeDeclaration" eSuperTypes="#//TwitterTypeDeclaration"/>
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="searches" upperBound="-1"
         eType="#//Search" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="twitterTypes" upperBound="-1"
-        eType="#//TwitterType" containment="true"/>
+        eType="#//TwitterTypeDeclaration" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -31,15 +31,6 @@ public interface TwitterSearchFactory extends EFactory {
 	Search createSearch();
 
 	/**
-	 * Returns a new object of class '<em>Field Expr</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Field Expr</em>'.
-	 * @generated
-	 */
-	FieldExpr createFieldExpr();
-
-	/**
 	 * Returns a new object of class '<em>Boolean Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,22 +94,22 @@ public interface TwitterSearchFactory extends EFactory {
 	TwitterObjectTypeDeclaration createTwitterObjectTypeDeclaration();
 
 	/**
-	 * Returns a new object of class '<em>Twitter Type</em>'.
+	 * Returns a new object of class '<em>Twitter Type Declaration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Twitter Type</em>'.
+	 * @return a new object of class '<em>Twitter Type Declaration</em>'.
 	 * @generated
 	 */
-	TwitterType createTwitterType();
+	TwitterTypeDeclaration createTwitterTypeDeclaration();
 
 	/**
-	 * Returns a new object of class '<em>Twitter Primitive Type</em>'.
+	 * Returns a new object of class '<em>Twitter Primitive Type Declaration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Twitter Primitive Type</em>'.
+	 * @return a new object of class '<em>Twitter Primitive Type Declaration</em>'.
 	 * @generated
 	 */
-	TwitterPrimitiveType createTwitterPrimitiveType();
+	TwitterPrimitiveTypeDeclaration createTwitterPrimitiveTypeDeclaration();
 
 	/**
 	 * Returns a new object of class '<em>Model</em>'.

@@ -5,7 +5,7 @@ package de.hub.modsoft.twittersearch.model.impl;
 import de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration;
 import de.hub.modsoft.twittersearch.model.TwitterObjectTypeDeclaration;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
-import de.hub.modsoft.twittersearch.model.TwitterType;
+import de.hub.modsoft.twittersearch.model.TwitterTypeDeclaration;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -42,7 +42,7 @@ public class TwitterFieldDeclarationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 * @ordered
 	 */
-	protected TwitterType type;
+	protected TwitterTypeDeclaration type;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -53,6 +53,7 @@ public class TwitterFieldDeclarationImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -128,10 +129,10 @@ public class TwitterFieldDeclarationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TwitterType getType() {
+	public TwitterTypeDeclaration getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (TwitterType)eResolveProxy(oldType);
+			type = (TwitterTypeDeclaration)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TwitterSearchPackage.TWITTER_FIELD_DECLARATION__TYPE, oldType, type));
@@ -145,7 +146,7 @@ public class TwitterFieldDeclarationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TwitterType basicGetType() {
+	public TwitterTypeDeclaration basicGetType() {
 		return type;
 	}
 
@@ -154,8 +155,8 @@ public class TwitterFieldDeclarationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(TwitterType newType) {
-		TwitterType oldType = type;
+	public void setType(TwitterTypeDeclaration newType) {
+		TwitterTypeDeclaration oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.TWITTER_FIELD_DECLARATION__TYPE, oldType, type));
@@ -257,7 +258,7 @@ public class TwitterFieldDeclarationImpl extends MinimalEObjectImpl.Container im
 				setObjectType((TwitterObjectTypeDeclaration)newValue);
 				return;
 			case TwitterSearchPackage.TWITTER_FIELD_DECLARATION__TYPE:
-				setType((TwitterType)newValue);
+				setType((TwitterTypeDeclaration)newValue);
 				return;
 			case TwitterSearchPackage.TWITTER_FIELD_DECLARATION__NAME:
 				setName((String)newValue);
@@ -278,7 +279,7 @@ public class TwitterFieldDeclarationImpl extends MinimalEObjectImpl.Container im
 				setObjectType((TwitterObjectTypeDeclaration)null);
 				return;
 			case TwitterSearchPackage.TWITTER_FIELD_DECLARATION__TYPE:
-				setType((TwitterType)null);
+				setType((TwitterTypeDeclaration)null);
 				return;
 			case TwitterSearchPackage.TWITTER_FIELD_DECLARATION__NAME:
 				setName(NAME_EDEFAULT);

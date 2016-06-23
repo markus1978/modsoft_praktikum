@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TwitterObjectTypeDeclaration extends TwitterType {
+public interface TwitterObjectTypeDeclaration extends TwitterTypeDeclaration {
 	/**
 	 * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
 	 * The list contents are of type {@link de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration}.

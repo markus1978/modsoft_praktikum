@@ -42,7 +42,7 @@ public interface Model extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Twitter Types</b></em>' containment reference list.
-	 * The list contents are of type {@link de.hub.modsoft.twittersearch.model.TwitterType}.
+	 * The list contents are of type {@link de.hub.modsoft.twittersearch.model.TwitterTypeDeclaration}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Twitter Types</em>' containment reference list isn't clear,
@@ -54,6 +54,6 @@ public interface Model extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<TwitterType> getTwitterTypes();
+	EList<TwitterTypeDeclaration> getTwitterTypes();
 
 } // Model

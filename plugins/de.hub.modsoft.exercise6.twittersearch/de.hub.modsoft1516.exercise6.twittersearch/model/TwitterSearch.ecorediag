@@ -14,23 +14,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_IsjBQYoQEeWpucWz4IRoOA" fontColor="4210752" fontName="Helvetica" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//Search"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IsjBQooQEeWpucWz4IRoOA" x="45" y="306"/>
-  </children>
-  <children xmi:type="notation:Node" xmi:id="_NWzw8IoQEeWpucWz4IRoOA" type="1001">
-    <children xmi:type="notation:Node" xmi:id="_NWzw8YoQEeWpucWz4IRoOA" type="4001"/>
-    <children xmi:type="notation:Node" xmi:id="_NWzw8ooQEeWpucWz4IRoOA" type="5001">
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_NWzw84oQEeWpucWz4IRoOA"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_NWzw9IoQEeWpucWz4IRoOA"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_NWzw9YoQEeWpucWz4IRoOA"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_NWzw9ooQEeWpucWz4IRoOA" type="5002">
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_NWzw94oQEeWpucWz4IRoOA"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_NWzw-IoQEeWpucWz4IRoOA"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_NWzw-YoQEeWpucWz4IRoOA"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_NWzw-ooQEeWpucWz4IRoOA" fontColor="4210752" fontName="Helvetica" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//FieldExpr"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NWzw-4oQEeWpucWz4IRoOA" x="495" y="306"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IsjBQooQEeWpucWz4IRoOA" x="90" y="306"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_O51p8IoQEeWpucWz4IRoOA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_O51p84oQEeWpucWz4IRoOA" type="4001"/>
@@ -62,7 +46,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_9d-akYoQEeWpucWz4IRoOA" fontColor="4210752" fontName="Helvetica" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//BooleanCondition"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9d-akooQEeWpucWz4IRoOA" x="522" y="423"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9d-akooQEeWpucWz4IRoOA" x="414" y="423"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_2lzzcIoREeWpucWz4IRoOA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_2lzzc4oREeWpucWz4IRoOA" type="4001"/>
@@ -86,7 +70,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_2lzzcYoREeWpucWz4IRoOA" fontColor="4210752" fontName="Helvetica" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//IntCondition"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2lzzcooREeWpucWz4IRoOA" x="369" y="423"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2lzzcooREeWpucWz4IRoOA" x="261" y="423"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_YAo34JdtEeW1QP8PHdNZKQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_YAo34ZdtEeW1QP8PHdNZKQ" type="4001"/>
@@ -102,7 +86,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_YAo36pdtEeW1QP8PHdNZKQ" fontColor="4210752" fontName="Helvetica" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//SearchOption"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YAo365dtEeW1QP8PHdNZKQ" x="54" y="468"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YAo365dtEeW1QP8PHdNZKQ" x="99" y="468"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_avoNsJdtEeW1QP8PHdNZKQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_avoNsZdtEeW1QP8PHdNZKQ" type="4001"/>
@@ -122,7 +106,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_avoNupdtEeW1QP8PHdNZKQ" fontColor="4210752" fontName="Helvetica" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//Keywords"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_avoNu5dtEeW1QP8PHdNZKQ" x="63" y="603"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_avoNu5dtEeW1QP8PHdNZKQ" x="81" y="603"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_bvo5MJdtEeW1QP8PHdNZKQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_bvo5MZdtEeW1QP8PHdNZKQ" type="4001"/>
@@ -172,9 +156,9 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_clEFWJdtEeW1QP8PHdNZKQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_clEFWZdtEeW1QP8PHdNZKQ"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_clEFWpdtEeW1QP8PHdNZKQ" fontColor="4210752" fontName="Helvetica" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_clEFWpdtEeW1QP8PHdNZKQ" fontColor="4210752" fontName="Helvetica" fontHeight="10" fillColor="15053796" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//Time"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_clEFW5dtEeW1QP8PHdNZKQ" x="378" y="603"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_clEFW5dtEeW1QP8PHdNZKQ" x="369" y="603"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_xsNeMJdtEeW1QP8PHdNZKQ" type="1005">
     <children xmi:type="notation:Node" xmi:id="_xsPTYJdtEeW1QP8PHdNZKQ" type="4010"/>
@@ -203,9 +187,9 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_RkghMqMOEeWe9t2036tHBQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_RkghM6MOEeWe9t2036tHBQ"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_RkesAaMOEeWe9t2036tHBQ" fontColor="4210752" fontName=".SF NS Text" fontHeight="10" fillColor="15053796" lineColor="8421504"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_RkesAaMOEeWe9t2036tHBQ" fontColor="4210752" fontName=".SF NS Text" fontHeight="10" fillColor="13420443" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//TwitterFieldDeclaration"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RkesAqMOEeWe9t2036tHBQ" x="720" y="306"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RkesAqMOEeWe9t2036tHBQ" x="522" y="306"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_hKO44KMOEeWe9t2036tHBQ" type="1005">
     <children xmi:type="notation:Node" xmi:id="_hKPf8KMOEeWe9t2036tHBQ" type="4010"/>
@@ -238,9 +222,9 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_8N7TR6MPEeWe9t2036tHBQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_8N7TSKMPEeWe9t2036tHBQ"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_8N6sMaMPEeWe9t2036tHBQ" fontColor="4210752" fontName=".SF NS Text" fontHeight="10" fillColor="15053796" lineColor="8421504"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_8N6sMaMPEeWe9t2036tHBQ" fontColor="4210752" fontName=".SF NS Text" fontHeight="10" fillColor="13420443" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//TwitterObjectTypeDeclaration"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8N6sMqMPEeWe9t2036tHBQ" x="711" y="198"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8N6sMqMPEeWe9t2036tHBQ" x="513" y="198"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_-bB8oKMSEeWe9t2036tHBQ" type="1005">
     <children xmi:type="notation:Node" xmi:id="_-bB8o6MSEeWe9t2036tHBQ" type="4010"/>
@@ -277,7 +261,7 @@
     <children xmi:type="notation:Node" xmi:id="_zoeQ8DkbEeao_oikniGS5g" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_zoe4ADkbEeao_oikniGS5g" type="5001">
       <children xmi:type="notation:Node" xmi:id="_C4OoEKMQEeWe9t2036tHBQ" type="2001">
-        <element xmi:type="ecore:EAttribute" href="TwitterSearch.ecore#//TwitterType/name"/>
+        <element xmi:type="ecore:EAttribute" href="TwitterSearch.ecore#//TwitterTypeDeclaration/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_C4OoEaMQEeWe9t2036tHBQ"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_zoe4ATkbEeao_oikniGS5g"/>
@@ -289,9 +273,9 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_zoe4BjkbEeao_oikniGS5g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zoe4BzkbEeao_oikniGS5g"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_zobNoTkbEeao_oikniGS5g" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//TwitterType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zobNojkbEeao_oikniGS5g" x="918" y="117"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zobNoTkbEeao_oikniGS5g" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13420443" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//TwitterTypeDeclaration"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zobNojkbEeao_oikniGS5g" x="702" y="117" width="152"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_0lrgEDkbEeao_oikniGS5g" type="1001">
     <children xmi:type="notation:Node" xmi:id="_0lsHIDkbEeao_oikniGS5g" type="4001"/>
@@ -305,9 +289,9 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_0lsHJzkbEeao_oikniGS5g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_0lsHKDkbEeao_oikniGS5g"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_0lrgETkbEeao_oikniGS5g" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//TwitterPrimitiveType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0lrgEjkbEeao_oikniGS5g" x="990" y="207"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_0lrgETkbEeao_oikniGS5g" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13420443" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="TwitterSearch.ecore#//TwitterPrimitiveTypeDeclaration"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0lrgEjkbEeao_oikniGS5g" x="756" y="234" width="183"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_IcNloDkcEeao_oikniGS5g" type="1001">
     <children xmi:type="notation:Node" xmi:id="_IcOMsDkcEeao_oikniGS5g" type="4001"/>
@@ -329,10 +313,10 @@
   <element xmi:type="ecore:EPackage" href="TwitterSearch.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_uULw8IoQEeWpucWz4IRoOA" type="3002" source="_IsjBQIoQEeWpucWz4IRoOA" target="_O51p8IoQEeWpucWz4IRoOA">
     <children xmi:type="notation:Node" xmi:id="_uUMYAIoQEeWpucWz4IRoOA" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_uUMYAYoQEeWpucWz4IRoOA" x="-8" y="-11"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_uUMYAYoQEeWpucWz4IRoOA" x="-16" y="-11"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_uUM_EIoQEeWpucWz4IRoOA" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_uUM_EYoQEeWpucWz4IRoOA" x="10" y="12"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_uUM_EYoQEeWpucWz4IRoOA" x="5" y="11"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_uULw8YoQEeWpucWz4IRoOA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_uULw8ooQEeWpucWz4IRoOA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
@@ -342,38 +326,24 @@
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uUkLcYoQEeWpucWz4IRoOA" id="(0.029411764705882353,0.47619047619047616)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_FZdqcIoREeWpucWz4IRoOA" type="3003" source="_9d-akIoQEeWpucWz4IRoOA" target="_O51p8IoQEeWpucWz4IRoOA">
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_FZdqcYoREeWpucWz4IRoOA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_FZdqcYoREeWpucWz4IRoOA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_FZdqcooREeWpucWz4IRoOA" fontName="Lucida Grande"/>
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FZdqc4oREeWpucWz4IRoOA" points="[-1, -1, 83, 88]$[-34, -91, 50, -2]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FZe4kIoREeWpucWz4IRoOA" id="(0.2523364485981308,0.047619047619047616)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_Loib0IoREeWpucWz4IRoOA" type="3002" source="_O51p8IoQEeWpucWz4IRoOA" target="_NWzw8IoQEeWpucWz4IRoOA">
-    <children xmi:type="notation:Node" xmi:id="_LojC4IoREeWpucWz4IRoOA" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_LojC4YoREeWpucWz4IRoOA" x="3" y="-11"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_LojC4ooREeWpucWz4IRoOA" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_LojC44oREeWpucWz4IRoOA" x="9" y="11"/>
-    </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Loib0YoREeWpucWz4IRoOA" lineColor="4210752"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_Loib0ooREeWpucWz4IRoOA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="TwitterSearch.ecore#//Condition/field"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Loib04oREeWpucWz4IRoOA" points="[13, 3, -133, 1]$[147, -18, 1, -20]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LokRAIoREeWpucWz4IRoOA" id="(0.8725490196078431,0.4523809523809524)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LokRAYoREeWpucWz4IRoOA" id="(0.23076923076923078,0.3230769230769231)"/>
-  </edges>
   <edges xmi:type="notation:Edge" xmi:id="_NnLA0IoTEeWpucWz4IRoOA" type="3003" source="_2lzzcIoREeWpucWz4IRoOA" target="_O51p8IoQEeWpucWz4IRoOA">
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_NnLA0YoTEeWpucWz4IRoOA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_NnLA0YoTEeWpucWz4IRoOA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_NnLA0ooTEeWpucWz4IRoOA" fontName="Lucida Grande"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NnLA04oTEeWpucWz4IRoOA" points="[-2, -5, 32, 97]$[-2, -32, 32, 70]$[-39, -32, -5, 70]$[-39, -82, -5, 20]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NnLA04oTEeWpucWz4IRoOA" points="[2, -7, -23, 97]$[20, -84, -5, 20]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NnM2AIoTEeWpucWz4IRoOA" id="(0.39215686274509803,0.12244897959183673)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_4f28QJdtEeW1QP8PHdNZKQ" type="3003" source="_avoNsJdtEeW1QP8PHdNZKQ" target="_YAo34JdtEeW1QP8PHdNZKQ">
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_4f28QZdtEeW1QP8PHdNZKQ" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_4f28QpdtEeW1QP8PHdNZKQ" fontName="Lucida Grande"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4f28Q5dtEeW1QP8PHdNZKQ" points="[-1, -2, 59, 163]$[-1, -56, 59, 109]$[-52, -56, 8, 109]$[-52, -142, 8, 23]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4f28Q5dtEeW1QP8PHdNZKQ" points="[-34, -2, -1, 118]$[-34, -97, -1, 23]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4f4xcJdtEeW1QP8PHdNZKQ" id="(0.628099173553719,0.061224489795918366)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4f4xcZdtEeW1QP8PHdNZKQ" id="(0.21568627450980393,0.42857142857142855)"/>
   </edges>
@@ -407,10 +377,10 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_HD9BoKMQEeWe9t2036tHBQ" type="3002" source="_8N6sMKMPEeWe9t2036tHBQ" target="_RkesAKMOEeWe9t2036tHBQ">
     <children xmi:type="notation:Node" xmi:id="_HD9osKMQEeWe9t2036tHBQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_HD9osaMQEeWe9t2036tHBQ" x="-10" y="16"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_HD9osaMQEeWe9t2036tHBQ" x="-11" y="17"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_HD9osqMQEeWe9t2036tHBQ" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_HD9os6MQEeWe9t2036tHBQ" y="12"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_HD9os6MQEeWe9t2036tHBQ" x="2" y="12"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_HD9BoaMQEeWe9t2036tHBQ" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_HD9BoqMQEeWe9t2036tHBQ" fontColor="4210752" fontName=".SF NS Text" fontHeight="10"/>
@@ -421,10 +391,10 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_O9Wm0KMQEeWe9t2036tHBQ" type="3002" source="_IcNloDkcEeao_oikniGS5g" target="_zobNoDkbEeao_oikniGS5g">
     <children xmi:type="notation:Node" xmi:id="_O9Wm1KMQEeWe9t2036tHBQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_O9Wm1aMQEeWe9t2036tHBQ" x="40" y="-10"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_O9Wm1aMQEeWe9t2036tHBQ" x="16" y="-10"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_O9Wm1qMQEeWe9t2036tHBQ" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_O9Wm16MQEeWe9t2036tHBQ" x="64" y="17"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_O9Wm16MQEeWe9t2036tHBQ" x="41" y="11"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_O9Wm0aMQEeWe9t2036tHBQ" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_O9Wm0qMQEeWe9t2036tHBQ" fontColor="4210752" fontName=".SF NS Text" fontHeight="10"/>
@@ -447,31 +417,31 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_C9U7EDkcEeao_oikniGS5g" id="(0.8947368421052632,0.6)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_C9U7ETkcEeao_oikniGS5g" id="(0.5,0.8979591836734694)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_c9PpIKMQEeWe9t2036tHBQ" type="3002" source="_NWzw8IoQEeWpucWz4IRoOA" target="_RkesAKMOEeWe9t2036tHBQ">
+  <edges xmi:type="notation:Edge" xmi:id="_c9PpIKMQEeWe9t2036tHBQ" type="3002" source="_O51p8IoQEeWpucWz4IRoOA" target="_RkesAKMOEeWe9t2036tHBQ">
     <children xmi:type="notation:Node" xmi:id="_c9QQMKMQEeWe9t2036tHBQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_c9QQMaMQEeWe9t2036tHBQ" x="-26" y="23"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_c9QQMaMQEeWe9t2036tHBQ" x="-21" y="-13"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_c9QQMqMQEeWe9t2036tHBQ" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_c9QQM6MQEeWe9t2036tHBQ" x="5" y="11"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_c9QQM6MQEeWe9t2036tHBQ" x="7" y="-25"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_c9PpIaMQEeWe9t2036tHBQ" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_c9PpIqMQEeWe9t2036tHBQ" fontColor="4210752" fontName=".SF NS Text" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="TwitterSearch.ecore#//FieldExpr/fieldDeclaration"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_c9PpI6MQEeWe9t2036tHBQ" points="[5, -2, -175, 9]$[175, -2, -5, 9]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_c9Q3QKMQEeWe9t2036tHBQ" id="(0.9509803921568627,0.5238095238095238)"/>
+    <element xmi:type="ecore:EReference" href="TwitterSearch.ecore#//Condition/fieldDeclaration"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_c9PpI6MQEeWe9t2036tHBQ" points="[21, -8, -301, 14]$[317, -8, -5, 14]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_c9Q3QKMQEeWe9t2036tHBQ" id="(0.7941176470588235,0.8809523809523809)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_c9Q3QaMQEeWe9t2036tHBQ" id="(0.043795620437956206,0.2923076923076923)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_kwh_QKMQEeWe9t2036tHBQ" type="3002" source="_IsjBQIoQEeWpucWz4IRoOA" target="_8N6sMKMPEeWe9t2036tHBQ">
     <children xmi:type="notation:Node" xmi:id="_kwh_RKMQEeWe9t2036tHBQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_kwh_RaMQEeWe9t2036tHBQ" x="74" y="11"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kwh_RaMQEeWe9t2036tHBQ" x="39" y="11"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_kwh_RqMQEeWe9t2036tHBQ" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_kwh_R6MQEeWe9t2036tHBQ" x="94" y="-13"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kwh_R6MQEeWe9t2036tHBQ" x="60" y="-11"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_kwh_QaMQEeWe9t2036tHBQ" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_kwh_QqMQEeWe9t2036tHBQ" fontColor="4210752" fontName=".SF NS Text" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="TwitterSearch.ecore#//Search/searchType"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kwh_Q6MQEeWe9t2036tHBQ" points="[4, -20, -637, 103]$[4, -110, -637, 13]$[616, -110, -25, 13]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kwh_Q6MQEeWe9t2036tHBQ" points="[-5, -20, -578, 104]$[-5, -111, -578, 13]$[535, -111, -38, 13]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kwimUKMQEeWe9t2036tHBQ" id="(0.23636363636363636,0.12244897959183673)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_Ul9kcLXwEeWo_5G8Kyp3uQ" type="3002" source="_IcNloDkcEeao_oikniGS5g" target="_IsjBQIoQEeWpucWz4IRoOA">
@@ -493,7 +463,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_2l4dQjkbEeao_oikniGS5g" fontName="Lucida Grande"/>
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2l4dQzkbEeao_oikniGS5g" points="[-2, -5, 30, 89]$[-28, -70, 4, 24]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2l6ScDkbEeao_oikniGS5g" id="(0.1652892561983471,0.047619047619047616)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2l6ScDkbEeao_oikniGS5g" id="(0.3551912568306011,0.07142857142857142)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Vl8cADkcEeao_oikniGS5g" id="(0.7450980392156863,0.9387755102040817)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_3FhmoDkbEeao_oikniGS5g" type="3003" source="_8N6sMKMPEeWe9t2036tHBQ" target="_zobNoDkbEeao_oikniGS5g">
@@ -514,7 +484,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_BHASoTkcEeao_oikniGS5g" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_BHASojkcEeao_oikniGS5g" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="TwitterSearch.ecore#//TwitterFieldDeclaration/type"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BHASozkcEeao_oikniGS5g" points="[24, -9, -95, 257]$[126, -9, 7, 257]$[126, -259, 7, 7]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BHASozkcEeao_oikniGS5g" points="[24, 6, -92, 187]$[108, 6, -8, 187]$[108, -174, -8, 7]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BHD9ADkcEeao_oikniGS5g" id="(0.8248175182481752,0.6923076923076923)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BHD9ATkcEeao_oikniGS5g" id="(0.29411764705882354,0.8571428571428571)"/>
   </edges>

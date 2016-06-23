@@ -787,7 +787,7 @@ public class InternalTwitterSearchParser extends AbstractInternalAntlrParser {
                     
             otherlv_3=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleFieldDclr747); 
 
-            		newLeafNode(otherlv_3, grammarAccess.getFieldDclrAccess().getTypeTwitterTypeCrossReference_3_0()); 
+            		newLeafNode(otherlv_3, grammarAccess.getFieldDclrAccess().getTypeTwitterTypeDeclarationCrossReference_3_0()); 
             	
 
             }

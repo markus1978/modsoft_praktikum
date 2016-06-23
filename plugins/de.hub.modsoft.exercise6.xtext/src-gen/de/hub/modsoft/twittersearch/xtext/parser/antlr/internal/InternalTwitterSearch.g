@@ -351,7 +351,7 @@ ruleFieldDclr returns [EObject current=null]
         }
 	otherlv_3=RULE_ID
 	{
-		newLeafNode(otherlv_3, grammarAccess.getFieldDclrAccess().getTypeTwitterTypeCrossReference_3_0()); 
+		newLeafNode(otherlv_3, grammarAccess.getFieldDclrAccess().getTypeTwitterTypeDeclarationCrossReference_3_0()); 
 	}
 
 )

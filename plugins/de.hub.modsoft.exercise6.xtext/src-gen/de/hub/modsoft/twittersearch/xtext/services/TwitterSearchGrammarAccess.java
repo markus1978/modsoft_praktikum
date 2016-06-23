@@ -80,7 +80,7 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTwitterObjectTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cTwitterPrimitiveTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//TwitterType:
+		//TwitterType returns TwitterTypeDeclaration:
 		//	TwitterObjectType | TwitterPrimitiveType;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -101,7 +101,7 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
-		//TwitterPrimitiveType:
+		//TwitterPrimitiveType returns TwitterPrimitiveTypeDeclaration:
 		//	"primitive" name=ID;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -166,14 +166,14 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cTypeTwitterTypeCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
-		private final RuleCall cTypeTwitterTypeIDTerminalRuleCall_3_0_1 = (RuleCall)cTypeTwitterTypeCrossReference_3_0.eContents().get(1);
+		private final CrossReference cTypeTwitterTypeDeclarationCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
+		private final RuleCall cTypeTwitterTypeDeclarationIDTerminalRuleCall_3_0_1 = (RuleCall)cTypeTwitterTypeDeclarationCrossReference_3_0.eContents().get(1);
 		
 		//FieldDclr returns TwitterFieldDeclaration:
-		//	"field" name=ID ":" type=[TwitterType];
+		//	"field" name=ID ":" type=[TwitterTypeDeclaration];
 		@Override public ParserRule getRule() { return rule; }
 
-		//"field" name=ID ":" type=[TwitterType]
+		//"field" name=ID ":" type=[TwitterTypeDeclaration]
 		public Group getGroup() { return cGroup; }
 
 		//"field"
@@ -188,14 +188,14 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//type=[TwitterType]
+		//type=[TwitterTypeDeclaration]
 		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
-		//[TwitterType]
-		public CrossReference getTypeTwitterTypeCrossReference_3_0() { return cTypeTwitterTypeCrossReference_3_0; }
+		//[TwitterTypeDeclaration]
+		public CrossReference getTypeTwitterTypeDeclarationCrossReference_3_0() { return cTypeTwitterTypeDeclarationCrossReference_3_0; }
 
 		//ID
-		public RuleCall getTypeTwitterTypeIDTerminalRuleCall_3_0_1() { return cTypeTwitterTypeIDTerminalRuleCall_3_0_1; }
+		public RuleCall getTypeTwitterTypeDeclarationIDTerminalRuleCall_3_0_1() { return cTypeTwitterTypeDeclarationIDTerminalRuleCall_3_0_1; }
 	}
 
 	public class SearchElements extends AbstractParserRuleElementFinder {
@@ -340,7 +340,7 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 
-	//TwitterType:
+	//TwitterType returns TwitterTypeDeclaration:
 	//	TwitterObjectType | TwitterPrimitiveType;
 	public TwitterTypeElements getTwitterTypeAccess() {
 		return pTwitterType;
@@ -350,7 +350,7 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		return getTwitterTypeAccess().getRule();
 	}
 
-	//TwitterPrimitiveType:
+	//TwitterPrimitiveType returns TwitterPrimitiveTypeDeclaration:
 	//	"primitive" name=ID;
 	public TwitterPrimitiveTypeElements getTwitterPrimitiveTypeAccess() {
 		return pTwitterPrimitiveType;
@@ -371,7 +371,7 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FieldDclr returns TwitterFieldDeclaration:
-	//	"field" name=ID ":" type=[TwitterType];
+	//	"field" name=ID ":" type=[TwitterTypeDeclaration];
 	public FieldDclrElements getFieldDclrAccess() {
 		return pFieldDclr;
 	}

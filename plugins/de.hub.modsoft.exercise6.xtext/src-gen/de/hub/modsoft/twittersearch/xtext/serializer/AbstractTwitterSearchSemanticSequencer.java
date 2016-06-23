@@ -8,7 +8,7 @@ import com.google.inject.Provider;
 import de.hub.modsoft.twittersearch.model.Model;
 import de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration;
 import de.hub.modsoft.twittersearch.model.TwitterObjectTypeDeclaration;
-import de.hub.modsoft.twittersearch.model.TwitterPrimitiveType;
+import de.hub.modsoft.twittersearch.model.TwitterPrimitiveTypeDeclaration;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
 import de.hub.modsoft.twittersearch.xtext.services.TwitterSearchGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -41,8 +41,8 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 			case TwitterSearchPackage.TWITTER_OBJECT_TYPE_DECLARATION:
 				sequence_TwitterObjectType(context, (TwitterObjectTypeDeclaration) semanticObject); 
 				return; 
-			case TwitterSearchPackage.TWITTER_PRIMITIVE_TYPE:
-				sequence_TwitterPrimitiveType(context, (TwitterPrimitiveType) semanticObject); 
+			case TwitterSearchPackage.TWITTER_PRIMITIVE_TYPE_DECLARATION:
+				sequence_TwitterPrimitiveType(context, (TwitterPrimitiveTypeDeclaration) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -50,7 +50,7 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=[TwitterType|ID])
+	 *     (name=ID type=[TwitterTypeDeclaration|ID])
 	 */
 	protected void sequence_FieldDclr(EObject context, TwitterFieldDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -79,10 +79,10 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_TwitterPrimitiveType(EObject context, TwitterPrimitiveType semanticObject) {
+	protected void sequence_TwitterPrimitiveType(EObject context, TwitterPrimitiveTypeDeclaration semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.TWITTER_TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.TWITTER_TYPE__NAME));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.TWITTER_TYPE_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.TWITTER_TYPE_DECLARATION__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);

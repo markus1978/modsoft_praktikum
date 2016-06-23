@@ -5,7 +5,7 @@ package de.hub.modsoft.twittersearch.model.impl;
 import de.hub.modsoft.twittersearch.model.Model;
 import de.hub.modsoft.twittersearch.model.Search;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
-import de.hub.modsoft.twittersearch.model.TwitterType;
+import de.hub.modsoft.twittersearch.model.TwitterTypeDeclaration;
 
 import java.util.Collection;
 
@@ -54,7 +54,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TwitterType> twitterTypes;
+	protected EList<TwitterTypeDeclaration> twitterTypes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,9 +92,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TwitterType> getTwitterTypes() {
+	public EList<TwitterTypeDeclaration> getTwitterTypes() {
 		if (twitterTypes == null) {
-			twitterTypes = new EObjectContainmentEList<TwitterType>(TwitterType.class, this, TwitterSearchPackage.MODEL__TWITTER_TYPES);
+			twitterTypes = new EObjectContainmentEList<TwitterTypeDeclaration>(TwitterTypeDeclaration.class, this, TwitterSearchPackage.MODEL__TWITTER_TYPES);
 		}
 		return twitterTypes;
 	}
@@ -146,7 +146,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				return;
 			case TwitterSearchPackage.MODEL__TWITTER_TYPES:
 				getTwitterTypes().clear();
-				getTwitterTypes().addAll((Collection<? extends TwitterType>)newValue);
+				getTwitterTypes().addAll((Collection<? extends TwitterTypeDeclaration>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

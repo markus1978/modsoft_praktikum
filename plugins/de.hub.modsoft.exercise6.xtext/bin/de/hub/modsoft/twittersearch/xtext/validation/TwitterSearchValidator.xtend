@@ -4,13 +4,12 @@
 package de.hub.modsoft.twittersearch.xtext.validation
 
 import de.hub.modsoft.twittersearch.model.Condition
-import de.hub.modsoft.twittersearch.model.FieldExpr
 import org.eclipse.xtext.validation.Check
 
 class TwitterSearchValidator extends AbstractTwitterSearchValidator {
 	
 	@Check(FAST)
-	def checkFieldDeclarationsPartOfSearchType(FieldExpr fieldExpr) {
+	def checkConditionFieldPartOfSearchType(Condition condition) {
 		// TODO
 	}
 

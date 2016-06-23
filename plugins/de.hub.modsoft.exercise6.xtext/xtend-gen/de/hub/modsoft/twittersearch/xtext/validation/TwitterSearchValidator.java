@@ -4,7 +4,6 @@
 package de.hub.modsoft.twittersearch.xtext.validation;
 
 import de.hub.modsoft.twittersearch.model.Condition;
-import de.hub.modsoft.twittersearch.model.FieldExpr;
 import de.hub.modsoft.twittersearch.xtext.validation.AbstractTwitterSearchValidator;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.CheckType;
@@ -12,7 +11,7 @@ import org.eclipse.xtext.validation.CheckType;
 @SuppressWarnings("all")
 public class TwitterSearchValidator extends AbstractTwitterSearchValidator {
   @Check(CheckType.FAST)
-  public Object checkFieldDeclarationsPartOfSearchType(final FieldExpr fieldExpr) {
+  public Object checkConditionFieldPartOfSearchType(final Condition condition) {
     return null;
   }
   
