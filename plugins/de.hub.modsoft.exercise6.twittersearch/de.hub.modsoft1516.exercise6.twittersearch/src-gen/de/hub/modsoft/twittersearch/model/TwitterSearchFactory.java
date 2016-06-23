@@ -85,31 +85,49 @@ public interface TwitterSearchFactory extends EFactory {
 	Time createTime();
 
 	/**
-	 * Returns a new object of class '<em>Field Declaration</em>'.
+	 * Returns a new object of class '<em>Twitter Field Declaration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Field Declaration</em>'.
+	 * @return a new object of class '<em>Twitter Field Declaration</em>'.
 	 * @generated
 	 */
-	FieldDeclaration createFieldDeclaration();
+	TwitterFieldDeclaration createTwitterFieldDeclaration();
 
 	/**
-	 * Returns a new object of class '<em>Twitter</em>'.
+	 * Returns a new object of class '<em>Twitter Object Type Declaration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Twitter</em>'.
+	 * @return a new object of class '<em>Twitter Object Type Declaration</em>'.
 	 * @generated
 	 */
-	Twitter createTwitter();
+	TwitterObjectTypeDeclaration createTwitterObjectTypeDeclaration();
 
 	/**
-	 * Returns a new object of class '<em>Twitter Object Type</em>'.
+	 * Returns a new object of class '<em>Twitter Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Twitter Object Type</em>'.
+	 * @return a new object of class '<em>Twitter Type</em>'.
 	 * @generated
 	 */
-	TwitterObjectType createTwitterObjectType();
+	TwitterType createTwitterType();
+
+	/**
+	 * Returns a new object of class '<em>Twitter Primitive Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Twitter Primitive Type</em>'.
+	 * @generated
+	 */
+	TwitterPrimitiveType createTwitterPrimitiveType();
+
+	/**
+	 * Returns a new object of class '<em>Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model</em>'.
+	 * @generated
+	 */
+	Model createModel();
 
 	/**
 	 * Returns the package supported by this factory.

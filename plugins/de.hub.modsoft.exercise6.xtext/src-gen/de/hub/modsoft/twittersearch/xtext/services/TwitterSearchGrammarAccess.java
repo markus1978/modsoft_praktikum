@@ -21,55 +21,107 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cTwitterAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cConfigurationKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cObjectTypesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cObjectTypesObjectTypeDclrParserRuleCall_3_0 = (RuleCall)cObjectTypesAssignment_3.eContents().get(0);
-		private final Keyword cSearchesKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cSearchesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cSearchesSearchParserRuleCall_6_0 = (RuleCall)cSearchesAssignment_6.eContents().get(0);
+		private final Action cModelAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cTwitterKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTwitterTypesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTwitterTypesTwitterTypeParserRuleCall_3_0 = (RuleCall)cTwitterTypesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cSearchesKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cSearchesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cSearchesSearchParserRuleCall_7_0 = (RuleCall)cSearchesAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//Model returns Twitter:
-		//	{Twitter} "configuration" ":" objectTypes+=ObjectTypeDclr* "searches" ":" searches+=Search*;
+		//Model:
+		//	{Model} "twitter" "{" twitterTypes+=TwitterType* "}" "searches" "{" searches+=Search* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{Twitter} "configuration" ":" objectTypes+=ObjectTypeDclr* "searches" ":" searches+=Search*
+		//{Model} "twitter" "{" twitterTypes+=TwitterType* "}" "searches" "{" searches+=Search* "}"
 		public Group getGroup() { return cGroup; }
 
-		//{Twitter}
-		public Action getTwitterAction_0() { return cTwitterAction_0; }
+		//{Model}
+		public Action getModelAction_0() { return cModelAction_0; }
 
-		//"configuration"
-		public Keyword getConfigurationKeyword_1() { return cConfigurationKeyword_1; }
+		//"twitter"
+		public Keyword getTwitterKeyword_1() { return cTwitterKeyword_1; }
 
-		//":"
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//objectTypes+=ObjectTypeDclr*
-		public Assignment getObjectTypesAssignment_3() { return cObjectTypesAssignment_3; }
+		//twitterTypes+=TwitterType*
+		public Assignment getTwitterTypesAssignment_3() { return cTwitterTypesAssignment_3; }
 
-		//ObjectTypeDclr
-		public RuleCall getObjectTypesObjectTypeDclrParserRuleCall_3_0() { return cObjectTypesObjectTypeDclrParserRuleCall_3_0; }
+		//TwitterType
+		public RuleCall getTwitterTypesTwitterTypeParserRuleCall_3_0() { return cTwitterTypesTwitterTypeParserRuleCall_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 
 		//"searches"
-		public Keyword getSearchesKeyword_4() { return cSearchesKeyword_4; }
+		public Keyword getSearchesKeyword_5() { return cSearchesKeyword_5; }
 
-		//":"
-		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
 
 		//searches+=Search*
-		public Assignment getSearchesAssignment_6() { return cSearchesAssignment_6; }
+		public Assignment getSearchesAssignment_7() { return cSearchesAssignment_7; }
 
 		//Search
-		public RuleCall getSearchesSearchParserRuleCall_6_0() { return cSearchesSearchParserRuleCall_6_0; }
+		public RuleCall getSearchesSearchParserRuleCall_7_0() { return cSearchesSearchParserRuleCall_7_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
-	public class ObjectTypeDclrElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ObjectTypeDclr");
+	public class TwitterTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TwitterType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cTwitterObjectTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTwitterPrimitiveTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//TwitterType:
+		//	TwitterObjectType | TwitterPrimitiveType;
+		@Override public ParserRule getRule() { return rule; }
+
+		//TwitterObjectType | TwitterPrimitiveType
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//TwitterObjectType
+		public RuleCall getTwitterObjectTypeParserRuleCall_0() { return cTwitterObjectTypeParserRuleCall_0; }
+
+		//TwitterPrimitiveType
+		public RuleCall getTwitterPrimitiveTypeParserRuleCall_1() { return cTwitterPrimitiveTypeParserRuleCall_1; }
+	}
+
+	public class TwitterPrimitiveTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TwitterPrimitiveType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cObjecttypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPrimitiveKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//TwitterPrimitiveType:
+		//	"primitive" name=ID;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"primitive" name=ID
+		public Group getGroup() { return cGroup; }
+
+		//"primitive"
+		public Keyword getPrimitiveKeyword_0() { return cPrimitiveKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
+	public class TwitterObjectTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TwitterObjectType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cObjectKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -77,15 +129,15 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFieldsFieldDclrParserRuleCall_3_0 = (RuleCall)cFieldsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//ObjectTypeDclr returns TwitterObjectType:
-		//	"objecttype" name=ID "{" fields+=FieldDclr* "}";
+		//TwitterObjectType returns TwitterObjectTypeDeclaration:
+		//	"object" name=ID "{" fields+=FieldDclr* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"objecttype" name=ID "{" fields+=FieldDclr* "}"
+		//"object" name=ID "{" fields+=FieldDclr* "}"
 		public Group getGroup() { return cGroup; }
 
-		//"objecttype"
-		public Keyword getObjecttypeKeyword_0() { return cObjecttypeKeyword_0; }
+		//"object"
+		public Keyword getObjectKeyword_0() { return cObjectKeyword_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -113,14 +165,15 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cFieldTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cFieldTypeFieldTypeEnumRuleCall_3_0 = (RuleCall)cFieldTypeAssignment_3.eContents().get(0);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cTypeTwitterTypeCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
+		private final RuleCall cTypeTwitterTypeIDTerminalRuleCall_3_0_1 = (RuleCall)cTypeTwitterTypeCrossReference_3_0.eContents().get(1);
 		
-		//FieldDclr returns FieldDeclaration:
-		//	"field" name=ID ":" fieldType=FieldType;
+		//FieldDclr returns TwitterFieldDeclaration:
+		//	"field" name=ID ":" type=[TwitterType];
 		@Override public ParserRule getRule() { return rule; }
 
-		//"field" name=ID ":" fieldType=FieldType
+		//"field" name=ID ":" type=[TwitterType]
 		public Group getGroup() { return cGroup; }
 
 		//"field"
@@ -135,11 +188,14 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//fieldType=FieldType
-		public Assignment getFieldTypeAssignment_3() { return cFieldTypeAssignment_3; }
+		//type=[TwitterType]
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
-		//FieldType
-		public RuleCall getFieldTypeFieldTypeEnumRuleCall_3_0() { return cFieldTypeFieldTypeEnumRuleCall_3_0; }
+		//[TwitterType]
+		public CrossReference getTypeTwitterTypeCrossReference_3_0() { return cTypeTwitterTypeCrossReference_3_0; }
+
+		//ID
+		public RuleCall getTypeTwitterTypeIDTerminalRuleCall_3_0_1() { return cTypeTwitterTypeIDTerminalRuleCall_3_0_1; }
 	}
 
 	public class SearchElements extends AbstractParserRuleElementFinder {
@@ -219,38 +275,11 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	public class FieldTypeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "FieldType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cBooleanEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cBooleanBOOLEANKeyword_0_0 = (Keyword)cBooleanEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cIntEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cIntINTKeyword_1_0 = (Keyword)cIntEnumLiteralDeclaration_1.eContents().get(0);
-		
-		//enum FieldType returns FieldTypes:
-		//	boolean="BOOLEAN" | int="INT";
-		public EnumRule getRule() { return rule; }
-
-		//boolean="BOOLEAN" | int="INT"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//boolean="BOOLEAN"
-		public EnumLiteralDeclaration getBooleanEnumLiteralDeclaration_0() { return cBooleanEnumLiteralDeclaration_0; }
-
-		//"BOOLEAN"
-		public Keyword getBooleanBOOLEANKeyword_0_0() { return cBooleanBOOLEANKeyword_0_0; }
-
-		//int="INT"
-		public EnumLiteralDeclaration getIntEnumLiteralDeclaration_1() { return cIntEnumLiteralDeclaration_1; }
-
-		//"INT"
-		public Keyword getIntINTKeyword_1_0() { return cIntINTKeyword_1_0; }
-	}
-	
 	private final ModelElements pModel;
-	private final ObjectTypeDclrElements pObjectTypeDclr;
+	private final TwitterTypeElements pTwitterType;
+	private final TwitterPrimitiveTypeElements pTwitterPrimitiveType;
+	private final TwitterObjectTypeElements pTwitterObjectType;
 	private final FieldDclrElements pFieldDclr;
-	private final FieldTypeElements unknownRuleFieldType;
 	private final SearchElements pSearch;
 	private final DOUBLEElements pDOUBLE;
 	private final DATEElements pDATE;
@@ -265,9 +294,10 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pObjectTypeDclr = new ObjectTypeDclrElements();
+		this.pTwitterType = new TwitterTypeElements();
+		this.pTwitterPrimitiveType = new TwitterPrimitiveTypeElements();
+		this.pTwitterObjectType = new TwitterObjectTypeElements();
 		this.pFieldDclr = new FieldDclrElements();
-		this.unknownRuleFieldType = new FieldTypeElements();
 		this.pSearch = new SearchElements();
 		this.pDOUBLE = new DOUBLEElements();
 		this.pDATE = new DATEElements();
@@ -300,8 +330,8 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Model returns Twitter:
-	//	{Twitter} "configuration" ":" objectTypes+=ObjectTypeDclr* "searches" ":" searches+=Search*;
+	//Model:
+	//	{Model} "twitter" "{" twitterTypes+=TwitterType* "}" "searches" "{" searches+=Search* "}";
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -310,34 +340,44 @@ public class TwitterSearchGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 
-	//ObjectTypeDclr returns TwitterObjectType:
-	//	"objecttype" name=ID "{" fields+=FieldDclr* "}";
-	public ObjectTypeDclrElements getObjectTypeDclrAccess() {
-		return pObjectTypeDclr;
+	//TwitterType:
+	//	TwitterObjectType | TwitterPrimitiveType;
+	public TwitterTypeElements getTwitterTypeAccess() {
+		return pTwitterType;
 	}
 	
-	public ParserRule getObjectTypeDclrRule() {
-		return getObjectTypeDclrAccess().getRule();
+	public ParserRule getTwitterTypeRule() {
+		return getTwitterTypeAccess().getRule();
 	}
 
-	//FieldDclr returns FieldDeclaration:
-	//	"field" name=ID ":" fieldType=FieldType;
+	//TwitterPrimitiveType:
+	//	"primitive" name=ID;
+	public TwitterPrimitiveTypeElements getTwitterPrimitiveTypeAccess() {
+		return pTwitterPrimitiveType;
+	}
+	
+	public ParserRule getTwitterPrimitiveTypeRule() {
+		return getTwitterPrimitiveTypeAccess().getRule();
+	}
+
+	//TwitterObjectType returns TwitterObjectTypeDeclaration:
+	//	"object" name=ID "{" fields+=FieldDclr* "}";
+	public TwitterObjectTypeElements getTwitterObjectTypeAccess() {
+		return pTwitterObjectType;
+	}
+	
+	public ParserRule getTwitterObjectTypeRule() {
+		return getTwitterObjectTypeAccess().getRule();
+	}
+
+	//FieldDclr returns TwitterFieldDeclaration:
+	//	"field" name=ID ":" type=[TwitterType];
 	public FieldDclrElements getFieldDclrAccess() {
 		return pFieldDclr;
 	}
 	
 	public ParserRule getFieldDclrRule() {
 		return getFieldDclrAccess().getRule();
-	}
-
-	//enum FieldType returns FieldTypes:
-	//	boolean="BOOLEAN" | int="INT";
-	public FieldTypeElements getFieldTypeAccess() {
-		return unknownRuleFieldType;
-	}
-	
-	public EnumRule getFieldTypeRule() {
-		return getFieldTypeAccess().getRule();
 	}
 
 	//Search:

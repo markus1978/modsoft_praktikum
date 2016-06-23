@@ -2,8 +2,8 @@
  */
 package de.hub.modsoft.twittersearch.model.impl;
 
-import de.hub.modsoft.twittersearch.model.FieldDeclaration;
 import de.hub.modsoft.twittersearch.model.FieldExpr;
+import de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -36,7 +36,7 @@ public class FieldExprImpl extends MinimalEObjectImpl.Container implements Field
 	 * @generated
 	 * @ordered
 	 */
-	protected FieldDeclaration fieldDeclaration;
+	protected TwitterFieldDeclaration fieldDeclaration;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,10 +62,10 @@ public class FieldExprImpl extends MinimalEObjectImpl.Container implements Field
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FieldDeclaration getFieldDeclaration() {
+	public TwitterFieldDeclaration getFieldDeclaration() {
 		if (fieldDeclaration != null && fieldDeclaration.eIsProxy()) {
 			InternalEObject oldFieldDeclaration = (InternalEObject)fieldDeclaration;
-			fieldDeclaration = (FieldDeclaration)eResolveProxy(oldFieldDeclaration);
+			fieldDeclaration = (TwitterFieldDeclaration)eResolveProxy(oldFieldDeclaration);
 			if (fieldDeclaration != oldFieldDeclaration) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TwitterSearchPackage.FIELD_EXPR__FIELD_DECLARATION, oldFieldDeclaration, fieldDeclaration));
@@ -79,7 +79,7 @@ public class FieldExprImpl extends MinimalEObjectImpl.Container implements Field
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FieldDeclaration basicGetFieldDeclaration() {
+	public TwitterFieldDeclaration basicGetFieldDeclaration() {
 		return fieldDeclaration;
 	}
 
@@ -88,8 +88,8 @@ public class FieldExprImpl extends MinimalEObjectImpl.Container implements Field
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFieldDeclaration(FieldDeclaration newFieldDeclaration) {
-		FieldDeclaration oldFieldDeclaration = fieldDeclaration;
+	public void setFieldDeclaration(TwitterFieldDeclaration newFieldDeclaration) {
+		TwitterFieldDeclaration oldFieldDeclaration = fieldDeclaration;
 		fieldDeclaration = newFieldDeclaration;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.FIELD_EXPR__FIELD_DECLARATION, oldFieldDeclaration, fieldDeclaration));
@@ -119,7 +119,7 @@ public class FieldExprImpl extends MinimalEObjectImpl.Container implements Field
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TwitterSearchPackage.FIELD_EXPR__FIELD_DECLARATION:
-				setFieldDeclaration((FieldDeclaration)newValue);
+				setFieldDeclaration((TwitterFieldDeclaration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,7 +134,7 @@ public class FieldExprImpl extends MinimalEObjectImpl.Container implements Field
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TwitterSearchPackage.FIELD_EXPR__FIELD_DECLARATION:
-				setFieldDeclaration((FieldDeclaration)null);
+				setFieldDeclaration((TwitterFieldDeclaration)null);
 				return;
 		}
 		super.eUnset(featureID);

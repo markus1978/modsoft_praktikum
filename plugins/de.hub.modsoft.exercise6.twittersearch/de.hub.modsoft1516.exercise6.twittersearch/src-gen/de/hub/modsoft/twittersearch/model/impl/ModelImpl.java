@@ -2,12 +2,10 @@
  */
 package de.hub.modsoft.twittersearch.model.impl;
 
+import de.hub.modsoft.twittersearch.model.Model;
 import de.hub.modsoft.twittersearch.model.Search;
-import de.hub.modsoft.twittersearch.model.Twitter;
-import de.hub.modsoft.twittersearch.model.TwitterObjectType;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
-
-import java.lang.reflect.InvocationTargetException;
+import de.hub.modsoft.twittersearch.model.TwitterType;
 
 import java.util.Collection;
 
@@ -25,29 +23,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Twitter</b></em>'.
+ * An implementation of the model object '<em><b>Model</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.hub.modsoft.twittersearch.model.impl.TwitterImpl#getObjectTypes <em>Object Types</em>}</li>
- *   <li>{@link de.hub.modsoft.twittersearch.model.impl.TwitterImpl#getSearches <em>Searches</em>}</li>
+ *   <li>{@link de.hub.modsoft.twittersearch.model.impl.ModelImpl#getSearches <em>Searches</em>}</li>
+ *   <li>{@link de.hub.modsoft.twittersearch.model.impl.ModelImpl#getTwitterTypes <em>Twitter Types</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter {
-	/**
-	 * The cached value of the '{@link #getObjectTypes() <em>Object Types</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getObjectTypes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<TwitterObjectType> objectTypes;
-
+public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	/**
 	 * The cached value of the '{@link #getSearches() <em>Searches</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -59,11 +47,21 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	protected EList<Search> searches;
 
 	/**
+	 * The cached value of the '{@link #getTwitterTypes() <em>Twitter Types</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTwitterTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TwitterType> twitterTypes;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TwitterImpl() {
+	protected ModelImpl() {
 		super();
 	}
 
@@ -74,19 +72,7 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TwitterSearchPackage.Literals.TWITTER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<TwitterObjectType> getObjectTypes() {
-		if (objectTypes == null) {
-			objectTypes = new EObjectContainmentEList<TwitterObjectType>(TwitterObjectType.class, this, TwitterSearchPackage.TWITTER__OBJECT_TYPES);
-		}
-		return objectTypes;
+		return TwitterSearchPackage.Literals.MODEL;
 	}
 
 	/**
@@ -96,7 +82,7 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	 */
 	public EList<Search> getSearches() {
 		if (searches == null) {
-			searches = new EObjectContainmentEList<Search>(Search.class, this, TwitterSearchPackage.TWITTER__SEARCHES);
+			searches = new EObjectContainmentEList<Search>(Search.class, this, TwitterSearchPackage.MODEL__SEARCHES);
 		}
 		return searches;
 	}
@@ -106,10 +92,11 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void performSearch(Search search) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public EList<TwitterType> getTwitterTypes() {
+		if (twitterTypes == null) {
+			twitterTypes = new EObjectContainmentEList<TwitterType>(TwitterType.class, this, TwitterSearchPackage.MODEL__TWITTER_TYPES);
+		}
+		return twitterTypes;
 	}
 
 	/**
@@ -120,10 +107,10 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TwitterSearchPackage.TWITTER__OBJECT_TYPES:
-				return ((InternalEList<?>)getObjectTypes()).basicRemove(otherEnd, msgs);
-			case TwitterSearchPackage.TWITTER__SEARCHES:
+			case TwitterSearchPackage.MODEL__SEARCHES:
 				return ((InternalEList<?>)getSearches()).basicRemove(otherEnd, msgs);
+			case TwitterSearchPackage.MODEL__TWITTER_TYPES:
+				return ((InternalEList<?>)getTwitterTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,10 +123,10 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TwitterSearchPackage.TWITTER__OBJECT_TYPES:
-				return getObjectTypes();
-			case TwitterSearchPackage.TWITTER__SEARCHES:
+			case TwitterSearchPackage.MODEL__SEARCHES:
 				return getSearches();
+			case TwitterSearchPackage.MODEL__TWITTER_TYPES:
+				return getTwitterTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -153,13 +140,13 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TwitterSearchPackage.TWITTER__OBJECT_TYPES:
-				getObjectTypes().clear();
-				getObjectTypes().addAll((Collection<? extends TwitterObjectType>)newValue);
-				return;
-			case TwitterSearchPackage.TWITTER__SEARCHES:
+			case TwitterSearchPackage.MODEL__SEARCHES:
 				getSearches().clear();
 				getSearches().addAll((Collection<? extends Search>)newValue);
+				return;
+			case TwitterSearchPackage.MODEL__TWITTER_TYPES:
+				getTwitterTypes().clear();
+				getTwitterTypes().addAll((Collection<? extends TwitterType>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,11 +160,11 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TwitterSearchPackage.TWITTER__OBJECT_TYPES:
-				getObjectTypes().clear();
-				return;
-			case TwitterSearchPackage.TWITTER__SEARCHES:
+			case TwitterSearchPackage.MODEL__SEARCHES:
 				getSearches().clear();
+				return;
+			case TwitterSearchPackage.MODEL__TWITTER_TYPES:
+				getTwitterTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -191,27 +178,12 @@ public class TwitterImpl extends MinimalEObjectImpl.Container implements Twitter
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TwitterSearchPackage.TWITTER__OBJECT_TYPES:
-				return objectTypes != null && !objectTypes.isEmpty();
-			case TwitterSearchPackage.TWITTER__SEARCHES:
+			case TwitterSearchPackage.MODEL__SEARCHES:
 				return searches != null && !searches.isEmpty();
+			case TwitterSearchPackage.MODEL__TWITTER_TYPES:
+				return twitterTypes != null && !twitterTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case TwitterSearchPackage.TWITTER___PERFORM_SEARCH__SEARCH:
-				performSearch((Search)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-} //TwitterImpl
+} //ModelImpl

@@ -30,12 +30,12 @@ public interface FieldExpr extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Field Declaration</em>' reference.
-	 * @see #setFieldDeclaration(FieldDeclaration)
+	 * @see #setFieldDeclaration(TwitterFieldDeclaration)
 	 * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getFieldExpr_FieldDeclaration()
 	 * @model extendedMetaData="name='fields'"
 	 * @generated
 	 */
-	FieldDeclaration getFieldDeclaration();
+	TwitterFieldDeclaration getFieldDeclaration();
 
 	/**
 	 * Sets the value of the '{@link de.hub.modsoft.twittersearch.model.FieldExpr#getFieldDeclaration <em>Field Declaration</em>}' reference.
@@ -45,6 +45,6 @@ public interface FieldExpr extends EObject {
 	 * @see #getFieldDeclaration()
 	 * @generated
 	 */
-	void setFieldDeclaration(FieldDeclaration value);
+	void setFieldDeclaration(TwitterFieldDeclaration value);
 
 } // FieldExpr

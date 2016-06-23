@@ -125,21 +125,35 @@ public class TwitterSearchSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TwitterSearchPackage.FIELD_DECLARATION: {
-				FieldDeclaration fieldDeclaration = (FieldDeclaration)theEObject;
-				T result = caseFieldDeclaration(fieldDeclaration);
+			case TwitterSearchPackage.TWITTER_FIELD_DECLARATION: {
+				TwitterFieldDeclaration twitterFieldDeclaration = (TwitterFieldDeclaration)theEObject;
+				T result = caseTwitterFieldDeclaration(twitterFieldDeclaration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TwitterSearchPackage.TWITTER: {
-				Twitter twitter = (Twitter)theEObject;
-				T result = caseTwitter(twitter);
+			case TwitterSearchPackage.TWITTER_OBJECT_TYPE_DECLARATION: {
+				TwitterObjectTypeDeclaration twitterObjectTypeDeclaration = (TwitterObjectTypeDeclaration)theEObject;
+				T result = caseTwitterObjectTypeDeclaration(twitterObjectTypeDeclaration);
+				if (result == null) result = caseTwitterType(twitterObjectTypeDeclaration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TwitterSearchPackage.TWITTER_OBJECT_TYPE: {
-				TwitterObjectType twitterObjectType = (TwitterObjectType)theEObject;
-				T result = caseTwitterObjectType(twitterObjectType);
+			case TwitterSearchPackage.TWITTER_TYPE: {
+				TwitterType twitterType = (TwitterType)theEObject;
+				T result = caseTwitterType(twitterType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TwitterSearchPackage.TWITTER_PRIMITIVE_TYPE: {
+				TwitterPrimitiveType twitterPrimitiveType = (TwitterPrimitiveType)theEObject;
+				T result = caseTwitterPrimitiveType(twitterPrimitiveType);
+				if (result == null) result = caseTwitterType(twitterPrimitiveType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TwitterSearchPackage.MODEL: {
+				Model model = (Model)theEObject;
+				T result = caseModel(model);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -283,47 +297,77 @@ public class TwitterSearchSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Field Declaration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Twitter Field Declaration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Field Declaration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Twitter Field Declaration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFieldDeclaration(FieldDeclaration object) {
+	public T caseTwitterFieldDeclaration(TwitterFieldDeclaration object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Twitter</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Twitter Object Type Declaration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Twitter</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Twitter Object Type Declaration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTwitter(Twitter object) {
+	public T caseTwitterObjectTypeDeclaration(TwitterObjectTypeDeclaration object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Twitter Object Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Twitter Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Twitter Object Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Twitter Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTwitterObjectType(TwitterObjectType object) {
+	public T caseTwitterType(TwitterType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Twitter Primitive Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Twitter Primitive Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTwitterPrimitiveType(TwitterPrimitiveType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModel(Model object) {
 		return null;
 	}
 

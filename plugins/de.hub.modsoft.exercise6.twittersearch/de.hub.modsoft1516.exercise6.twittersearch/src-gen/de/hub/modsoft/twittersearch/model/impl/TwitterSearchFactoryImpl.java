@@ -64,9 +64,11 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 			case TwitterSearchPackage.KEYWORDS: return createKeywords();
 			case TwitterSearchPackage.LOCATION: return createLocation();
 			case TwitterSearchPackage.TIME: return createTime();
-			case TwitterSearchPackage.FIELD_DECLARATION: return createFieldDeclaration();
-			case TwitterSearchPackage.TWITTER: return createTwitter();
-			case TwitterSearchPackage.TWITTER_OBJECT_TYPE: return createTwitterObjectType();
+			case TwitterSearchPackage.TWITTER_FIELD_DECLARATION: return createTwitterFieldDeclaration();
+			case TwitterSearchPackage.TWITTER_OBJECT_TYPE_DECLARATION: return createTwitterObjectTypeDeclaration();
+			case TwitterSearchPackage.TWITTER_TYPE: return createTwitterType();
+			case TwitterSearchPackage.TWITTER_PRIMITIVE_TYPE: return createTwitterPrimitiveType();
+			case TwitterSearchPackage.MODEL: return createModel();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -185,9 +187,9 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FieldDeclaration createFieldDeclaration() {
-		FieldDeclarationImpl fieldDeclaration = new FieldDeclarationImpl();
-		return fieldDeclaration;
+	public TwitterFieldDeclaration createTwitterFieldDeclaration() {
+		TwitterFieldDeclarationImpl twitterFieldDeclaration = new TwitterFieldDeclarationImpl();
+		return twitterFieldDeclaration;
 	}
 
 	/**
@@ -195,9 +197,9 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Twitter createTwitter() {
-		TwitterImpl twitter = new TwitterImpl();
-		return twitter;
+	public TwitterObjectTypeDeclaration createTwitterObjectTypeDeclaration() {
+		TwitterObjectTypeDeclarationImpl twitterObjectTypeDeclaration = new TwitterObjectTypeDeclarationImpl();
+		return twitterObjectTypeDeclaration;
 	}
 
 	/**
@@ -205,9 +207,29 @@ public class TwitterSearchFactoryImpl extends EFactoryImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TwitterObjectType createTwitterObjectType() {
-		TwitterObjectTypeImpl twitterObjectType = new TwitterObjectTypeImpl();
-		return twitterObjectType;
+	public TwitterType createTwitterType() {
+		TwitterTypeImpl twitterType = new TwitterTypeImpl();
+		return twitterType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TwitterPrimitiveType createTwitterPrimitiveType() {
+		TwitterPrimitiveTypeImpl twitterPrimitiveType = new TwitterPrimitiveTypeImpl();
+		return twitterPrimitiveType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Model createModel() {
+		ModelImpl model = new ModelImpl();
+		return model;
 	}
 
 	/**

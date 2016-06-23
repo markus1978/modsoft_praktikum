@@ -5,7 +5,7 @@ package de.hub.modsoft.twittersearch.model.impl;
 import de.hub.modsoft.twittersearch.model.Condition;
 import de.hub.modsoft.twittersearch.model.Search;
 import de.hub.modsoft.twittersearch.model.SearchOption;
-import de.hub.modsoft.twittersearch.model.TwitterObjectType;
+import de.hub.modsoft.twittersearch.model.TwitterObjectTypeDeclaration;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
 
 import java.util.Collection;
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.hub.modsoft.twittersearch.model.impl.SearchImpl#getConditions <em>Conditions</em>}</li>
  *   <li>{@link de.hub.modsoft.twittersearch.model.impl.SearchImpl#getOptions <em>Options</em>}</li>
- *   <li>{@link de.hub.modsoft.twittersearch.model.impl.SearchImpl#getSearchFor <em>Search For</em>}</li>
+ *   <li>{@link de.hub.modsoft.twittersearch.model.impl.SearchImpl#getSearchType <em>Search Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,14 +61,14 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 	protected EList<SearchOption> options;
 
 	/**
-	 * The cached value of the '{@link #getSearchFor() <em>Search For</em>}' reference.
+	 * The cached value of the '{@link #getSearchType() <em>Search Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSearchFor()
+	 * @see #getSearchType()
 	 * @generated
 	 * @ordered
 	 */
-	protected TwitterObjectType searchFor;
+	protected TwitterObjectTypeDeclaration searchType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,16 +118,16 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TwitterObjectType getSearchFor() {
-		if (searchFor != null && searchFor.eIsProxy()) {
-			InternalEObject oldSearchFor = (InternalEObject)searchFor;
-			searchFor = (TwitterObjectType)eResolveProxy(oldSearchFor);
-			if (searchFor != oldSearchFor) {
+	public TwitterObjectTypeDeclaration getSearchType() {
+		if (searchType != null && searchType.eIsProxy()) {
+			InternalEObject oldSearchType = (InternalEObject)searchType;
+			searchType = (TwitterObjectTypeDeclaration)eResolveProxy(oldSearchType);
+			if (searchType != oldSearchType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TwitterSearchPackage.SEARCH__SEARCH_FOR, oldSearchFor, searchFor));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TwitterSearchPackage.SEARCH__SEARCH_TYPE, oldSearchType, searchType));
 			}
 		}
-		return searchFor;
+		return searchType;
 	}
 
 	/**
@@ -135,8 +135,8 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TwitterObjectType basicGetSearchFor() {
-		return searchFor;
+	public TwitterObjectTypeDeclaration basicGetSearchType() {
+		return searchType;
 	}
 
 	/**
@@ -144,11 +144,11 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSearchFor(TwitterObjectType newSearchFor) {
-		TwitterObjectType oldSearchFor = searchFor;
-		searchFor = newSearchFor;
+	public void setSearchType(TwitterObjectTypeDeclaration newSearchType) {
+		TwitterObjectTypeDeclaration oldSearchType = searchType;
+		searchType = newSearchType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.SEARCH__SEARCH_FOR, oldSearchFor, searchFor));
+			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.SEARCH__SEARCH_TYPE, oldSearchType, searchType));
 	}
 
 	/**
@@ -179,9 +179,9 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 				return getConditions();
 			case TwitterSearchPackage.SEARCH__OPTIONS:
 				return getOptions();
-			case TwitterSearchPackage.SEARCH__SEARCH_FOR:
-				if (resolve) return getSearchFor();
-				return basicGetSearchFor();
+			case TwitterSearchPackage.SEARCH__SEARCH_TYPE:
+				if (resolve) return getSearchType();
+				return basicGetSearchType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,8 +203,8 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 				getOptions().clear();
 				getOptions().addAll((Collection<? extends SearchOption>)newValue);
 				return;
-			case TwitterSearchPackage.SEARCH__SEARCH_FOR:
-				setSearchFor((TwitterObjectType)newValue);
+			case TwitterSearchPackage.SEARCH__SEARCH_TYPE:
+				setSearchType((TwitterObjectTypeDeclaration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,8 +224,8 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 			case TwitterSearchPackage.SEARCH__OPTIONS:
 				getOptions().clear();
 				return;
-			case TwitterSearchPackage.SEARCH__SEARCH_FOR:
-				setSearchFor((TwitterObjectType)null);
+			case TwitterSearchPackage.SEARCH__SEARCH_TYPE:
+				setSearchType((TwitterObjectTypeDeclaration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,8 +243,8 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 				return conditions != null && !conditions.isEmpty();
 			case TwitterSearchPackage.SEARCH__OPTIONS:
 				return options != null && !options.isEmpty();
-			case TwitterSearchPackage.SEARCH__SEARCH_FOR:
-				return searchFor != null;
+			case TwitterSearchPackage.SEARCH__SEARCH_TYPE:
+				return searchType != null;
 		}
 		return super.eIsSet(featureID);
 	}
