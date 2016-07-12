@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.hub.modsoft.twittersearch.model.Condition#getField <em>Field</em>}</li>
+ *   <li>{@link de.hub.modsoft.twittersearch.model.Condition#getFieldDeclaration <em>Field Declaration</em>}</li>
  * </ul>
  *
  * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getCondition()
@@ -22,29 +22,29 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Condition extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Field</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Field Declaration</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Field</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Field Declaration</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Field</em>' containment reference.
-	 * @see #setField(FieldExpr)
-	 * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getCondition_Field()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Field Declaration</em>' reference.
+	 * @see #setFieldDeclaration(TwitterFieldDeclaration)
+	 * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getCondition_FieldDeclaration()
+	 * @model extendedMetaData="name='fields'"
 	 * @generated
 	 */
-	FieldExpr getField();
+	TwitterFieldDeclaration getFieldDeclaration();
 
 	/**
-	 * Sets the value of the '{@link de.hub.modsoft.twittersearch.model.Condition#getField <em>Field</em>}' containment reference.
+	 * Sets the value of the '{@link de.hub.modsoft.twittersearch.model.Condition#getFieldDeclaration <em>Field Declaration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Field</em>' containment reference.
-	 * @see #getField()
+	 * @param value the new value of the '<em>Field Declaration</em>' reference.
+	 * @see #getFieldDeclaration()
 	 * @generated
 	 */
-	void setField(FieldExpr value);
+	void setFieldDeclaration(TwitterFieldDeclaration value);
 
 } // Condition

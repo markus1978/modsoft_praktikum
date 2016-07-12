@@ -6,15 +6,15 @@ package de.hub.modsoft.twittersearch.xtext.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import de.hub.modsoft.twittersearch.model.BooleanCondition;
-import de.hub.modsoft.twittersearch.model.FieldDeclaration;
-import de.hub.modsoft.twittersearch.model.FieldExpr;
 import de.hub.modsoft.twittersearch.model.IntCondition;
 import de.hub.modsoft.twittersearch.model.Keywords;
 import de.hub.modsoft.twittersearch.model.Location;
+import de.hub.modsoft.twittersearch.model.Model;
 import de.hub.modsoft.twittersearch.model.Search;
 import de.hub.modsoft.twittersearch.model.Time;
-import de.hub.modsoft.twittersearch.model.Twitter;
-import de.hub.modsoft.twittersearch.model.TwitterObjectType;
+import de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration;
+import de.hub.modsoft.twittersearch.model.TwitterObjectTypeDeclaration;
+import de.hub.modsoft.twittersearch.model.TwitterPrimitiveTypeDeclaration;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
 import de.hub.modsoft.twittersearch.xtext.services.TwitterSearchGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -41,12 +41,6 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 			case TwitterSearchPackage.BOOLEAN_CONDITION:
 				sequence_BooleanCondition(context, (BooleanCondition) semanticObject); 
 				return; 
-			case TwitterSearchPackage.FIELD_DECLARATION:
-				sequence_FieldDclr(context, (FieldDeclaration) semanticObject); 
-				return; 
-			case TwitterSearchPackage.FIELD_EXPR:
-				sequence_FieldExpression(context, (FieldExpr) semanticObject); 
-				return; 
 			case TwitterSearchPackage.INT_CONDITION:
 				sequence_IntCondition(context, (IntCondition) semanticObject); 
 				return; 
@@ -56,17 +50,23 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 			case TwitterSearchPackage.LOCATION:
 				sequence_Location(context, (Location) semanticObject); 
 				return; 
+			case TwitterSearchPackage.MODEL:
+				sequence_Model(context, (Model) semanticObject); 
+				return; 
 			case TwitterSearchPackage.SEARCH:
 				sequence_Search(context, (Search) semanticObject); 
 				return; 
 			case TwitterSearchPackage.TIME:
 				sequence_Time(context, (Time) semanticObject); 
 				return; 
-			case TwitterSearchPackage.TWITTER:
-				sequence_Model(context, (Twitter) semanticObject); 
+			case TwitterSearchPackage.TWITTER_FIELD_DECLARATION:
+				sequence_FieldDclr(context, (TwitterFieldDeclaration) semanticObject); 
 				return; 
-			case TwitterSearchPackage.TWITTER_OBJECT_TYPE:
-				sequence_ObjectTypeDclr(context, (TwitterObjectType) semanticObject); 
+			case TwitterSearchPackage.TWITTER_OBJECT_TYPE_DECLARATION:
+				sequence_TwitterObjectType(context, (TwitterObjectTypeDeclaration) semanticObject); 
+				return; 
+			case TwitterSearchPackage.TWITTER_PRIMITIVE_TYPE_DECLARATION:
+				sequence_TwitterPrimitiveType(context, (TwitterPrimitiveTypeDeclaration) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -74,53 +74,37 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 	
 	/**
 	 * Constraint:
-	 *     field=FieldExpression
+	 *     fieldDeclaration=[TwitterFieldDeclaration|ID]
 	 */
 	protected void sequence_BooleanCondition(EObject context, BooleanCondition semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD_DECLARATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD_DECLARATION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getBooleanConditionAccess().getFieldFieldExpressionParserRuleCall_0(), semanticObject.getField());
+		feeder.accept(grammarAccess.getBooleanConditionAccess().getFieldDeclarationTwitterFieldDeclarationIDTerminalRuleCall_0_1(), semanticObject.getFieldDeclaration());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID fieldType=FieldType)
+	 *     (name=ID type=[TwitterTypeDeclaration|ID])
 	 */
-	protected void sequence_FieldDclr(EObject context, FieldDeclaration semanticObject) {
+	protected void sequence_FieldDclr(EObject context, TwitterFieldDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     fieldDeclaration=[FieldDeclaration|ID]
-	 */
-	protected void sequence_FieldExpression(EObject context, FieldExpr semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.FIELD_EXPR__FIELD_DECLARATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.FIELD_EXPR__FIELD_DECLARATION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getFieldExpressionAccess().getFieldDeclarationFieldDeclarationIDTerminalRuleCall_0_1(), semanticObject.getFieldDeclaration());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (field=FieldExpression operator=IntOperators operand=INT)
+	 *     (fieldDeclaration=[TwitterFieldDeclaration|ID] operator=IntOperators operand=INT)
 	 */
 	protected void sequence_IntCondition(EObject context, IntCondition semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD));
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD_DECLARATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.CONDITION__FIELD_DECLARATION));
 			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.INT_CONDITION__OPERAND) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.INT_CONDITION__OPERAND));
 			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.INT_CONDITION__OPERATOR) == ValueTransient.YES)
@@ -128,7 +112,7 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getIntConditionAccess().getFieldFieldExpressionParserRuleCall_0_0(), semanticObject.getField());
+		feeder.accept(grammarAccess.getIntConditionAccess().getFieldDeclarationTwitterFieldDeclarationIDTerminalRuleCall_0_0_1(), semanticObject.getFieldDeclaration());
 		feeder.accept(grammarAccess.getIntConditionAccess().getOperatorIntOperatorsEnumRuleCall_1_0(), semanticObject.getOperator());
 		feeder.accept(grammarAccess.getIntConditionAccess().getOperandINTTerminalRuleCall_2_0(), semanticObject.getOperand());
 		feeder.finish();
@@ -171,25 +155,16 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 	
 	/**
 	 * Constraint:
-	 *     (objectTypes+=ObjectTypeDclr* searches+=Search*)
+	 *     (twitterTypes+=TwitterType* searches+=Search*)
 	 */
-	protected void sequence_Model(EObject context, Twitter semanticObject) {
+	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID fields+=FieldDclr*)
-	 */
-	protected void sequence_ObjectTypeDclr(EObject context, TwitterObjectType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (searchFor=[TwitterObjectType|ID] options+=Option* (conditions+=Condition conditions+=Condition*)?)
+	 *     (searchType=[TwitterObjectTypeDeclaration|ID] options+=Option* (conditions+=Condition conditions+=Condition*)?)
 	 */
 	protected void sequence_Search(EObject context, Search semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -208,6 +183,31 @@ public abstract class AbstractTwitterSearchSemanticSequencer extends AbstractDel
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getTimeAccess().getBeforeDATEParserRuleCall_1_0(), semanticObject.getBefore());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID fields+=FieldDclr*)
+	 */
+	protected void sequence_TwitterObjectType(EObject context, TwitterObjectTypeDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_TwitterPrimitiveType(EObject context, TwitterPrimitiveTypeDeclaration semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, TwitterSearchPackage.Literals.TWITTER_TYPE_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TwitterSearchPackage.Literals.TWITTER_TYPE_DECLARATION__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTwitterPrimitiveTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 }

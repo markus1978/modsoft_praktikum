@@ -3,11 +3,10 @@
 package de.hub.modsoft.twittersearch.model.impl;
 
 import de.hub.modsoft.twittersearch.model.Condition;
-import de.hub.modsoft.twittersearch.model.FieldExpr;
+import de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -23,21 +22,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.hub.modsoft.twittersearch.model.impl.ConditionImpl#getField <em>Field</em>}</li>
+ *   <li>{@link de.hub.modsoft.twittersearch.model.impl.ConditionImpl#getFieldDeclaration <em>Field Declaration</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class ConditionImpl extends MinimalEObjectImpl.Container implements Condition {
 	/**
-	 * The cached value of the '{@link #getField() <em>Field</em>}' containment reference.
+	 * The cached value of the '{@link #getFieldDeclaration() <em>Field Declaration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getField()
+	 * @see #getFieldDeclaration()
 	 * @generated
 	 * @ordered
 	 */
-	protected FieldExpr field;
+	protected TwitterFieldDeclaration fieldDeclaration;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,8 +62,16 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FieldExpr getField() {
-		return field;
+	public TwitterFieldDeclaration getFieldDeclaration() {
+		if (fieldDeclaration != null && fieldDeclaration.eIsProxy()) {
+			InternalEObject oldFieldDeclaration = (InternalEObject)fieldDeclaration;
+			fieldDeclaration = (TwitterFieldDeclaration)eResolveProxy(oldFieldDeclaration);
+			if (fieldDeclaration != oldFieldDeclaration) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TwitterSearchPackage.CONDITION__FIELD_DECLARATION, oldFieldDeclaration, fieldDeclaration));
+			}
+		}
+		return fieldDeclaration;
 	}
 
 	/**
@@ -72,14 +79,8 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetField(FieldExpr newField, NotificationChain msgs) {
-		FieldExpr oldField = field;
-		field = newField;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.CONDITION__FIELD, oldField, newField);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public TwitterFieldDeclaration basicGetFieldDeclaration() {
+		return fieldDeclaration;
 	}
 
 	/**
@@ -87,32 +88,11 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setField(FieldExpr newField) {
-		if (newField != field) {
-			NotificationChain msgs = null;
-			if (field != null)
-				msgs = ((InternalEObject)field).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TwitterSearchPackage.CONDITION__FIELD, null, msgs);
-			if (newField != null)
-				msgs = ((InternalEObject)newField).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TwitterSearchPackage.CONDITION__FIELD, null, msgs);
-			msgs = basicSetField(newField, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.CONDITION__FIELD, newField, newField));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case TwitterSearchPackage.CONDITION__FIELD:
-				return basicSetField(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setFieldDeclaration(TwitterFieldDeclaration newFieldDeclaration) {
+		TwitterFieldDeclaration oldFieldDeclaration = fieldDeclaration;
+		fieldDeclaration = newFieldDeclaration;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TwitterSearchPackage.CONDITION__FIELD_DECLARATION, oldFieldDeclaration, fieldDeclaration));
 	}
 
 	/**
@@ -123,8 +103,9 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TwitterSearchPackage.CONDITION__FIELD:
-				return getField();
+			case TwitterSearchPackage.CONDITION__FIELD_DECLARATION:
+				if (resolve) return getFieldDeclaration();
+				return basicGetFieldDeclaration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -137,8 +118,8 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TwitterSearchPackage.CONDITION__FIELD:
-				setField((FieldExpr)newValue);
+			case TwitterSearchPackage.CONDITION__FIELD_DECLARATION:
+				setFieldDeclaration((TwitterFieldDeclaration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,8 +133,8 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TwitterSearchPackage.CONDITION__FIELD:
-				setField((FieldExpr)null);
+			case TwitterSearchPackage.CONDITION__FIELD_DECLARATION:
+				setFieldDeclaration((TwitterFieldDeclaration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -167,8 +148,8 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TwitterSearchPackage.CONDITION__FIELD:
-				return field != null;
+			case TwitterSearchPackage.CONDITION__FIELD_DECLARATION:
+				return fieldDeclaration != null;
 		}
 		return super.eIsSet(featureID);
 	}

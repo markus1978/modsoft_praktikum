@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.hub.modsoft.twittersearch.model.Search#getConditions <em>Conditions</em>}</li>
  *   <li>{@link de.hub.modsoft.twittersearch.model.Search#getOptions <em>Options</em>}</li>
- *   <li>{@link de.hub.modsoft.twittersearch.model.Search#getSearchFor <em>Search For</em>}</li>
+ *   <li>{@link de.hub.modsoft.twittersearch.model.Search#getSearchType <em>Search Type</em>}</li>
  * </ul>
  *
  * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getSearch()
@@ -58,29 +58,29 @@ public interface Search extends EObject {
 	EList<SearchOption> getOptions();
 
 	/**
-	 * Returns the value of the '<em><b>Search For</b></em>' reference.
+	 * Returns the value of the '<em><b>Search Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Search For</em>' reference isn't clear,
+	 * If the meaning of the '<em>Search Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Search For</em>' reference.
-	 * @see #setSearchFor(TwitterObjectType)
-	 * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getSearch_SearchFor()
+	 * @return the value of the '<em>Search Type</em>' reference.
+	 * @see #setSearchType(TwitterObjectTypeDeclaration)
+	 * @see de.hub.modsoft.twittersearch.model.TwitterSearchPackage#getSearch_SearchType()
 	 * @model extendedMetaData="name='fields'"
 	 * @generated
 	 */
-	TwitterObjectType getSearchFor();
+	TwitterObjectTypeDeclaration getSearchType();
 
 	/**
-	 * Sets the value of the '{@link de.hub.modsoft.twittersearch.model.Search#getSearchFor <em>Search For</em>}' reference.
+	 * Sets the value of the '{@link de.hub.modsoft.twittersearch.model.Search#getSearchType <em>Search Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Search For</em>' reference.
-	 * @see #getSearchFor()
+	 * @param value the new value of the '<em>Search Type</em>' reference.
+	 * @see #getSearchType()
 	 * @generated
 	 */
-	void setSearchFor(TwitterObjectType value);
+	void setSearchType(TwitterObjectTypeDeclaration value);
 
 } // Search

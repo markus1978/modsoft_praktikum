@@ -81,95 +81,186 @@ ruleModel returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getModelAccess().getTwitterAction_0(),
+            grammarAccess.getModelAccess().getModelAction_0(),
             $current);
     }
-)	otherlv_1='configuration' 
+)	otherlv_1='twitter' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getModelAccess().getConfigurationKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getModelAccess().getTwitterKeyword_1());
     }
-	otherlv_2=':' 
+	otherlv_2='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getModelAccess().getColonKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getModelAccess().getLeftCurlyBracketKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getObjectTypesObjectTypeDclrParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getTwitterTypesTwitterTypeParserRuleCall_3_0()); 
 	    }
-		lv_objectTypes_3_0=ruleObjectTypeDclr		{
+		lv_twitterTypes_3_0=ruleTwitterType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
        		add(
        			$current, 
-       			"objectTypes",
-        		lv_objectTypes_3_0, 
-        		"ObjectTypeDclr");
+       			"twitterTypes",
+        		lv_twitterTypes_3_0, 
+        		"TwitterType");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_4='searches' 
+)*	otherlv_4='}' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getModelAccess().getSearchesKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_4());
     }
-	otherlv_5=':' 
+	otherlv_5='searches' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getModelAccess().getColonKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getModelAccess().getSearchesKeyword_5());
+    }
+	otherlv_6='{' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getModelAccess().getLeftCurlyBracketKeyword_6());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getSearchesSearchParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getSearchesSearchParserRuleCall_7_0()); 
 	    }
-		lv_searches_6_0=ruleSearch		{
+		lv_searches_7_0=ruleSearch		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
        		add(
        			$current, 
        			"searches",
-        		lv_searches_6_0, 
+        		lv_searches_7_0, 
         		"Search");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*)
+)*	otherlv_8='}' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_8());
+    }
+)
 ;
 
 
 
 
 
-// Entry rule entryRuleObjectTypeDclr
-entryRuleObjectTypeDclr returns [EObject current=null] 
+// Entry rule entryRuleTwitterType
+entryRuleTwitterType returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getObjectTypeDclrRule()); }
-	 iv_ruleObjectTypeDclr=ruleObjectTypeDclr 
-	 { $current=$iv_ruleObjectTypeDclr.current; } 
+	{ newCompositeNode(grammarAccess.getTwitterTypeRule()); }
+	 iv_ruleTwitterType=ruleTwitterType 
+	 { $current=$iv_ruleTwitterType.current; } 
 	 EOF 
 ;
 
-// Rule ObjectTypeDclr
-ruleObjectTypeDclr returns [EObject current=null] 
+// Rule TwitterType
+ruleTwitterType returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='objecttype' 
+(
+    { 
+        newCompositeNode(grammarAccess.getTwitterTypeAccess().getTwitterObjectTypeParserRuleCall_0()); 
+    }
+    this_TwitterObjectType_0=ruleTwitterObjectType
+    { 
+        $current = $this_TwitterObjectType_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getTwitterTypeAccess().getTwitterPrimitiveTypeParserRuleCall_1()); 
+    }
+    this_TwitterPrimitiveType_1=ruleTwitterPrimitiveType
+    { 
+        $current = $this_TwitterPrimitiveType_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleTwitterPrimitiveType
+entryRuleTwitterPrimitiveType returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTwitterPrimitiveTypeRule()); }
+	 iv_ruleTwitterPrimitiveType=ruleTwitterPrimitiveType 
+	 { $current=$iv_ruleTwitterPrimitiveType.current; } 
+	 EOF 
+;
+
+// Rule TwitterPrimitiveType
+ruleTwitterPrimitiveType returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='primitive' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getObjectTypeDclrAccess().getObjecttypeKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getTwitterPrimitiveTypeAccess().getPrimitiveKeyword_0());
     }
 (
 (
 		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getObjectTypeDclrAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getTwitterPrimitiveTypeAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getObjectTypeDclrRule());
+	            $current = createModelElement(grammarAccess.getTwitterPrimitiveTypeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleTwitterObjectType
+entryRuleTwitterObjectType returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTwitterObjectTypeRule()); }
+	 iv_ruleTwitterObjectType=ruleTwitterObjectType 
+	 { $current=$iv_ruleTwitterObjectType.current; } 
+	 EOF 
+;
+
+// Rule TwitterObjectType
+ruleTwitterObjectType returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='object' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getTwitterObjectTypeAccess().getObjectKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getTwitterObjectTypeAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTwitterObjectTypeRule());
 	        }
        		setWithLastConsumed(
        			$current, 
@@ -181,16 +272,16 @@ ruleObjectTypeDclr returns [EObject current=null]
 )
 )	otherlv_2='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getObjectTypeDclrAccess().getLeftCurlyBracketKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getTwitterObjectTypeAccess().getLeftCurlyBracketKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getObjectTypeDclrAccess().getFieldsFieldDclrParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getTwitterObjectTypeAccess().getFieldsFieldDclrParserRuleCall_3_0()); 
 	    }
 		lv_fields_3_0=ruleFieldDclr		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getObjectTypeDclrRule());
+	            $current = createModelElementForParent(grammarAccess.getTwitterObjectTypeRule());
 	        }
        		add(
        			$current, 
@@ -203,7 +294,7 @@ ruleObjectTypeDclr returns [EObject current=null]
 )
 )*	otherlv_4='}' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getObjectTypeDclrAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getTwitterObjectTypeAccess().getRightCurlyBracketKeyword_4());
     }
 )
 ;
@@ -254,20 +345,15 @@ ruleFieldDclr returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getFieldDclrAccess().getFieldTypeFieldTypeEnumRuleCall_3_0()); 
-	    }
-		lv_fieldType_3_0=ruleFieldType		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getFieldDclrRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getFieldDclrRule());
 	        }
-       		set(
-       			$current, 
-       			"fieldType",
-        		lv_fieldType_3_0, 
-        		"FieldType");
-	        afterParserOrEnumRuleCall();
-	    }
+        }
+	otherlv_3=RULE_ID
+	{
+		newLeafNode(otherlv_3, grammarAccess.getFieldDclrAccess().getTypeTwitterTypeDeclarationCrossReference_3_0()); 
+	}
 
 )
 ))
@@ -314,7 +400,7 @@ ruleSearch returns [EObject current=null]
         }
 	otherlv_3=RULE_ID
 	{
-		newLeafNode(otherlv_3, grammarAccess.getSearchAccess().getSearchForTwitterObjectTypeCrossReference_3_0()); 
+		newLeafNode(otherlv_3, grammarAccess.getSearchAccess().getSearchTypeTwitterObjectTypeDeclarationCrossReference_3_0()); 
 	}
 
 )
@@ -722,20 +808,15 @@ ruleIntCondition returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		{ 
-	        newCompositeNode(grammarAccess.getIntConditionAccess().getFieldFieldExpressionParserRuleCall_0_0()); 
-	    }
-		lv_field_0_0=ruleFieldExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getIntConditionRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getIntConditionRule());
 	        }
-       		set(
-       			$current, 
-       			"field",
-        		lv_field_0_0, 
-        		"FieldExpression");
-	        afterParserOrEnumRuleCall();
-	    }
+        }
+	otherlv_0=RULE_ID
+	{
+		newLeafNode(otherlv_0, grammarAccess.getIntConditionAccess().getFieldDeclarationTwitterFieldDeclarationCrossReference_0_0()); 
+	}
 
 )
 )(
@@ -797,53 +878,14 @@ ruleBooleanCondition returns [EObject current=null]
     @after { leaveRule(); }:
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getBooleanConditionAccess().getFieldFieldExpressionParserRuleCall_0()); 
-	    }
-		lv_field_0_0=ruleFieldExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBooleanConditionRule());
-	        }
-       		set(
-       			$current, 
-       			"field",
-        		lv_field_0_0, 
-        		"FieldExpression");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-;
-
-
-
-
-
-// Entry rule entryRuleFieldExpression
-entryRuleFieldExpression returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getFieldExpressionRule()); }
-	 iv_ruleFieldExpression=ruleFieldExpression 
-	 { $current=$iv_ruleFieldExpression.current; } 
-	 EOF 
-;
-
-// Rule FieldExpression
-ruleFieldExpression returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-(
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFieldExpressionRule());
+	            $current = createModelElement(grammarAccess.getBooleanConditionRule());
 	        }
         }
 	otherlv_0=RULE_ID
 	{
-		newLeafNode(otherlv_0, grammarAccess.getFieldExpressionAccess().getFieldDeclarationFieldDeclarationCrossReference_0()); 
+		newLeafNode(otherlv_0, grammarAccess.getBooleanConditionAccess().getFieldDeclarationTwitterFieldDeclarationCrossReference_0()); 
 	}
 
 )
@@ -952,25 +994,6 @@ ruleDATE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     ;
 
 
-
-
-
-// Rule FieldType
-ruleFieldType returns [Enumerator current=null] 
-    @init { enterRule(); }
-    @after { leaveRule(); }:
-((	enumLiteral_0='BOOLEAN' 
-	{
-        $current = grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_0()); 
-    }
-)
-    |(	enumLiteral_1='INT' 
-	{
-        $current = grammarAccess.getFieldTypeAccess().getIntEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getFieldTypeAccess().getIntEnumLiteralDeclaration_1()); 
-    }
-));
 
 
 

@@ -5,25 +5,25 @@ package de.hub.modsoft.twittersearch.model.impl;
 import de.hub.modsoft.twittersearch.model.BooleanCondition;
 import de.hub.modsoft.twittersearch.model.Condition;
 import de.hub.modsoft.twittersearch.model.DistanceUnit;
-import de.hub.modsoft.twittersearch.model.FieldDeclaration;
-import de.hub.modsoft.twittersearch.model.FieldExpr;
 import de.hub.modsoft.twittersearch.model.FieldTypes;
 import de.hub.modsoft.twittersearch.model.IntCondition;
 import de.hub.modsoft.twittersearch.model.IntOperators;
 import de.hub.modsoft.twittersearch.model.Keywords;
 import de.hub.modsoft.twittersearch.model.Location;
+import de.hub.modsoft.twittersearch.model.Model;
 import de.hub.modsoft.twittersearch.model.Search;
 import de.hub.modsoft.twittersearch.model.SearchOption;
 import de.hub.modsoft.twittersearch.model.Time;
-import de.hub.modsoft.twittersearch.model.Twitter;
-import de.hub.modsoft.twittersearch.model.TwitterObjectType;
+import de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration;
+import de.hub.modsoft.twittersearch.model.TwitterObjectTypeDeclaration;
+import de.hub.modsoft.twittersearch.model.TwitterPrimitiveTypeDeclaration;
 import de.hub.modsoft.twittersearch.model.TwitterSearchFactory;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
+import de.hub.modsoft.twittersearch.model.TwitterTypeDeclaration;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -42,13 +42,6 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * @generated
 	 */
 	private EClass searchEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fieldExprEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,21 +97,35 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass fieldDeclarationEClass = null;
+	private EClass twitterFieldDeclarationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass twitterEClass = null;
+	private EClass twitterObjectTypeDeclarationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass twitterObjectTypeEClass = null;
+	private EClass twitterTypeDeclarationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass twitterPrimitiveTypeDeclarationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,26 +241,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSearch_SearchFor() {
+	public EReference getSearch_SearchType() {
 		return (EReference)searchEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFieldExpr() {
-		return fieldExprEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFieldExpr_FieldDeclaration() {
-		return (EReference)fieldExprEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -270,7 +259,7 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCondition_Field() {
+	public EReference getCondition_FieldDeclaration() {
 		return (EReference)conditionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -405,8 +394,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFieldDeclaration() {
-		return fieldDeclarationEClass;
+	public EClass getTwitterFieldDeclaration() {
+		return twitterFieldDeclarationEClass;
 	}
 
 	/**
@@ -414,8 +403,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFieldDeclaration_FieldType() {
-		return (EAttribute)fieldDeclarationEClass.getEStructuralFeatures().get(0);
+	public EReference getTwitterFieldDeclaration_ObjectType() {
+		return (EReference)twitterFieldDeclarationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -423,8 +412,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFieldDeclaration_Name() {
-		return (EAttribute)fieldDeclarationEClass.getEStructuralFeatures().get(1);
+	public EReference getTwitterFieldDeclaration_Type() {
+		return (EReference)twitterFieldDeclarationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -432,8 +421,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFieldDeclaration_ObjectType() {
-		return (EReference)fieldDeclarationEClass.getEStructuralFeatures().get(2);
+	public EAttribute getTwitterFieldDeclaration_Name() {
+		return (EAttribute)twitterFieldDeclarationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -441,8 +430,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTwitter() {
-		return twitterEClass;
+	public EClass getTwitterObjectTypeDeclaration() {
+		return twitterObjectTypeDeclarationEClass;
 	}
 
 	/**
@@ -450,8 +439,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTwitter_ObjectTypes() {
-		return (EReference)twitterEClass.getEStructuralFeatures().get(0);
+	public EReference getTwitterObjectTypeDeclaration_Fields() {
+		return (EReference)twitterObjectTypeDeclarationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -459,8 +448,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTwitter_Searches() {
-		return (EReference)twitterEClass.getEStructuralFeatures().get(1);
+	public EClass getTwitterTypeDeclaration() {
+		return twitterTypeDeclarationEClass;
 	}
 
 	/**
@@ -468,8 +457,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTwitter__PerformSearch__Search() {
-		return twitterEClass.getEOperations().get(0);
+	public EAttribute getTwitterTypeDeclaration_Name() {
+		return (EAttribute)twitterTypeDeclarationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -477,8 +466,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTwitterObjectType() {
-		return twitterObjectTypeEClass;
+	public EClass getTwitterPrimitiveTypeDeclaration() {
+		return twitterPrimitiveTypeDeclarationEClass;
 	}
 
 	/**
@@ -486,8 +475,8 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTwitterObjectType_Name() {
-		return (EAttribute)twitterObjectTypeEClass.getEStructuralFeatures().get(0);
+	public EClass getModel() {
+		return modelEClass;
 	}
 
 	/**
@@ -495,8 +484,17 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTwitterObjectType_Fields() {
-		return (EReference)twitterObjectTypeEClass.getEStructuralFeatures().get(1);
+	public EReference getModel_Searches() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModel_TwitterTypes() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -557,13 +555,10 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 		searchEClass = createEClass(SEARCH);
 		createEReference(searchEClass, SEARCH__CONDITIONS);
 		createEReference(searchEClass, SEARCH__OPTIONS);
-		createEReference(searchEClass, SEARCH__SEARCH_FOR);
-
-		fieldExprEClass = createEClass(FIELD_EXPR);
-		createEReference(fieldExprEClass, FIELD_EXPR__FIELD_DECLARATION);
+		createEReference(searchEClass, SEARCH__SEARCH_TYPE);
 
 		conditionEClass = createEClass(CONDITION);
-		createEReference(conditionEClass, CONDITION__FIELD);
+		createEReference(conditionEClass, CONDITION__FIELD_DECLARATION);
 
 		booleanConditionEClass = createEClass(BOOLEAN_CONDITION);
 
@@ -585,19 +580,22 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 		timeEClass = createEClass(TIME);
 		createEAttribute(timeEClass, TIME__BEFORE);
 
-		fieldDeclarationEClass = createEClass(FIELD_DECLARATION);
-		createEAttribute(fieldDeclarationEClass, FIELD_DECLARATION__FIELD_TYPE);
-		createEAttribute(fieldDeclarationEClass, FIELD_DECLARATION__NAME);
-		createEReference(fieldDeclarationEClass, FIELD_DECLARATION__OBJECT_TYPE);
+		twitterFieldDeclarationEClass = createEClass(TWITTER_FIELD_DECLARATION);
+		createEReference(twitterFieldDeclarationEClass, TWITTER_FIELD_DECLARATION__OBJECT_TYPE);
+		createEReference(twitterFieldDeclarationEClass, TWITTER_FIELD_DECLARATION__TYPE);
+		createEAttribute(twitterFieldDeclarationEClass, TWITTER_FIELD_DECLARATION__NAME);
 
-		twitterEClass = createEClass(TWITTER);
-		createEReference(twitterEClass, TWITTER__OBJECT_TYPES);
-		createEReference(twitterEClass, TWITTER__SEARCHES);
-		createEOperation(twitterEClass, TWITTER___PERFORM_SEARCH__SEARCH);
+		twitterObjectTypeDeclarationEClass = createEClass(TWITTER_OBJECT_TYPE_DECLARATION);
+		createEReference(twitterObjectTypeDeclarationEClass, TWITTER_OBJECT_TYPE_DECLARATION__FIELDS);
 
-		twitterObjectTypeEClass = createEClass(TWITTER_OBJECT_TYPE);
-		createEAttribute(twitterObjectTypeEClass, TWITTER_OBJECT_TYPE__NAME);
-		createEReference(twitterObjectTypeEClass, TWITTER_OBJECT_TYPE__FIELDS);
+		twitterTypeDeclarationEClass = createEClass(TWITTER_TYPE_DECLARATION);
+		createEAttribute(twitterTypeDeclarationEClass, TWITTER_TYPE_DECLARATION__NAME);
+
+		twitterPrimitiveTypeDeclarationEClass = createEClass(TWITTER_PRIMITIVE_TYPE_DECLARATION);
+
+		modelEClass = createEClass(MODEL);
+		createEReference(modelEClass, MODEL__SEARCHES);
+		createEReference(modelEClass, MODEL__TWITTER_TYPES);
 
 		// Create enums
 		distanceUnitEEnum = createEEnum(DISTANCE_UNIT);
@@ -638,18 +636,17 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 		keywordsEClass.getESuperTypes().add(this.getSearchOption());
 		locationEClass.getESuperTypes().add(this.getSearchOption());
 		timeEClass.getESuperTypes().add(this.getSearchOption());
+		twitterObjectTypeDeclarationEClass.getESuperTypes().add(this.getTwitterTypeDeclaration());
+		twitterPrimitiveTypeDeclarationEClass.getESuperTypes().add(this.getTwitterTypeDeclaration());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(searchEClass, Search.class, "Search", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSearch_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSearch_Options(), this.getSearchOption(), null, "options", null, 0, -1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSearch_SearchFor(), this.getTwitterObjectType(), null, "searchFor", null, 0, 1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(fieldExprEClass, FieldExpr.class, "FieldExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFieldExpr_FieldDeclaration(), this.getFieldDeclaration(), null, "fieldDeclaration", null, 0, 1, FieldExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSearch_SearchType(), this.getTwitterObjectTypeDeclaration(), null, "searchType", null, 0, 1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionEClass, Condition.class, "Condition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCondition_Field(), this.getFieldExpr(), null, "field", null, 1, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCondition_FieldDeclaration(), this.getTwitterFieldDeclaration(), null, "fieldDeclaration", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(booleanConditionEClass, BooleanCondition.class, "BooleanCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -671,21 +668,22 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 		initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTime_Before(), ecorePackage.getEDate(), "before", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(fieldDeclarationEClass, FieldDeclaration.class, "FieldDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFieldDeclaration_FieldType(), this.getFieldTypes(), "fieldType", null, 0, 1, FieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFieldDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, FieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFieldDeclaration_ObjectType(), this.getTwitterObjectType(), this.getTwitterObjectType_Fields(), "objectType", null, 0, 1, FieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(twitterFieldDeclarationEClass, TwitterFieldDeclaration.class, "TwitterFieldDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTwitterFieldDeclaration_ObjectType(), this.getTwitterObjectTypeDeclaration(), this.getTwitterObjectTypeDeclaration_Fields(), "objectType", null, 0, 1, TwitterFieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTwitterFieldDeclaration_Type(), this.getTwitterTypeDeclaration(), null, "type", null, 0, 1, TwitterFieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTwitterFieldDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, TwitterFieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(twitterEClass, Twitter.class, "Twitter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTwitter_ObjectTypes(), this.getTwitterObjectType(), null, "objectTypes", null, 0, -1, Twitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTwitter_Searches(), this.getSearch(), null, "searches", null, 0, -1, Twitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(twitterObjectTypeDeclarationEClass, TwitterObjectTypeDeclaration.class, "TwitterObjectTypeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTwitterObjectTypeDeclaration_Fields(), this.getTwitterFieldDeclaration(), this.getTwitterFieldDeclaration_ObjectType(), "fields", null, 0, -1, TwitterObjectTypeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getTwitter__PerformSearch__Search(), null, "performSearch", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSearch(), "search", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(twitterTypeDeclarationEClass, TwitterTypeDeclaration.class, "TwitterTypeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTwitterTypeDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, TwitterTypeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(twitterObjectTypeEClass, TwitterObjectType.class, "TwitterObjectType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTwitterObjectType_Name(), ecorePackage.getEString(), "name", null, 0, 1, TwitterObjectType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTwitterObjectType_Fields(), this.getFieldDeclaration(), this.getFieldDeclaration_ObjectType(), "fields", null, 0, -1, TwitterObjectType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(twitterPrimitiveTypeDeclarationEClass, TwitterPrimitiveTypeDeclaration.class, "TwitterPrimitiveTypeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModel_Searches(), this.getSearch(), null, "searches", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_TwitterTypes(), this.getTwitterTypeDeclaration(), null, "twitterTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(distanceUnitEEnum, DistanceUnit.class, "DistanceUnit");
@@ -720,13 +718,13 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
 		addAnnotation
-		  (getSearch_SearchFor(), 
+		  (getSearch_SearchType(), 
 		   source, 
 		   new String[] {
 			 "name", "fields"
 		   });	
 		addAnnotation
-		  (getFieldExpr_FieldDeclaration(), 
+		  (getCondition_FieldDeclaration(), 
 		   source, 
 		   new String[] {
 			 "name", "fields"

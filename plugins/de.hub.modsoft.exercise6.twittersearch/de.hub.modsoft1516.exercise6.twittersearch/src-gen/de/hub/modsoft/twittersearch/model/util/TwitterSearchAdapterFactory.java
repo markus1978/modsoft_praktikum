@@ -72,10 +72,6 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 				return createSearchAdapter();
 			}
 			@Override
-			public Adapter caseFieldExpr(FieldExpr object) {
-				return createFieldExprAdapter();
-			}
-			@Override
 			public Adapter caseCondition(Condition object) {
 				return createConditionAdapter();
 			}
@@ -104,16 +100,24 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 				return createTimeAdapter();
 			}
 			@Override
-			public Adapter caseFieldDeclaration(FieldDeclaration object) {
-				return createFieldDeclarationAdapter();
+			public Adapter caseTwitterFieldDeclaration(TwitterFieldDeclaration object) {
+				return createTwitterFieldDeclarationAdapter();
 			}
 			@Override
-			public Adapter caseTwitter(Twitter object) {
-				return createTwitterAdapter();
+			public Adapter caseTwitterObjectTypeDeclaration(TwitterObjectTypeDeclaration object) {
+				return createTwitterObjectTypeDeclarationAdapter();
 			}
 			@Override
-			public Adapter caseTwitterObjectType(TwitterObjectType object) {
-				return createTwitterObjectTypeAdapter();
+			public Adapter caseTwitterTypeDeclaration(TwitterTypeDeclaration object) {
+				return createTwitterTypeDeclarationAdapter();
+			}
+			@Override
+			public Adapter caseTwitterPrimitiveTypeDeclaration(TwitterPrimitiveTypeDeclaration object) {
+				return createTwitterPrimitiveTypeDeclarationAdapter();
+			}
+			@Override
+			public Adapter caseModel(Model object) {
+				return createModelAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -146,20 +150,6 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSearchAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.FieldExpr <em>Field Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.model.FieldExpr
-	 * @generated
-	 */
-	public Adapter createFieldExprAdapter() {
 		return null;
 	}
 
@@ -262,44 +252,72 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.FieldDeclaration <em>Field Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration <em>Twitter Field Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.model.FieldDeclaration
+	 * @see de.hub.modsoft.twittersearch.model.TwitterFieldDeclaration
 	 * @generated
 	 */
-	public Adapter createFieldDeclarationAdapter() {
+	public Adapter createTwitterFieldDeclarationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.Twitter <em>Twitter</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterObjectTypeDeclaration <em>Twitter Object Type Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.model.Twitter
+	 * @see de.hub.modsoft.twittersearch.model.TwitterObjectTypeDeclaration
 	 * @generated
 	 */
-	public Adapter createTwitterAdapter() {
+	public Adapter createTwitterObjectTypeDeclarationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterObjectType <em>Twitter Object Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterTypeDeclaration <em>Twitter Type Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.model.TwitterObjectType
+	 * @see de.hub.modsoft.twittersearch.model.TwitterTypeDeclaration
 	 * @generated
 	 */
-	public Adapter createTwitterObjectTypeAdapter() {
+	public Adapter createTwitterTypeDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.TwitterPrimitiveTypeDeclaration <em>Twitter Primitive Type Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.hub.modsoft.twittersearch.model.TwitterPrimitiveTypeDeclaration
+	 * @generated
+	 */
+	public Adapter createTwitterPrimitiveTypeDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.model.Model <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.hub.modsoft.twittersearch.model.Model
+	 * @generated
+	 */
+	public Adapter createModelAdapter() {
 		return null;
 	}
 
