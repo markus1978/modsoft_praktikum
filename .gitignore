@@ -6,6 +6,7 @@
 *.xtendbin
 .DS_store
 *._trace
+*.xtendbin
 
 # eclipse specific git ignore
 bin/**
