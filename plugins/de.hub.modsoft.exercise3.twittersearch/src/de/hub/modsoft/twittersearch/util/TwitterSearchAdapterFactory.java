@@ -1,8 +1,8 @@
 /**
  */
-package de.hub.modsoft.twittersearch.twittersearch.util;
+package de.hub.modsoft.twittersearch.util;
 
-import de.hub.modsoft.twittersearch.twittersearch.*;
+import de.hub.modsoft.twittersearch.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see de.hub.modsoft.twittersearch.twittersearch.TwitterSearchPackage
+ * @see de.hub.modsoft.twittersearch.TwitterSearchPackage
  * @generated
  */
 public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
@@ -92,13 +92,13 @@ public class TwitterSearchAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.twittersearch.ExampleClass <em>Example Class</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.hub.modsoft.twittersearch.ExampleClass <em>Example Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.hub.modsoft.twittersearch.twittersearch.ExampleClass
+	 * @see de.hub.modsoft.twittersearch.ExampleClass
 	 * @generated
 	 */
 	public Adapter createExampleClassAdapter() {

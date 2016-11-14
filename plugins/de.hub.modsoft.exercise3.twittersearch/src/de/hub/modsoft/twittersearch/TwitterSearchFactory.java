@@ -1,6 +1,6 @@
 /**
  */
-package de.hub.modsoft.twittersearch.twittersearch;
+package de.hub.modsoft.twittersearch;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see de.hub.modsoft.twittersearch.twittersearch.TwitterSearchPackage
+ * @see de.hub.modsoft.twittersearch.TwitterSearchPackage
  * @generated
  */
 public interface TwitterSearchFactory extends EFactory {
@@ -19,7 +19,7 @@ public interface TwitterSearchFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TwitterSearchFactory eINSTANCE = de.hub.modsoft.twittersearch.twittersearch.impl.TwitterSearchFactoryImpl.init();
+	TwitterSearchFactory eINSTANCE = de.hub.modsoft.twittersearch.impl.TwitterSearchFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Example Class</em>'.

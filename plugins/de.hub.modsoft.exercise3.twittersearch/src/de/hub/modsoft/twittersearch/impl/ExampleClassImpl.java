@@ -1,9 +1,9 @@
 /**
  */
-package de.hub.modsoft.twittersearch.twittersearch.impl;
+package de.hub.modsoft.twittersearch.impl;
 
-import de.hub.modsoft.twittersearch.twittersearch.ExampleClass;
-import de.hub.modsoft.twittersearch.twittersearch.TwitterSearchPackage;
+import de.hub.modsoft.twittersearch.ExampleClass;
+import de.hub.modsoft.twittersearch.TwitterSearchPackage;
 
 import org.eclipse.emf.ecore.EClass;
 

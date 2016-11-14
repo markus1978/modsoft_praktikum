@@ -1,6 +1,6 @@
 /**
  */
-package de.hub.modsoft.twittersearch.twittersearch;
+package de.hub.modsoft.twittersearch;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see de.hub.modsoft.twittersearch.twittersearch.TwitterSearchFactory
+ * @see de.hub.modsoft.twittersearch.TwitterSearchFactory
  * @model kind="package"
  * @generated
  */
@@ -52,14 +52,14 @@ public interface TwitterSearchPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TwitterSearchPackage eINSTANCE = de.hub.modsoft.twittersearch.twittersearch.impl.TwitterSearchPackageImpl.init();
+	TwitterSearchPackage eINSTANCE = de.hub.modsoft.twittersearch.impl.TwitterSearchPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.twittersearch.impl.ExampleClassImpl <em>Example Class</em>}' class.
+	 * The meta object id for the '{@link de.hub.modsoft.twittersearch.impl.ExampleClassImpl <em>Example Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.hub.modsoft.twittersearch.twittersearch.impl.ExampleClassImpl
-	 * @see de.hub.modsoft.twittersearch.twittersearch.impl.TwitterSearchPackageImpl#getExampleClass()
+	 * @see de.hub.modsoft.twittersearch.impl.ExampleClassImpl
+	 * @see de.hub.modsoft.twittersearch.impl.TwitterSearchPackageImpl#getExampleClass()
 	 * @generated
 	 */
 	int EXAMPLE_CLASS = 0;
@@ -84,11 +84,11 @@ public interface TwitterSearchPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.twittersearch.ExampleClass <em>Example Class</em>}'.
+	 * Returns the meta object for class '{@link de.hub.modsoft.twittersearch.ExampleClass <em>Example Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Example Class</em>'.
-	 * @see de.hub.modsoft.twittersearch.twittersearch.ExampleClass
+	 * @see de.hub.modsoft.twittersearch.ExampleClass
 	 * @generated
 	 */
 	EClass getExampleClass();
@@ -117,11 +117,11 @@ public interface TwitterSearchPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.twittersearch.impl.ExampleClassImpl <em>Example Class</em>}' class.
+		 * The meta object literal for the '{@link de.hub.modsoft.twittersearch.impl.ExampleClassImpl <em>Example Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.hub.modsoft.twittersearch.twittersearch.impl.ExampleClassImpl
-		 * @see de.hub.modsoft.twittersearch.twittersearch.impl.TwitterSearchPackageImpl#getExampleClass()
+		 * @see de.hub.modsoft.twittersearch.impl.ExampleClassImpl
+		 * @see de.hub.modsoft.twittersearch.impl.TwitterSearchPackageImpl#getExampleClass()
 		 * @generated
 		 */
 		EClass EXAMPLE_CLASS = eINSTANCE.getExampleClass();

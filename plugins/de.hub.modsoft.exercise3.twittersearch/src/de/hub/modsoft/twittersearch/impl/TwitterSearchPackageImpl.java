@@ -1,10 +1,10 @@
 /**
  */
-package de.hub.modsoft.twittersearch.twittersearch.impl;
+package de.hub.modsoft.twittersearch.impl;
 
-import de.hub.modsoft.twittersearch.twittersearch.ExampleClass;
-import de.hub.modsoft.twittersearch.twittersearch.TwitterSearchFactory;
-import de.hub.modsoft.twittersearch.twittersearch.TwitterSearchPackage;
+import de.hub.modsoft.twittersearch.ExampleClass;
+import de.hub.modsoft.twittersearch.TwitterSearchFactory;
+import de.hub.modsoft.twittersearch.TwitterSearchPackage;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -36,7 +36,7 @@ public class TwitterSearchPackageImpl extends EPackageImpl implements TwitterSea
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see de.hub.modsoft.twittersearch.twittersearch.TwitterSearchPackage#eNS_URI
+	 * @see de.hub.modsoft.twittersearch.TwitterSearchPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */

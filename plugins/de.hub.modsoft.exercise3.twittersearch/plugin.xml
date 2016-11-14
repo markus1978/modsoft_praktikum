@@ -10,7 +10,7 @@
       <!-- @generated TwitterSearch -->
       <package
             uri="http://www.hu-berlin.de/Modsoft/TwitterSearch/1.0"
-            class="de.hub.modsoft.twittersearch.twittersearch.TwitterSearchPackage"
+            class="de.hub.modsoft.twittersearch.TwitterSearchPackage"
             genModel="model/TwitterSearch.genmodel"/>
    </extension>
 
