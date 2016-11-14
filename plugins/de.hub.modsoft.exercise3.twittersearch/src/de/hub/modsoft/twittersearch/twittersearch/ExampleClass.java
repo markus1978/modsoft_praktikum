@@ -1,6 +1,6 @@
 /**
  */
-package de.hub.modsoft.twittersearch;
+package de.hub.modsoft.twittersearch.twittersearch;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see de.hub.modsoft.twittersearch.TwitterSearchPackage#getExampleClass()
+ * @see de.hub.modsoft.twittersearch.twittersearch.TwitterSearchPackage#getExampleClass()
  * @model
  * @generated
  */

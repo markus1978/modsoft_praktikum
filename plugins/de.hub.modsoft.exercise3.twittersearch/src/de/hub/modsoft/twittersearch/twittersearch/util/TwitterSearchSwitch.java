@@ -1,8 +1,8 @@
 /**
  */
-package de.hub.modsoft.twittersearch.util;
+package de.hub.modsoft.twittersearch.twittersearch.util;
 
-import de.hub.modsoft.twittersearch.*;
+import de.hub.modsoft.twittersearch.twittersearch.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see de.hub.modsoft.twittersearch.TwitterSearchPackage
+ * @see de.hub.modsoft.twittersearch.twittersearch.TwitterSearchPackage
  * @generated
  */
 public class TwitterSearchSwitch<T> extends Switch<T> {
