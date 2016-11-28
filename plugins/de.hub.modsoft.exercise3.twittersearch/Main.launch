@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<<<<<<< HEAD:plugins/de.hub.modsoft.exercise3.twittersearch/Main.launch
 <listEntry value="/de.hub.modsoft.exercise3.twittersearch"/>
+=======
+<listEntry value="/de.hub.modsoft.exercise3.twittersearch/src/de/hub/modsoft/twittersearch/Main.java"/>
+>>>>>>> 91c49065c51b08f1e5a4dc968ed418391bc9343d:plugins/de.hub.modsoft.exercise3.twittersearch/Main.launch
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<<<<<<< HEAD:plugins/de.hub.modsoft.exercise3.twittersearch/Main.launch
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="de.hub.modsoft.twittersearch.twittersearch.Main"/>
+=======
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="de.hub.modsoft.twittersearch.Main"/>
+>>>>>>> 91c49065c51b08f1e5a4dc968ed418391bc9343d:plugins/de.hub.modsoft.exercise3.twittersearch/Main.launch
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="de.hub.modsoft.exercise3.twittersearch"/>
 </launchConfiguration>
