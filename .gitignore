@@ -7,11 +7,11 @@
 *.xtendbin
 
 # eclipse specific git ignore
-gen-src/**
-xtend-gen/**
-bin/**
-tmp/**
-tmp/**/*
+*/gen-src/**
+*/xtend-gen/**
+*/bin/**
+*/tmp/**
+*/tmp/**/*
 *.tmp
 *.bak
 *.swp
