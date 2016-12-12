@@ -3,8 +3,8 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:twittersearch="http://www.hu-berlin.de/modsoft/TwitterSearch/1.0"
-    xsi:schemaLocation="http://www.hu-berlin.de/modsoft/TwitterSearch/1.0 TwitterSearch.ecore">
+    xmlns:twittersearch="http://www.hu-berlin.de/modsoft/TwitterSearch/Exercise4"
+    xsi:schemaLocation="http://www.hu-berlin.de/modsoft/TwitterSearch/Exercise4 TwitterSearch.ecore">
   <twitter>
     <types xsi:type="twittersearch:PrimitiveType"
         name="Boolean"/>
