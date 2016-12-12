@@ -1,0 +1,27 @@
+twitter {
+	primitive Integer;
+	primitive Boolean;
+	
+	object Tweet {
+		retweets: Integer;
+		favorits: Integer;
+		hasURL: Boolean;
+		hasImage : Boolean;
+		user: User;
+	}
+	
+	object User {
+		followerCount: Integer;
+		friendsCount: Integer;
+		hasProfileImage: Boolean;
+	}
+}
+
+searches {
+	search for Tweet with "RealDonaldTrump" where followerCount > 1000
+	search for User with "RealDonaldTrump" where followerCount > 1000
+
+	search for Tweet with "VW" where user.followerCount > 1000 and (hasURL || retweets.hasURL)
+	search for Tweet with "VW" where user.followerCount > 1000 and (hasURL || retweets > 5)
+}
+

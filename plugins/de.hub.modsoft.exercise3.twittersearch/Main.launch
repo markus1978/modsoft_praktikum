@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<<<<<<< HEAD
 <listEntry value="/de.hub.modsoft.1516.exercise3.twittersearch/src/de/hub/modsoft/twittersearch/twittersearch/Main.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
@@ -9,4 +10,14 @@
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="de.hub.modsoft.twittersearch.twittersearch.Main"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="de.hub.modsoft.1516.exercise3.twittersearch"/>
+=======
+<listEntry value="/de.hub.modsoft.exercise3.twittersearch"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="de.hub.modsoft.twittersearch.twittersearch.Main"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="de.hub.modsoft.exercise3.twittersearch"/>
+>>>>>>> 4aa29adac587e10723dc2d723788173ab6252a3c
 </launchConfiguration>

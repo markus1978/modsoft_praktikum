@@ -3,14 +3,8 @@
 *.war
 *.ear
 *.class
-<<<<<<< HEAD
-*.xtendbin
-.DS_store
-*._trace
-=======
 *._trace
 *.xtendbin
->>>>>>> 4aa29adac587e10723dc2d723788173ab6252a3c
 
 # eclipse specific git ignore
 gen-src/**

@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="twittersearch" nsURI="http://www.hu-berlin.de/modsoft/TwitterSearch/Exercise4"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="twittersearch" nsURI="http://www.hu-berlin.de/modsoft/TwitterSearch/1.0"
     nsPrefix="twittersearch">
   <eClassifiers xsi:type="ecore:EClass" name="Search">
-<<<<<<< HEAD:plugins/de.hub.modsoft.exercise6.twittersearch/de.hub.modsoft1516.exercise6.twittersearch/model/TwitterSearch.ecore
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
-        eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
-        eType="#//SearchOption" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="searchType" eType="#//TwitterObjectTypeDeclaration">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="fields"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDeclaration" eType="#//TwitterFieldDeclaration">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="fields"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-=======
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//BooleanExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
@@ -30,7 +12,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true" eSuperTypes="#//BooleanExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fieldExpression" eType="#//FieldExpression"
         containment="true"/>
->>>>>>> 4aa29adac587e10723dc2d723788173ab6252a3c:plugins/de.hub.modsoft.exercise4.twittersearch/model/TwitterSearch.ecore
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanCondition" eSuperTypes="#//Condition"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntCondition" eSuperTypes="#//Condition">
@@ -48,31 +29,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="radius" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="radiusUnit" eType="#//DistanceUnit"/>
   </eClassifiers>
-<<<<<<< HEAD:plugins/de.hub.modsoft.exercise6.twittersearch/de.hub.modsoft1516.exercise6.twittersearch/model/TwitterSearch.ecore
-  <eClassifiers xsi:type="ecore:EClass" name="Time" eSuperTypes="#//SearchOption">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="before" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-  </eClassifiers>
-=======
->>>>>>> 4aa29adac587e10723dc2d723788173ab6252a3c:plugins/de.hub.modsoft.exercise4.twittersearch/model/TwitterSearch.ecore
   <eClassifiers xsi:type="ecore:EEnum" name="DistanceUnit">
-    <eLiterals name="mi"/>
-    <eLiterals name="km" value="1"/>
+    <eLiterals name="miles"/>
+    <eLiterals name="kilometers" value="1"/>
   </eClassifiers>
-<<<<<<< HEAD:plugins/de.hub.modsoft.exercise6.twittersearch/de.hub.modsoft1516.exercise6.twittersearch/model/TwitterSearch.ecore
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterFieldDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="objectType" eType="#//TwitterObjectTypeDeclaration"
-        eOpposite="#//TwitterObjectTypeDeclaration/fields"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TwitterTypeDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="FieldTypes">
-    <eLiterals name="int"/>
-    <eLiterals name="boolean" value="2"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterObjectTypeDeclaration" eSuperTypes="#//TwitterTypeDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-        eType="#//TwitterFieldDeclaration" containment="true" eOpposite="#//TwitterFieldDeclaration/objectType"/>
-=======
   <eClassifiers xsi:type="ecore:EEnum" name="IntOperators">
     <eLiterals name="gt" literal=">"/>
     <eLiterals name="gte" value="1" literal=">="/>
@@ -115,7 +75,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//FieldReference"
         containment="true"/>
->>>>>>> 4aa29adac587e10723dc2d723788173ab6252a3c:plugins/de.hub.modsoft.exercise4.twittersearch/model/TwitterSearch.ecore
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldReference" eSuperTypes="#//FieldExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fieldDeclaration" eType="#//TwitterFieldDeclaration"/>
@@ -125,15 +84,5 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="searches" upperBound="-1"
         eType="#//Search" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterTypeDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TwitterPrimitiveTypeDeclaration" eSuperTypes="#//TwitterTypeDeclaration"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="searches" upperBound="-1"
-        eType="#//Search" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="twitterTypes" upperBound="-1"
-        eType="#//TwitterTypeDeclaration" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
