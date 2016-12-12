@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.hub.modsoft.exercise5.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.hub.modsoft.exercise5.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ de.hub.modsoft.exercise5.twittersearch,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: de.hub.modsoft.twittersearch.xtext,
+ de.hub.modsoft.twittersearch.xtext.services,
+ de.hub.modsoft.twittersearch.xtext.serializer,
+ de.hub.modsoft.twittersearch.xtext.parser.antlr,
+ de.hub.modsoft.twittersearch.xtext.parser.antlr.internal,
+ de.hub.modsoft.twittersearch.xtext.validation,
+ de.hub.modsoft.twittersearch.xtext.scoping,
+ de.hub.modsoft.twittersearch.xtext.generator,
+ de.hub.modsoft.twittersearch.xtext.formatting

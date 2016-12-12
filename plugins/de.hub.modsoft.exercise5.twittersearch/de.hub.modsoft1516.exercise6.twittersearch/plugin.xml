@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated TwitterSearch -->
       <package
-            uri="http://www.hu-berlin.de/modsoft/TwitterSearch/Exercise4"
-            class="de.hub.modsoft.twittersearch.TwitterSearchPackage"
+            uri="http://www.hu-berlin.de/modsoft/TwitterSearch/Exercise5"
+            class="de.hub.modsoft.twittersearch.model.TwitterSearchPackage"
             genModel="model/TwitterSearch.genmodel"/>
    </extension>
 
