@@ -119,13 +119,13 @@ public class TwitterSearchGenerator implements IGenerator {
       _builder.append("searches {");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("search for Tweet with \"VW\" where retweet_count > 5 & hasURL");
+      _builder.append("search for Tweet with \"VW\" where retweet_count > 5 & hasURL;");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("search for Tweet with \"quake\" in geo(37.781157,-122.398720,100mi) where hasImage");
+      _builder.append("search for Tweet with \"quake\" in geo(37.781157,-122.398720,100mi) where hasImage;");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("search for User with \"Donald\" before 11.07.2016 where followers_count > 10");
+      _builder.append("search for User with \"Donald\" before 11.07.2016 where followers_count > 10;");
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
