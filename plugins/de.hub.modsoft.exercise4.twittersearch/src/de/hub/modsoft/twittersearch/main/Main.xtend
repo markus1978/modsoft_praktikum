@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
+import static extension de.hub.modsoft.twittersearch.main.IterableExtensions.*
+
 class Main {
 	
 	/**
@@ -76,11 +78,6 @@ class Main {
 		val resource = rs.getResource(URI.createFileURI("model/Example.xmi"), true)
 		val model = resource.contents.get(0) as Model
 		
-		println("Type checking:")
-		model.searches.forEach[
-			println(condition.checkTypes(searchType));
-		]
-		
 		println("Questions")		
 		println("Do all searches search for tweets?")
 		println("TODO")
@@ -101,5 +98,10 @@ class Main {
 			All collection functions (collect, select, etc.) only work on iterables.
 		''')		
 		println("TODO")
+		
+		println("Type checking:")
+		model.searches.forEach[
+			println(condition.checkTypes(searchType));
+		]
 	}	
 }
