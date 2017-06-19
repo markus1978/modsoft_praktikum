@@ -1,11 +1,13 @@
 package de.hub.modsoft.twittersearch.main
 
 import de.hub.modsoft.twittersearch.BooleanBinaryOp
+import de.hub.modsoft.twittersearch.BooleanCondition
 import de.hub.modsoft.twittersearch.BooleanExpression
 import de.hub.modsoft.twittersearch.Condition
 import de.hub.modsoft.twittersearch.Dot
 import de.hub.modsoft.twittersearch.FieldExpression
 import de.hub.modsoft.twittersearch.FieldReference
+import de.hub.modsoft.twittersearch.IntCondition
 import de.hub.modsoft.twittersearch.Model
 import de.hub.modsoft.twittersearch.Not
 import de.hub.modsoft.twittersearch.TwitterFieldDeclaration
@@ -26,9 +28,9 @@ class Main {
 	 */
 	public static def TwitterFieldDeclaration fieldDeclaration(FieldExpression fieldExpr) {
 		if (fieldExpr instanceof FieldReference) {
-			return null //TODO
+			return fieldExpr.fieldDeclaration
 		} else if (fieldExpr instanceof Dot) {
-			return null //TODO
+			return fieldExpr.right.fieldDeclaration
 		}
 	}
 
@@ -40,10 +42,15 @@ class Main {
 			// the left hand side's type must be an object type and
 			// the field on the right hand side must be part of the left hand side's type and 
 			// the left hand side field must by part of the given object type
-			false // TODO
+			val leftFieldType = fieldExpr.left.fieldDeclaration.type
+			if (leftFieldType instanceof TwitterObjectTypeDeclaration) {
+				fieldExpr.right.fieldExists(leftFieldType)	
+			} else {
+				false
+			} && fieldExpr.left.fieldExists(objectType)
 		} else if (fieldExpr instanceof FieldReference) {
 			// the referenced field must be part of the given object type
-			false // TODO
+			objectType.fields.exists[it == fieldExpr.fieldDeclaration]
 		} else {
 			false
 		}
@@ -54,7 +61,14 @@ class Main {
 	 * all fields within the contained field expression exist in the context of the given search type.
 	 */	
 	public static def boolean checkType(Condition condition, TwitterObjectTypeDeclaration searchType) {		
-		false // TODO
+		fieldExists(condition.fieldExpression, searchType) &&
+		if (condition instanceof IntCondition) {			
+			condition.fieldExpression.fieldDeclaration.type.name == "Integer"
+		} else if (condition instanceof BooleanCondition) {
+			condition.fieldExpression.fieldDeclaration.type.name == "Boolean"
+		} else {
+			false
+		}
 	}
 	
 	/**
@@ -63,8 +77,8 @@ class Main {
 	 */
 	public static def boolean checkTypes(BooleanExpression expr, TwitterObjectTypeDeclaration searchType) {
 		switch (expr) {
-			Not: false // TODO
-			BooleanBinaryOp: false // TODO
+			Not: expr.operand.checkTypes(searchType)
+			BooleanBinaryOp: expr.left.checkTypes(searchType) && expr.right.checkTypes(searchType)
 			Condition: expr.checkType(searchType)
 			default: false 
 		}		
@@ -78,18 +92,23 @@ class Main {
 		val resource = rs.getResource(URI.createFileURI("model/Example.xmi"), true)
 		val model = resource.contents.get(0) as Model
 		
+		println("Type checking:")
+		model.searches.forEach[
+			println(condition.checkTypes(searchType));
+		]
+		
 		println("Questions")		
 		println("Do all searches search for tweets?")
-		println("TODO")
+		println(model.searches.forall[searchType.name == "Tweet"])
 		
 		println("Does at least one search search for users?")
-		println("TODO")
+		println(model.searches.collect[searchType].exists[name == "User"])
 		
 		println("How many different EClasses do all used search types instantiate?")
-		println("TODO")
+		println(model.searches.collect[searchType.eClass].toSet.size)
 		
 		println("Is there a search for each object type?")
-		println("TODO")
+		println(model.twitter.types.select[it instanceof TwitterObjectTypeDeclaration].forall[type|model.searches.exists[searchType == type]])
 		
 		println('''
 			How many conditions does the whole model contain. 
@@ -97,11 +116,6 @@ class Main {
 			You can use toIterable to turn an iterator into an iterable.
 			All collection functions (collect, select, etc.) only work on iterables.
 		''')		
-		println("TODO")
-		
-		println("Type checking:")
-		model.searches.forEach[
-			println(condition.checkTypes(searchType));
-		]
+		println(model.eAllContents.toIterable.select[it instanceof Condition].size)
 	}	
 }
