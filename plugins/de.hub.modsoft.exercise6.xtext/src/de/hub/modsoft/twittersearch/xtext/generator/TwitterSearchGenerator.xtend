@@ -63,11 +63,13 @@ class TwitterSearchGenerator implements IGenerator {
 			}
 			
 			searches {
-				search for Tweet with "VW" where retweet_count > 5 & hasURL
-				search for Tweet with "quake" in geo(37.781157,-122.398720,100mi) where hasImage
-				search for User with "Donald" before 11.07.2016 where followers_count > 10
+				search for Tweet with "VW" before 12.07.2017 where retweet_count > 5 & hasURL;
+				search for Tweet with "quake" in geo(37.781157,-122.398720,100mi) where hasImage;
+				search for User with "Donald" where followers_count > 10;
 			}
 		''') as Model
+		
+		model.eResource.errors.forEach[println('''ERROR: «it»''')]
 		
 		val generator = new TwitterSearchGenerator
 		val code = generator.doGenerate(model)

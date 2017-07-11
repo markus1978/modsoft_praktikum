@@ -4,6 +4,7 @@ import de.hub.modsoft.twittersearch.model.Model;
 import de.hub.modsoft.twittersearch.model.TwitterSearchPackage;
 import de.hub.modsoft.twittersearch.xtext.TwitterSearchParser;
 import java.io.File;
+import java.util.function.Consumer;
 import org.apache.commons.io.FileUtils;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -13,6 +14,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 /**
  * Generates code from your model files on save.
@@ -119,18 +121,27 @@ public class TwitterSearchGenerator implements IGenerator {
       _builder.append("searches {");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("search for Tweet with \"VW\" where retweet_count > 5 & hasURL");
+      _builder.append("search for Tweet with \"VW\" before 12.07.2017 where retweet_count > 5 & hasURL;");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("search for Tweet with \"quake\" in geo(37.781157,-122.398720,100mi) where hasImage");
+      _builder.append("search for Tweet with \"quake\" in geo(37.781157,-122.398720,100mi) where hasImage;");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("search for User with \"Donald\" before 11.07.2016 where followers_count > 10");
+      _builder.append("search for User with \"Donald\" where followers_count > 10;");
       _builder.newLine();
       _builder.append("}");
       _builder.newLine();
       EObject _parser = parser.parser(_builder.toString());
       final Model model = ((Model) _parser);
+      Resource _eResource = model.eResource();
+      EList<Resource.Diagnostic> _errors = _eResource.getErrors();
+      final Consumer<Resource.Diagnostic> _function = (Resource.Diagnostic it) -> {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("ERROR: ");
+        _builder_1.append(it, "");
+        InputOutput.<String>println(_builder_1.toString());
+      };
+      _errors.forEach(_function);
       final TwitterSearchGenerator generator = new TwitterSearchGenerator();
       final CharSequence code = generator.doGenerate(model);
       File _file = new File("src-gen/de/hub/modsoft/twittersearch/RunSearchMain.java");
